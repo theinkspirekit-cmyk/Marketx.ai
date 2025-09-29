@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import heroAutomation from "@/assets/hero-automation.jpg";
-
 const Hero = () => {
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id)?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+  return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Exact radial gradient background matching reference */}
       <div className="radial-bg"></div>
 
@@ -20,7 +19,9 @@ const Hero = () => {
         <div className="text-xs text-muted-foreground mt-1">20.945</div>
       </div>
 
-      <div className="absolute top-32 right-16 glass-card p-4 float-animation opacity-80" style={{ animationDelay: '1s' }}>
+      <div className="absolute top-32 right-16 glass-card p-4 float-animation opacity-80" style={{
+      animationDelay: '1s'
+    }}>
         <div className="text-center">
           <div className="flex items-center space-x-2 mb-1">
             <div className="w-2 h-2 bg-primary rounded-full"></div>
@@ -30,14 +31,18 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-32 left-20 glass-card p-4 float-animation opacity-80" style={{ animationDelay: '2s' }}>
+      <div className="absolute bottom-32 left-20 glass-card p-4 float-animation opacity-80" style={{
+      animationDelay: '2s'
+    }}>
         <div className="flex items-center space-x-2">
           <span className="text-xs font-medium text-foreground">Aelf</span>
         </div>
         <div className="text-xs text-muted-foreground">18.540</div>
       </div>
 
-      <div className="absolute bottom-20 right-32 glass-card p-4 float-animation opacity-80" style={{ animationDelay: '0.5s' }}>
+      <div className="absolute bottom-20 right-32 glass-card p-4 float-animation opacity-80" style={{
+      animationDelay: '0.5s'
+    }}>
         <div className="text-center">
           <div className="flex items-center space-x-2 mb-1">
             <div className="w-2 h-2 bg-muted-foreground rounded-full"></div>
@@ -62,8 +67,10 @@ const Hero = () => {
 
           {/* Main heading matching reference exactly */}
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 leading-tight tracking-tight">
-            <span className="text-foreground">One-click for Asset </span>
-            <span className="gradient-text-ref">Defense</span>
+            <span className="text-foreground text-8xl">Automate Your Business.</span>
+            <span className="gradient-text-ref text-8xl text-gray-500">Save 10+ Hours/Work
+
+          </span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-medium">
@@ -79,10 +86,7 @@ const Hero = () => {
               </svg>
             </button>
             
-            <button 
-              onClick={() => scrollToSection('services')}
-              className="btn-primary-ref"
-            >
+            <button onClick={() => scrollToSection('services')} className="btn-primary-ref">
               Discover More
             </button>
           </div>
@@ -106,8 +110,6 @@ const Hero = () => {
           <div className="w-8 h-px bg-muted-foreground mt-2"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
