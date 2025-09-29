@@ -1,29 +1,22 @@
 const Problem = () => {
-  const problems = [
-    {
-      icon: "⏰",
-      title: "Repetitive Tasks",
-      description: "Spending hours on manual data entry, email responses, and routine processes that could be automated."
-    },
-    {
-      icon: "📧",
-      title: "Missed Leads",  
-      description: "Potential customers slip through the cracks due to delayed follow-ups and manual lead management."
-    },
-    {
-      icon: "🔄",
-      title: "Manual Work",
-      description: "Team members stuck doing boring, repetitive work instead of focusing on growth and creativity."
-    },
-    {
-      icon: "📊",
-      title: "Data Chaos",
-      description: "Information scattered across multiple platforms with no unified system or reporting."
-    }
-  ];
-
-  return (
-    <section className="py-20 relative">
+  const problems = [{
+    icon: "⏰",
+    title: "Repetitive Tasks",
+    description: "Spending hours on manual data entry, email responses, and routine processes that could be automated."
+  }, {
+    icon: "📧",
+    title: "Missed Leads",
+    description: "Potential customers slip through the cracks due to delayed follow-ups and manual lead management."
+  }, {
+    icon: "🔄",
+    title: "Manual Work",
+    description: "Team members stuck doing boring, repetitive work instead of focusing on growth and creativity."
+  }, {
+    icon: "📊",
+    title: "Data Chaos",
+    description: "Information scattered across multiple platforms with no unified system or reporting."
+  }];
+  return <section className="py-20 relative">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -38,16 +31,11 @@ const Problem = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {problems.map((problem, index) => (
-            <div 
-              key={index}
-              className="glass-card p-6 hover-glow transition-all duration-300 hover:scale-105"
-            >
-              <div className="text-4xl mb-4">{problem.icon}</div>
+          {problems.map((problem, index) => <div key={index} className="glass-card p-6 hover-glow transition-all duration-300 hover:scale-105">
+              
               <h3 className="text-xl font-semibold mb-3 text-foreground">{problem.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{problem.description}</p>
-            </div>
-          ))}
+            </div>)}
         </div>
 
         <div className="text-center">
@@ -74,8 +62,6 @@ const Problem = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Problem;
