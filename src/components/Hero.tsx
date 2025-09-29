@@ -57,25 +57,16 @@ const Hero = () => {
         <div className="max-w-6xl mx-auto">
           {/* Small unlock button matching reference */}
           <div className="mb-8">
-            <button className="btn-secondary-ref inline-flex items-center space-x-2 opacity-90">
-              <span className="text-sm">🔓 Unlock Your Assets Spark!</span>
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+            
           </div>
 
           {/* Main heading matching reference exactly */}
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 leading-tight tracking-tight">
             <span className="text-foreground text-8xl">Automate Your Business.</span>
-            <span className="gradient-text-ref text-8xl text-gray-500">Save 10+ Hours/Work
-
-          </span>
+            <span className="gradient-text-ref text-8xl text-gray-500 px-0 my-0 mx-0 py-[15px]">Save 10+ Hours/Work</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-medium">
-            Dive into the art assets, where innovative blockchain technology meets financial expertise
-          </p>
+          
 
           {/* Buttons matching reference style */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
@@ -93,12 +84,7 @@ const Hero = () => {
 
           {/* Bottom scroll indicator matching reference */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-            <div className="glass-card px-4 py-2 rounded-full">
-              <div className="flex items-center space-x-2 text-xs text-muted-foreground">
-                <div className="w-2 h-2 rounded-full border border-muted-foreground"></div>
-                <span>02/03 : Scroll down</span>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
