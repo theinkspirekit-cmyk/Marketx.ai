@@ -115,7 +115,14 @@ const CTA = () => {
 
             {/* Benefits */}
             <div className="space-y-6">
-              
+              <a
+                href="https://calendly.com/katkamdheekshitdatta/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg rounded-xl transition-colors"
+              >
+                Book Your Free Strategy Call
+              </a>
 
               
             </div>

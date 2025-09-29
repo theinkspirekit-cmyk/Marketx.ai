@@ -10,47 +10,6 @@ const Hero = () => {
       {/* Exact radial gradient background matching reference */}
       <div className="radial-bg"></div>
 
-      {/* Floating Elements - matching reference style */}
-      <div className="absolute top-20 left-10 glass-card p-4 float-animation opacity-80">
-        <div className="flex items-center space-x-2">
-          <div className="w-3 h-3 bg-primary rounded-full pulse-glow"></div>
-          <span className="text-xs text-muted-foreground font-medium">Cortex</span>
-        </div>
-        <div className="text-xs text-muted-foreground mt-1">20.945</div>
-      </div>
-
-      <div className="absolute top-32 right-16 glass-card p-4 float-animation opacity-80" style={{
-      animationDelay: '1s'
-    }}>
-        <div className="text-center">
-          <div className="flex items-center space-x-2 mb-1">
-            <div className="w-2 h-2 bg-primary rounded-full"></div>
-            <span className="text-xs text-muted-foreground font-medium">Quant</span>
-          </div>
-          <div className="text-xs text-muted-foreground">3.245</div>
-        </div>
-      </div>
-
-      <div className="absolute bottom-32 left-20 glass-card p-4 float-animation opacity-80" style={{
-      animationDelay: '2s'
-    }}>
-        <div className="flex items-center space-x-2">
-          <span className="text-xs font-medium text-foreground">Aelf</span>
-        </div>
-        <div className="text-xs text-muted-foreground">18.540</div>
-      </div>
-
-      <div className="absolute bottom-20 right-32 glass-card p-4 float-animation opacity-80" style={{
-      animationDelay: '0.5s'
-    }}>
-        <div className="text-center">
-          <div className="flex items-center space-x-2 mb-1">
-            <div className="w-2 h-2 bg-muted-foreground rounded-full"></div>
-            <span className="text-xs text-muted-foreground font-medium">Meeton</span>
-          </div>
-          <div className="text-xs text-muted-foreground">619</div>
-        </div>
-      </div>
 
       {/* Main Content - exact typography matching reference */}
       <div className="container mx-auto px-6 text-center z-10 relative">
@@ -70,12 +29,17 @@ const Hero = () => {
 
           {/* Buttons matching reference style */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <button className="btn-secondary-ref inline-flex items-center space-x-2">
-              <span>Open App</span>
+            <a
+              href="https://calendly.com/katkamdheekshitdatta/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary-ref inline-flex items-center space-x-2"
+            >
+              <span>Book Free Call</span>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </button>
+            </a>
             
             <button onClick={() => scrollToSection('services')} className="btn-primary-ref">
               Discover More
@@ -89,10 +53,10 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Bottom right label matching reference */}
+      {/* Bottom right label */}
       <div className="absolute bottom-16 right-8 opacity-70">
         <div className="text-right">
-          <div className="text-sm text-muted-foreground font-medium">DeFi horizons</div>
+          <div className="text-sm text-muted-foreground font-medium">AI Automation</div>
           <div className="w-8 h-px bg-muted-foreground mt-2"></div>
         </div>
       </div>

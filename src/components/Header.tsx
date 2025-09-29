@@ -17,9 +17,9 @@ const Header = () => {
   return <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-card border-b' : 'bg-transparent'}`}>
       <nav className="container mx-auto px-6 py-4 my-0">
         <div className="flex items-center justify-between mx-0">
-          {/* Logo matching reference style */}
+          {/* Logo */}
           <div className="flex items-center space-x-2">
-            
+            <span className="text-xl font-bold text-foreground">marketx.ai</span>
           </div>
           
           {/* Navigation matching reference */}
@@ -28,23 +28,29 @@ const Header = () => {
               Home
             </button>
             <button onClick={() => scrollToSection('services')} className="text-muted-foreground hover:text-foreground transition-colors font-medium">
-              DeFi App
+              Services
             </button>
             
-            <button onClick={() => scrollToSection('services')} className="text-muted-foreground hover:text-foreground transition-colors font-medium">
-              Features
+            <button onClick={() => scrollToSection('proof')} className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+              Case Studies
             </button>
             
-            <button className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+            <button onClick={() => scrollToSection('faq')} className="text-muted-foreground hover:text-foreground transition-colors font-medium">
               FAQ
             </button>
             
           </div>
 
-          {/* Create Account button matching reference */}
+          {/* Book a Free Call button */}
           <div className="flex items-center space-x-4">
-            
-            
+            <a
+              href="https://calendly.com/katkamdheekshitdatta/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary-ref"
+            >
+              Book a Free Call
+            </a>
           </div>
         </div>
       </nav>
