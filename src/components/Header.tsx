@@ -22,47 +22,67 @@ const Header = () => {
     }`}>
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
+          {/* Logo matching reference style */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">A</span>
+            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+              <span className="text-black font-bold text-sm">C</span>
             </div>
-            <span className="font-bold text-lg text-foreground">AutomateFlow</span>
           </div>
           
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Navigation matching reference */}
+          <div className="hidden md:flex items-center space-x-8 text-sm">
             <button 
               onClick={() => scrollToSection('home')}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors font-medium"
             >
               Home
             </button>
             <button 
               onClick={() => scrollToSection('services')}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors font-medium"
             >
-              Services
+              DeFi App
             </button>
             <button 
               onClick={() => scrollToSection('proof')}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors font-medium"
             >
-              Case Studies
+              Assets
             </button>
             <button 
-              onClick={() => scrollToSection('contact')}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              onClick={() => scrollToSection('services')}
+              className="text-muted-foreground hover:text-foreground transition-colors font-medium"
             >
-              Contact
+              Features
             </button>
+            <button className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+              Pricing
+            </button>
+            <button className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+              FAQ
+            </button>
+            <div className="flex items-center space-x-2">
+              <span className="text-muted-foreground font-medium">Protection</span>
+              <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
           </div>
 
-          <Button 
-            onClick={() => scrollToSection('cta')}
-            className="btn-glow text-primary-foreground px-6"
-            size="sm"
-          >
-            Book Free Call
-          </Button>
+          {/* Create Account button matching reference */}
+          <div className="flex items-center space-x-4">
+            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+              <span className="text-black font-bold text-xs">?</span>
+            </div>
+            <Button 
+              onClick={() => scrollToSection('cta')}
+              className="btn-primary-ref text-sm"
+              size="sm"
+            >
+              <span className="mr-2">👤</span>
+              Create Account
+            </Button>
+          </div>
         </div>
       </nav>
     </header>
