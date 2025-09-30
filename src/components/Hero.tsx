@@ -1,14 +1,27 @@
 import { Button } from "@/components/ui/button";
-import heroAutomation from "@/assets/hero-automation.jpg";
+import { useState } from "react";
+import gradientBg from "@/assets/gradient-bg.png";
+
 const Hero = () => {
+  const [showCalendly, setShowCalendly] = useState(false);
+  
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: 'smooth'
     });
   };
+  
   return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Exact radial gradient background matching reference */}
-      <div className="radial-bg"></div>
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${gradientBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      ></div>
 
 
       {/* Main Content - exact typography matching reference */}
@@ -25,26 +38,57 @@ const Hero = () => {
             <span className="gradient-text-ref text-8xl text-gray-500 px-0 my-0 mx-0 py-[15px]">Save 10+ Hours/Work</span>
           </h1>
           
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+            Automate the hustle, amplify the win.
+          </p>
+          
           
 
           {/* Buttons matching reference style */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <a
-              href="https://calendly.com/katkamdheekshitdatta/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setShowCalendly(true)}
               className="btn-secondary-ref inline-flex items-center space-x-2"
             >
               <span>Book Free Call</span>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </a>
+            </button>
             
             <button onClick={() => scrollToSection('services')} className="btn-primary-ref">
               Discover More
             </button>
           </div>
+          
+          {/* Calendly Widget Modal */}
+          {showCalendly && (
+            <div 
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+              onClick={() => setShowCalendly(false)}
+            >
+              <div 
+                className="relative w-full max-w-4xl h-[80vh] bg-white rounded-lg overflow-hidden"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  onClick={() => setShowCalendly(false)}
+                  className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+                <iframe
+                  src="https://calendly.com/katkamdheekshitdatta/30min"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  title="Schedule a meeting"
+                ></iframe>
+              </div>
+            </div>
+          )}
 
           {/* Bottom scroll indicator matching reference */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">

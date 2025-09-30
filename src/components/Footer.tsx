@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <span className="font-bold text-lg text-foreground font-orbitron tracking-wider">marketx.ai</span>
+              <span className="font-bold text-lg text-foreground font-poppins tracking-wider">marketx.ai</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Transforming businesses through intelligent automation. 
@@ -84,7 +84,9 @@ const Footer = () => {
                 Book Free Call →
               </a>
               <div className="text-muted-foreground text-sm">
-                <div>📧 hello@marketx.ai</div>
+                <div>
+                  📧 <a href="mailto:katkamdheekshitdatta@gmail.com" className="hover:text-primary transition-colors">katkamdheekshitdatta@gmail.com</a>
+                </div>
                 <div>📞 Available 24/7</div>
               </div>
               <div className="flex items-center space-x-2 text-sm">
