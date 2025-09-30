@@ -1,8 +1,9 @@
 interface CTAProps {
   onBookCallClick: () => void;
 }
-
-const CTA = ({ onBookCallClick }: CTAProps) => {
+const CTA = ({
+  onBookCallClick
+}: CTAProps) => {
   return <section id="cta" className="py-20 relative">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
@@ -18,10 +19,7 @@ const CTA = ({ onBookCallClick }: CTAProps) => {
           </div>
 
           <div className="flex justify-center">
-            <button
-              onClick={onBookCallClick}
-              className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg rounded-xl transition-colors"
-            >
+            <button onClick={onBookCallClick} className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg transition-colors font-semibold rounded-full">
               Book Free Call
             </button>
           </div>

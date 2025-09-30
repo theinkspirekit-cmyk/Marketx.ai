@@ -1,10 +1,10 @@
 const Footer = () => {
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id)?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <footer className="py-12 border-t border-border">
+  return <footer className="py-12 border-t border-border">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
@@ -22,28 +22,16 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Services</h4>
             <div className="space-y-2">
-              <button 
-                onClick={() => scrollToSection('services')}
-                className="block text-muted-foreground hover:text-foreground text-sm transition-colors"
-              >
+              <button onClick={() => scrollToSection('services')} className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
                 Lead Generation Automation
               </button>
-              <button 
-                onClick={() => scrollToSection('services')}
-                className="block text-muted-foreground hover:text-foreground text-sm transition-colors"
-              >
+              <button onClick={() => scrollToSection('services')} className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
                 E-commerce Automation
               </button>
-              <button 
-                onClick={() => scrollToSection('services')}
-                className="block text-muted-foreground hover:text-foreground text-sm transition-colors"
-              >
+              <button onClick={() => scrollToSection('services')} className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
                 Social Media Automation
               </button>
-              <button 
-                onClick={() => scrollToSection('services')}
-                className="block text-muted-foreground hover:text-foreground text-sm transition-colors"
-              >
+              <button onClick={() => scrollToSection('services')} className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
                 Custom AI Workflows
               </button>
             </div>
@@ -53,21 +41,12 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Company</h4>
             <div className="space-y-2">
-              <button 
-                onClick={() => scrollToSection('proof')}
-                className="block text-muted-foreground hover:text-foreground text-sm transition-colors"
-              >
-                Case Studies
-              </button>
+              
               <a href="#" className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
                 About Us
               </a>
-              <a href="#" className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
-                Blog
-              </a>
-              <a href="#" className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
-                Careers
-              </a>
+              
+              
             </div>
           </div>
 
@@ -75,12 +54,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Get Started</h4>
             <div className="space-y-3">
-              <a 
-                href="https://calendly.com/katkamdheekshitdatta/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-primary hover:text-primary-glow text-sm font-semibold transition-colors"
-              >
+              <a href="https://calendly.com/katkamdheekshitdatta/30min" target="_blank" rel="noopener noreferrer" className="block text-primary hover:text-primary-glow text-sm font-semibold transition-colors">
                 Book Free Call →
               </a>
               <div className="text-muted-foreground text-sm">
@@ -118,8 +92,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

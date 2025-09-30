@@ -39,7 +39,7 @@ const Problem = () => {
         </div>
 
         <div className="text-center">
-          <div className="glass-card p-8 max-w-3xl mx-auto">
+          <div className="glass-card p-8 max-w-3xl mx-auto rounded-3xl">
             <h3 className="text-2xl font-bold mb-4 gradient-text">We Fix This With Smart Automations</h3>
             <p className="text-lg text-muted-foreground mb-6">
               Transform your business operations with AI-powered workflows that handle the boring stuff, 
