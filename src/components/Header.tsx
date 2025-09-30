@@ -19,7 +19,7 @@ const Header = () => {
         <div className="flex items-center justify-between mx-0">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-foreground">marketx.ai</span>
+            <span className="text-xl font-bold text-foreground font-orbitron tracking-wider">marketx.ai</span>
           </div>
           
           {/* Navigation matching reference */}

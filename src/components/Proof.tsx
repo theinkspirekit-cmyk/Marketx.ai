@@ -20,22 +20,22 @@ const Proof = () => {
   }];
   const tools = [{
     name: "Make",
-    logo: "🔗"
+    logo: "/logos/make.png"
   }, {
-    name: "Zapier",
-    logo: "⚡"
+    name: "n8n",
+    logo: "/logos/n8n.png"
   }, {
     name: "OpenAI",
-    logo: "🤖"
+    logo: "/logos/openai.png"
   }, {
     name: "Google Workspace",
-    logo: "📧"
+    logo: "/logos/google.png"
   }, {
     name: "Slack",
-    logo: "💬"
+    logo: "/logos/slack.png"
   }, {
     name: "HubSpot",
-    logo: "📊"
+    logo: "/logos/hubspot.png"
   }];
   const stats = [{
     number: "500+",
@@ -95,7 +95,7 @@ const Proof = () => {
             <div className="flex flex-wrap justify-center items-center gap-8">
               {tools.map((tool, index) => (
                 <div key={index} className="flex items-center space-x-3 glass-card px-6 py-3">
-                  <span className="text-2xl">{tool.logo}</span>
+                  <img src={tool.logo} alt={tool.name} className="w-6 h-6 object-contain" />
                   <span className="font-semibold text-foreground">{tool.name}</span>
                 </div>
               ))}
