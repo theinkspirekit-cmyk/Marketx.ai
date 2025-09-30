@@ -1,4 +1,8 @@
-const CTA = () => {
+interface CTAProps {
+  onBookCallClick: () => void;
+}
+
+const CTA = ({ onBookCallClick }: CTAProps) => {
   return <section id="cta" className="py-20 relative">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
@@ -14,14 +18,12 @@ const CTA = () => {
           </div>
 
           <div className="flex justify-center">
-            <a
-              href="https://calendly.com/katkamdheekshitdatta/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={onBookCallClick}
               className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg rounded-xl transition-colors"
             >
               Book Free Call
-            </a>
+            </button>
           </div>
         </div>
       </div>

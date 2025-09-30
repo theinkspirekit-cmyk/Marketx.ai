@@ -1,9 +1,10 @@
-import { Button } from "@/components/ui/button";
-import { useState } from "react";
 import gradientBg from "@/assets/gradient-bg.png";
 
-const Hero = () => {
-  const [showCalendly, setShowCalendly] = useState(false);
+interface HeroProps {
+  onBookCallClick: () => void;
+}
+
+const Hero = ({ onBookCallClick }: HeroProps) => {
   
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
@@ -47,7 +48,7 @@ const Hero = () => {
           {/* Buttons matching reference style */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <button
-              onClick={() => setShowCalendly(true)}
+              onClick={onBookCallClick}
               className="btn-secondary-ref inline-flex items-center space-x-2"
             >
               <span>Book Free Call</span>
@@ -60,35 +61,6 @@ const Hero = () => {
               Discover More
             </button>
           </div>
-          
-          {/* Calendly Widget Modal */}
-          {showCalendly && (
-            <div 
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
-              onClick={() => setShowCalendly(false)}
-            >
-              <div 
-                className="relative w-full max-w-4xl h-[80vh] bg-white rounded-lg overflow-hidden"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <button
-                  onClick={() => setShowCalendly(false)}
-                  className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-                <iframe
-                  src="https://calendly.com/katkamdheekshitdatta/30min"
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  title="Schedule a meeting"
-                ></iframe>
-              </div>
-            </div>
-          )}
 
           {/* Bottom scroll indicator matching reference */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">

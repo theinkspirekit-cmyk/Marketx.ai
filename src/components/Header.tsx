@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-const Header = () => {
+
+interface HeaderProps {
+  onBookCallClick: () => void;
+}
+
+const Header = ({ onBookCallClick }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -31,10 +35,6 @@ const Header = () => {
               Services
             </button>
             
-            <button onClick={() => scrollToSection('proof')} className="text-muted-foreground hover:text-foreground transition-colors font-medium">
-              Case Studies
-            </button>
-            
             <button onClick={() => scrollToSection('faq')} className="text-muted-foreground hover:text-foreground transition-colors font-medium">
               FAQ
             </button>
@@ -43,14 +43,12 @@ const Header = () => {
 
           {/* Book a Free Call button */}
           <div className="flex items-center space-x-4">
-            <a
-              href="https://calendly.com/katkamdheekshitdatta/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={onBookCallClick}
               className="btn-primary-ref"
             >
               Book a Free Call
-            </a>
+            </button>
           </div>
         </div>
       </nav>
