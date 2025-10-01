@@ -45,7 +45,7 @@ const Problem = () => {
               Transform your business operations with AI-powered workflows that handle the boring stuff, 
               so your team can focus on what really matters - growing your business.
             </p>
-            <div className="flex items-center justify-center space-x-6 text-sm">
+            <div className="flex flex-col sm:flex-row items-center justify-center sm:space-x-6 space-y-3 sm:space-y-0 text-sm">
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-primary rounded-full pulse-glow"></div>
                 <span className="text-foreground">10x Faster Processing</span>
