@@ -39,6 +39,9 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
               <button onClick={() => scrollToSection('services')} className="text-muted-foreground hover:text-foreground transition-colors font-medium">
                 Services
               </button>
+              <button onClick={() => scrollToSection('use-cases')} className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+                Success Stories
+              </button>
               <button onClick={() => scrollToSection('faq')} className="text-muted-foreground hover:text-foreground transition-colors font-medium">
                 FAQ
               </button>
@@ -83,6 +86,12 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
                   className="text-2xl font-medium text-muted-foreground hover:text-foreground transition-colors text-left"
                 >
                   Services
+                </button>
+                <button 
+                  onClick={() => scrollToSection('use-cases')} 
+                  className="text-2xl font-medium text-muted-foreground hover:text-foreground transition-colors text-left"
+                >
+                  Success Stories
                 </button>
                 <button 
                   onClick={() => scrollToSection('faq')} 
