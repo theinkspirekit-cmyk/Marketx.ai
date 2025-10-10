@@ -1,4 +1,4 @@
-import { Play } from "lucide-react";
+import { Play, AlertCircle } from "lucide-react";
 import { useState } from "react";
 import {
   Dialog,
@@ -10,9 +10,6 @@ import {
 
 const VideoSection = () => {
   const [isOpen, setIsOpen] = useState(false);
-  
-  // Replace this URL with your actual YouTube video URL
-  const videoId = "dQw4w9WgXcQ"; // Change this to your video ID
 
   return (
     <section className="py-20 relative">
@@ -51,21 +48,19 @@ const VideoSection = () => {
           </div>
 
           <Dialog open={isOpen} onOpenChange={setIsOpen}>
-            <DialogContent className="max-w-4xl w-full p-0">
-              <DialogHeader className="sr-only">
-                <DialogTitle>Automation Demo Video</DialogTitle>
+            <DialogContent className="max-w-2xl w-full">
+              <DialogHeader>
+                <DialogTitle>Video Unavailable</DialogTitle>
                 <DialogDescription>
                   Watch how we transform manual work into automated workflows
                 </DialogDescription>
               </DialogHeader>
-              <div className="aspect-video w-full">
-                <iframe
-                  src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
-                  title="Automation Demo Video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                ></iframe>
+              <div className="aspect-video w-full bg-muted rounded-lg flex flex-col items-center justify-center gap-4 p-8">
+                <AlertCircle className="w-16 h-16 text-muted-foreground" />
+                <p className="text-lg font-semibold text-foreground">Cannot Play Video</p>
+                <p className="text-sm text-muted-foreground text-center">
+                  This video is currently unavailable. Please check back later.
+                </p>
               </div>
             </DialogContent>
           </Dialog>
