@@ -88,6 +88,10 @@ export default {
             height: "0",
           },
         },
+        shimmer: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -96,6 +100,7 @@ export default {
         "pulse-glow": "pulse-glow 2s infinite",
         "fade-in": "fade-in 0.6s ease-out",
         "slide-up": "slide-up 0.6s ease-out",
+        "shimmer": "shimmer 2s infinite",
       },
       backgroundImage: {
         "gradient-primary": "var(--gradient-primary)",
