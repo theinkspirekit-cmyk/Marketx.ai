@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <span className="font-bold text-lg text-foreground font-poppins tracking-wider">marketx.ai</span>
+              <span className="font-bold text-lg text-foreground font-poppins tracking-wider">markitx.ai</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Transforming businesses through intelligent automation. 
@@ -75,7 +75,7 @@ const Footer = () => {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <p className="text-muted-foreground text-sm">
-              © 2024 marketx.ai. All rights reserved.
+              © 2024 markitx.ai. All rights reserved.
             </p>
             
             <div className="flex items-center space-x-6 mt-4 md:mt-0">
