@@ -59,7 +59,7 @@ const Footer = () => {
               </a>
               <div className="text-muted-foreground text-sm">
                 <div>
-                  📧 <a href="mailto:katkamdheekshitdatta@gmail.com" className="hover:text-primary transition-colors">katkamdheekshitdatta@gmail.com</a>
+                  📧 <a href="mailto:markitx.ai@gmail.com" className="hover:text-primary transition-colors">markitx.ai@gmail.com</a>
                 </div>
                 <div>📞 Available 24/7</div>
               </div>
