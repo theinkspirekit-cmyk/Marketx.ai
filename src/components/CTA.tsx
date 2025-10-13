@@ -19,8 +19,8 @@ const CTA = ({
           </div>
 
           <div className="flex justify-center">
-            <button onClick={onBookCallClick} className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg transition-colors font-semibold rounded-full">
-              Book Free Call
+            <button onClick={onBookCallClick} className="btn-secondary-ref px-10 py-5 text-lg">
+              Book Your Free Strategy Call
             </button>
           </div>
         </div>
