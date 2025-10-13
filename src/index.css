@@ -108,32 +108,33 @@ Matching the provided reference image exactly.
 @layer components {
   /* ==================== Apple Liquid Glass System ==================== */
   
-  /* Base Liquid Glass with translucency and blur */
+  /* Base Liquid Glass with translucency and blur - matching reference exactly */
   .glass-card {
     background: linear-gradient(135deg, 
-                hsl(var(--card-glass) / 0.7), 
-                hsl(var(--card-glass) / 0.4));
-    backdrop-filter: blur(40px) saturate(180%) brightness(1.1);
-    -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(1.1);
-    border: 1px solid hsl(var(--glass-highlight) / 0.18);
-    box-shadow: var(--shadow-card);
+                hsl(0 0% 12% / 0.4), 
+                hsl(0 0% 8% / 0.3));
+    backdrop-filter: blur(50px) saturate(180%);
+    -webkit-backdrop-filter: blur(50px) saturate(180%);
+    border: 1px solid hsl(0 0% 100% / 0.1);
+    box-shadow: 0 8px 32px hsl(0 0% 0% / 0.4),
+                inset 0 1px 0 hsl(0 0% 100% / 0.08),
+                inset 0 -1px 0 hsl(0 0% 0% / 0.2);
     border-radius: var(--radius);
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
   }
 
-  /* Specular highlight effect */
+  /* Specular highlight effect - top shine */
   .glass-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, 
-                transparent, 
-                hsl(var(--glass-highlight) / 0.2), 
+    height: 50%;
+    background: linear-gradient(180deg, 
+                hsl(0 0% 100% / 0.06), 
                 transparent);
     pointer-events: none;
   }
@@ -141,98 +142,97 @@ Matching the provided reference image exactly.
   /* Dynamic hover effect with real-time rendering */
   .glass-card:hover {
     background: linear-gradient(135deg, 
-                hsl(var(--card-glass) / 0.8), 
-                hsl(var(--card-glass) / 0.5));
-    border-color: hsl(var(--glass-highlight) / 0.25);
-    box-shadow: 0 12px 48px 0 hsl(var(--glass-shadow) / 0.5), 
-                var(--shadow-specular);
+                hsl(0 0% 15% / 0.5), 
+                hsl(0 0% 10% / 0.4));
+    border-color: hsl(0 0% 100% / 0.15);
+    box-shadow: 0 12px 48px hsl(0 0% 0% / 0.5),
+                inset 0 1px 0 hsl(0 0% 100% / 0.1),
+                inset 0 -1px 0 hsl(0 0% 0% / 0.2);
     transform: translateY(-2px);
   }
 
-  /* Liquid Glass Button - Primary */
+  /* Liquid Glass Button - Primary - matching reference exactly */
   .glass-button-primary {
     background: linear-gradient(135deg, 
-                hsl(var(--glass-light) / 0.9), 
-                hsl(var(--card-glass) / 0.7));
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid hsl(var(--glass-highlight) / 0.2);
-    box-shadow: 0 4px 16px hsl(var(--glass-shadow) / 0.2), 
-                var(--shadow-specular);
+                hsl(0 0% 12% / 0.5), 
+                hsl(0 0% 8% / 0.3));
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid hsl(0 0% 100% / 0.12);
+    box-shadow: 0 8px 32px hsl(0 0% 0% / 0.3),
+                inset 0 1px 0 hsl(0 0% 100% / 0.08),
+                inset 0 -1px 0 hsl(0 0% 0% / 0.15);
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
   }
 
-  .glass-button-primary::after {
+  .glass-button-primary::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, 
-                hsl(var(--glass-highlight) / 0.1) 0%, 
-                transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg, 
+                hsl(0 0% 100% / 0.06), 
+                transparent);
     pointer-events: none;
-  }
-
-  .glass-button-primary:hover::after {
-    opacity: 1;
   }
 
   .glass-button-primary:hover {
     background: linear-gradient(135deg, 
-                hsl(var(--glass-light) / 1), 
-                hsl(var(--card-glass) / 0.8));
-    border-color: hsl(var(--glass-highlight) / 0.3);
-    box-shadow: 0 8px 24px hsl(var(--glass-shadow) / 0.3), 
-                var(--shadow-specular);
+                hsl(0 0% 15% / 0.6), 
+                hsl(0 0% 10% / 0.4));
+    border-color: hsl(0 0% 100% / 0.18);
+    box-shadow: 0 12px 40px hsl(0 0% 0% / 0.4),
+                inset 0 1px 0 hsl(0 0% 100% / 0.1),
+                inset 0 -1px 0 hsl(0 0% 0% / 0.15);
     transform: translateY(-2px);
   }
 
-  /* Liquid Glass Input/Control */
+  /* Liquid Glass Input/Control - matching reference exactly */
   .glass-input {
     background: linear-gradient(135deg, 
-                hsl(var(--card-glass) / 0.5), 
-                hsl(var(--card-glass) / 0.3));
-    backdrop-filter: blur(30px) saturate(180%);
-    -webkit-backdrop-filter: blur(30px) saturate(180%);
-    border: 1px solid hsl(var(--glass-highlight) / 0.15);
-    box-shadow: inset 0 2px 4px hsl(var(--glass-shadow) / 0.1), 
-                var(--shadow-specular);
+                hsl(0 0% 10% / 0.4), 
+                hsl(0 0% 6% / 0.3));
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid hsl(0 0% 100% / 0.1);
+    box-shadow: 0 4px 16px hsl(0 0% 0% / 0.3),
+                inset 0 1px 0 hsl(0 0% 100% / 0.05),
+                inset 0 -1px 0 hsl(0 0% 0% / 0.15);
     transition: var(--transition-smooth);
   }
 
   .glass-input:focus {
     background: linear-gradient(135deg, 
-                hsl(var(--card-glass) / 0.6), 
-                hsl(var(--card-glass) / 0.4));
-    border-color: hsl(var(--glass-highlight) / 0.25);
-    box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1), 
-                inset 0 2px 4px hsl(var(--glass-shadow) / 0.15), 
-                var(--shadow-specular);
+                hsl(0 0% 12% / 0.5), 
+                hsl(0 0% 8% / 0.4));
+    border-color: hsl(0 0% 100% / 0.15);
+    box-shadow: 0 0 0 3px hsl(var(--primary) / 0.15),
+                0 4px 16px hsl(0 0% 0% / 0.4),
+                inset 0 1px 0 hsl(0 0% 100% / 0.08),
+                inset 0 -1px 0 hsl(0 0% 0% / 0.15);
   }
 
   /* Translucent overlay for modals/dialogs */
   .glass-overlay {
-    background: hsl(var(--glass-shadow) / 0.5);
-    backdrop-filter: blur(8px) saturate(150%);
-    -webkit-backdrop-filter: blur(8px) saturate(150%);
+    background: hsl(0 0% 0% / 0.7);
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
   }
 
   /* Liquid Glass Navigation/Tab Bar */
   .glass-nav {
     background: linear-gradient(180deg, 
-                hsl(var(--card-glass) / 0.8), 
-                hsl(var(--card-glass) / 0.6));
-    backdrop-filter: blur(40px) saturate(180%) brightness(1.1);
-    -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(1.1);
-    border-bottom: 1px solid hsl(var(--glass-highlight) / 0.18);
-    box-shadow: 0 4px 24px hsl(var(--glass-shadow) / 0.3), 
-                var(--shadow-specular);
+                hsl(0 0% 10% / 0.5), 
+                hsl(0 0% 6% / 0.4));
+    backdrop-filter: blur(50px) saturate(180%);
+    -webkit-backdrop-filter: blur(50px) saturate(180%);
+    border-bottom: 1px solid hsl(0 0% 100% / 0.1);
+    box-shadow: 0 4px 24px hsl(0 0% 0% / 0.4),
+                inset 0 1px 0 hsl(0 0% 100% / 0.08);
   }
 
   /* Reference buttons with liquid glass - matching reference images */
