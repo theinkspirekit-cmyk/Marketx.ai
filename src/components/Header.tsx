@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle";
 
 interface HeaderProps {
   onBookCallClick: () => void;
@@ -50,7 +49,6 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
 
             {/* Desktop CTA & Mobile Menu Button */}
             <div className="flex items-center space-x-4">
-              <ThemeToggle />
               <button
                 onClick={onBookCallClick}
                 className="hidden md:block btn-primary-ref"
@@ -101,18 +99,15 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
                 >
                   FAQ
                 </button>
-                <div className="flex items-center space-x-4 mt-4">
-                  <ThemeToggle />
-                  <button
-                    onClick={() => {
-                      onBookCallClick();
-                      setMobileMenuOpen(false);
-                    }}
-                    className="btn-primary-ref flex-1"
-                  >
-                    Book a Free Call
-                  </button>
-                </div>
+                <button
+                  onClick={() => {
+                    onBookCallClick();
+                    setMobileMenuOpen(false);
+                  }}
+                  className="btn-primary-ref mt-4"
+                >
+                  Book a Free Call
+                </button>
               </div>
             </nav>
           </div>
