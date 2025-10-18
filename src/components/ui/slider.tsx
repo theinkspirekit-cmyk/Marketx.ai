@@ -12,10 +12,10 @@ const Slider = React.forwardRef<
     className={cn("relative flex w-full touch-none select-none items-center", className)}
     {...props}
   >
-    <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-full glass-input border border-white/10">
-      <SliderPrimitive.Range className="absolute h-full bg-gradient-to-r from-primary/60 to-primary/40 shadow-[0_0_10px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)]" />
+    <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-full glass-input">
+      <SliderPrimitive.Range className="absolute h-full bg-gradient-to-r from-primary/90 to-primary/70 shadow-[0_0_10px_rgba(var(--primary),0.3)]" />
     </SliderPrimitive.Track>
-    <SliderPrimitive.Thumb className="block h-5 w-5 rounded-full border border-white/15 bg-gradient-to-br from-[hsl(0_0%_15%/0.9)] to-[hsl(0_0%_10%/0.7)] backdrop-blur-[40px] shadow-[0_4px_12px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.15)] ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-110 hover:shadow-[0_6px_16px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.2)]" />
+    <SliderPrimitive.Thumb className="block h-5 w-5 rounded-full border-2 border-white/30 bg-gradient-to-br from-card-glass/90 to-card-glass/70 backdrop-blur-xl shadow-[0_2px_8px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.2)] ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-110" />
   </SliderPrimitive.Root>
 ));
 Slider.displayName = SliderPrimitive.Root.displayName;
