@@ -18,6 +18,7 @@ export default {
         'sans': ['Inter', 'sans-serif'],
         'orbitron': ['Orbitron', 'sans-serif'],
         'poppins': ['Poppins', 'sans-serif'],
+        'roboto': ['Roboto', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -9,11 +9,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "glass-button-primary text-foreground before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-500",
-        destructive: "bg-gradient-to-br from-destructive/90 to-destructive/70 backdrop-blur-xl border border-white/20 text-destructive-foreground shadow-[0_4px_16px_rgba(0,0,0,0.2),inset_0_1px_2px_rgba(255,255,255,0.15)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.2)] hover:-translate-y-0.5",
-        outline: "border border-white/18 bg-gradient-to-br from-card-glass/60 to-card-glass/40 backdrop-blur-[30px] text-foreground shadow-[0_4px_16px_rgba(0,0,0,0.15),inset_0_1px_1px_rgba(255,255,255,0.1)] hover:bg-gradient-to-br hover:from-card-glass/70 hover:to-card-glass/50 hover:border-white/25 hover:shadow-[0_8px_24px_rgba(0,0,0,0.25),inset_0_1px_2px_rgba(255,255,255,0.15)] hover:-translate-y-0.5",
-        secondary: "bg-gradient-to-br from-card-glass/70 to-card-glass/50 backdrop-blur-[20px] text-foreground border border-white/15 shadow-[0_4px_16px_rgba(0,0,0,0.2),inset_0_1px_1px_rgba(255,255,255,0.1)] hover:bg-gradient-to-br hover:from-card-glass/80 hover:to-card-glass/60 hover:border-white/22 hover:shadow-[0_8px_24px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.15)] hover:-translate-y-0.5",
-        ghost: "hover:bg-gradient-to-br hover:from-accent/60 hover:to-accent/40 hover:backdrop-blur-[20px] hover:text-accent-foreground hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]",
+        default: "glass-button-primary text-foreground",
+        destructive: "bg-gradient-to-br from-[hsl(0_84%_60%/0.5)] to-[hsl(0_84%_50%/0.3)] backdrop-blur-[40px] border border-white/12 text-destructive-foreground shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.08)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.1)] hover:-translate-y-0.5",
+        outline: "border border-white/12 bg-gradient-to-br from-[hsl(0_0%_12%/0.4)] to-[hsl(0_0%_8%/0.3)] backdrop-blur-[40px] text-foreground shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.08)] hover:bg-gradient-to-br hover:from-[hsl(0_0%_15%/0.5)] hover:to-[hsl(0_0%_10%/0.4)] hover:border-white/18 hover:shadow-[0_12px_40px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.1)] hover:-translate-y-0.5",
+        secondary: "bg-gradient-to-br from-[hsl(0_0%_12%/0.5)] to-[hsl(0_0%_8%/0.3)] backdrop-blur-[40px] text-foreground border border-white/12 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.08)] hover:bg-gradient-to-br hover:from-[hsl(0_0%_15%/0.6)] hover:to-[hsl(0_0%_10%/0.4)] hover:border-white/18 hover:shadow-[0_12px_40px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.1)] hover:-translate-y-0.5",
+        ghost: "hover:bg-gradient-to-br hover:from-[hsl(0_0%_12%/0.4)] hover:to-[hsl(0_0%_8%/0.3)] hover:backdrop-blur-[40px] hover:text-accent-foreground hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
