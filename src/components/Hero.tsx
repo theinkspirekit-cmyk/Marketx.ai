@@ -35,7 +35,7 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
 
           {/* Main heading matching reference exactly */}
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 leading-tight tracking-tight">
-            <span className="text-foreground text-4xl sm:text-6xl md:text-8xl block mb-2 animate-fade-in hover:scale-[1.02] transition-transform duration-500">Automate Your Business.</span>
+            <span className="text-foreground text-4xl sm:text-6xl md:text-8xl block mb-2 animate-fade-in">Automate Your Business.</span>
             <span className="gradient-text-animated text-4xl sm:text-6xl md:text-8xl px-0 my-0 mx-0 py-2 md:py-[15px] block">Save 10+ Hours/Week</span>
           </h1>
           
