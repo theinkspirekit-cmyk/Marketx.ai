@@ -28,7 +28,9 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
           <div className="flex items-center justify-between mx-0">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <span className="text-xl font-bold text-foreground font-poppins tracking-wider">markitx.ai</span>
+              <span className="text-2xl font-bold font-roboto text-foreground hover:scale-105 transition-transform duration-300">
+                markitx<span className="text-primary">.ai</span>
+              </span>
             </div>
             
             {/* Desktop Navigation */}

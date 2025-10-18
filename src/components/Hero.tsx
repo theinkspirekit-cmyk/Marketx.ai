@@ -35,29 +35,29 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
 
           {/* Main heading matching reference exactly */}
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 leading-tight tracking-tight">
-            <span className="text-foreground text-4xl sm:text-6xl md:text-8xl block mb-2">Automate Your Business.</span>
-            <span className="gradient-text-ref text-4xl sm:text-6xl md:text-8xl text-gray-500 px-0 my-0 mx-0 py-2 md:py-[15px] block">Save 10+ Hours/Work</span>
+            <span className="text-foreground text-4xl sm:text-6xl md:text-8xl block mb-2 animate-fade-in">Automate Your Business.</span>
+            <span className="gradient-shimmer text-4xl sm:text-6xl md:text-8xl px-0 my-0 mx-0 py-2 md:py-[15px] block">Save 10+ Hours/Work</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-            Automate the hustle, amplify the win.
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in">
+            Automate the hustle, <span className="text-primary font-semibold">amplify the win</span>.
           </p>
           
           
 
           {/* Buttons matching reference style */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in">
             <button
               onClick={onBookCallClick}
-              className="btn-secondary-ref inline-flex items-center space-x-2"
+              className="btn-secondary-ref inline-flex items-center space-x-2 scale-pulse hover:glow-border"
             >
               <span>Book Free Call</span>
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
             
-            <button onClick={() => scrollToSection('services')} className="btn-primary-ref">
+            <button onClick={() => scrollToSection('services')} className="btn-primary-ref scale-pulse">
               Discover More
             </button>
           </div>
