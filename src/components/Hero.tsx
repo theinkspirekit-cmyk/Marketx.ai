@@ -35,12 +35,12 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
 
           {/* Main heading matching reference exactly */}
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 leading-tight tracking-tight">
-            <span className="text-foreground text-4xl sm:text-6xl md:text-8xl block mb-2 animate-fade-in hover:scale-[1.02] transition-transform duration-500">Automate Your Business.</span>
-            <span className="gradient-text-animated text-4xl sm:text-6xl md:text-8xl px-0 my-0 mx-0 py-2 md:py-[15px] block">Save 10+ Hours/Week</span>
+            <span className="text-foreground text-4xl sm:text-6xl md:text-8xl block mb-2 animate-fade-in">Automate Your Business.</span>
+            <span className="gradient-shimmer text-4xl sm:text-6xl md:text-8xl px-0 my-0 mx-0 py-2 md:py-[15px] block">Save 10+ Hours/Work</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in max-w-3xl mx-auto leading-relaxed">
-            Automate the hustle, <span className="text-primary font-semibold bg-primary/10 px-2 rounded">amplify the win</span>.
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in">
+            Automate the hustle, <span className="text-primary font-semibold">amplify the win</span>.
           </p>
           
           
@@ -49,7 +49,7 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in">
             <button
               onClick={onBookCallClick}
-              className="btn-secondary-ref inline-flex items-center space-x-2 group hover:scale-105 transition-all duration-300"
+              className="btn-secondary-ref inline-flex items-center space-x-2 scale-pulse hover:glow-border"
             >
               <span>Book Free Call</span>
               <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -57,7 +57,7 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
               </svg>
             </button>
             
-            <button onClick={() => scrollToSection('services')} className="btn-primary-ref hover:scale-105 transition-all duration-300">
+            <button onClick={() => scrollToSection('services')} className="btn-primary-ref scale-pulse">
               Discover More
             </button>
           </div>
