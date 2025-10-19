@@ -31,8 +31,8 @@ const VideoSection = () => {
               <button
                 className="group relative"
               >
-                <div className="absolute inset-0 bg-primary rounded-full blur-2xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
-                <div className="relative w-20 h-20 md:w-24 md:h-24 bg-primary hover:bg-primary/90 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                <div className="absolute inset-0 bg-primary rounded-full blur-2xl opacity-50"></div>
+                <div className="relative w-20 h-20 md:w-24 md:h-24 bg-primary rounded-full flex items-center justify-center">
                   <Play className="w-10 h-10 md:w-12 md:h-12 text-primary-foreground ml-1" />
                 </div>
               </button>
