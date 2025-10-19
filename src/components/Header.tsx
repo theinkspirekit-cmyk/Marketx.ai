@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 interface HeaderProps {
   onBookCallClick: () => void;
 }
@@ -27,9 +28,7 @@ const Header = ({
           <div className="flex items-center justify-between mx-0">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <span className="text-white tracking-tight font-extrabold text-2xl">
-                markitx.ai
-              </span>
+              <img src={logo} alt="markitx.ai" className="h-8" />
             </div>
             
             {/* Desktop Navigation */}
