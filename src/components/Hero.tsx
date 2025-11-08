@@ -1,4 +1,5 @@
 import gradientBg from "@/assets/gradient-bg.png";
+import { ArrowRight, Clock, TrendingUp } from "lucide-react";
 
 interface HeroProps {
   onBookCallClick: () => void;
@@ -12,8 +13,9 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
     });
   };
   
-  return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background image */}
+  return (
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Background image with optimization */}
       <div 
         className="absolute inset-0 z-0"
         style={{
@@ -22,60 +24,73 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
+        role="img"
+        aria-label="AI automation workflow gradient background"
       ></div>
 
-
-      {/* Main Content - exact typography matching reference */}
+      {/* Main Content */}
       <div className="container mx-auto px-6 text-center z-10 relative">
         <div className="max-w-6xl mx-auto">
-          {/* Small unlock button matching reference */}
-          <div className="mb-8">
-            
-          </div>
-
-          {/* Main heading matching reference exactly */}
+          {/* Main heading - SEO optimized */}
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 leading-tight tracking-tight">
-            <span className="text-foreground text-4xl sm:text-6xl md:text-8xl block mb-2 animate-fade-in">Automate Your Business.</span>
-            <span className="gradient-text-animated text-4xl sm:text-6xl md:text-8xl px-0 my-0 mx-0 py-2 md:py-[15px] block">Save 10+ Hours/Week</span>
+            <span className="text-foreground text-4xl sm:text-6xl md:text-8xl block mb-2 animate-fade-in">
+              AI Business Automation
+            </span>
+            <span className="gradient-text-animated text-4xl sm:text-6xl md:text-8xl px-0 my-0 mx-0 py-2 md:py-[15px] block">
+              Save 10+ Hours Per Week
+            </span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in max-w-3xl mx-auto leading-relaxed">
-            Automate the hustle, <span className="text-primary font-semibold bg-primary/10 px-2 rounded">amplify the win</span>.
+            Professional workflow automation services for businesses. Automate lead generation, e-commerce operations, and custom processes. 
+            <span className="text-primary font-semibold"> Reduce errors by 95%</span> and boost productivity with proven AI solutions.
           </p>
-          
-          
 
-          {/* Buttons matching reference style */}
+          {/* Trust indicators */}
+          <div className="flex flex-wrap justify-center gap-6 mb-12 text-sm animate-fade-in">
+            <div className="flex items-center gap-2 glass-card px-4 py-2 rounded-full">
+              <Clock className="w-4 h-4 text-primary" />
+              <span className="text-foreground"><strong>48-Hour</strong> Implementation</span>
+            </div>
+            <div className="flex items-center gap-2 glass-card px-4 py-2 rounded-full">
+              <TrendingUp className="w-4 h-4 text-primary" />
+              <span className="text-foreground"><strong>300-500%</strong> ROI</span>
+            </div>
+            <div className="flex items-center gap-2 glass-card px-4 py-2 rounded-full">
+              <span className="text-primary text-lg">✓</span>
+              <span className="text-foreground"><strong>30-Day</strong> Money-Back Guarantee</span>
+            </div>
+          </div>
+
+          {/* CTA Buttons - Conversion optimized */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in">
             <button
               onClick={onBookCallClick}
               className="btn-secondary-ref inline-flex items-center space-x-2 group hover:scale-105 transition-all duration-300"
+              aria-label="Schedule a free automation strategy call"
             >
-              <span>Book Free Call</span>
-              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+              <span>Get My Free Automation Plan</span>
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </button>
             
-            <button onClick={() => scrollToSection('services')} className="btn-primary-ref hover:scale-105 transition-all duration-300">
-              Discover More
+            <button 
+              onClick={() => scrollToSection('services')} 
+              className="btn-primary-ref hover:scale-105 transition-all duration-300"
+            >
+              See How Much Time You Can Save
             </button>
-          </div>
-
-          {/* Bottom scroll indicator matching reference */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-            
           </div>
         </div>
       </div>
 
       {/* Bottom right label */}
-      <div className="absolute bottom-16 right-8 opacity-70">
+      <div className="absolute bottom-16 right-8 opacity-70 hidden md:block">
         <div className="text-right">
-          <div className="text-sm text-muted-foreground font-medium">AI Automation</div>
+          <div className="text-sm text-muted-foreground font-medium">AI Workflow Automation</div>
           <div className="w-8 h-px bg-muted-foreground mt-2"></div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default Hero;
