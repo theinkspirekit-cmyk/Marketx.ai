@@ -20,12 +20,13 @@ const Problem = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-muted-foreground">Are You Wasting Hours on</span>
+            <span className="text-muted-foreground">Stuck in the</span>
             <br />
-            <span className="gradient-text">Repetitive Business Tasks?</span>
+            <span className="gradient-text">Manual Work Trap?</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Most small businesses and agencies waste 10+ hours weekly on manual tasks that AI automation can handle. Discover how workflow automation solves these common productivity bottlenecks:
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Most businesses waste 10+ hours weekly on tasks that could be automated. 
+            Here's what's holding you back:
           </p>
         </div>
 
@@ -39,9 +40,10 @@ const Problem = () => {
 
         <div className="text-center">
           <div className="glass-card p-8 max-w-3xl mx-auto rounded-3xl">
-            <h3 className="text-2xl font-bold mb-4 gradient-text">AI Business Automation Is The Solution</h3>
+            <h3 className="text-2xl font-bold mb-4 gradient-text">We Fix This With Smart Automations</h3>
             <p className="text-lg text-muted-foreground mb-6">
-              Transform your business operations with intelligent AI-powered workflows that automate repetitive tasks, so your team can focus on strategic growth and revenue-generating activities.
+              Transform your business operations with AI-powered workflows that handle the boring stuff, 
+              so your team can focus on what really matters - growing your business.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center sm:space-x-6 space-y-3 sm:space-y-0 text-sm">
               <div className="flex items-center space-x-2">

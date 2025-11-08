@@ -4,17 +4,17 @@ const Footer = () => {
       behavior: 'smooth'
     });
   };
-  return (
-    <footer className="py-12 border-t border-border" role="contentinfo">
+  return <footer className="py-12 border-t border-border">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <span className="font-bold text-lg text-foreground font-poppins tracking-wider">Marktrix.ai</span>
+              <span className="font-bold text-lg text-foreground font-poppins tracking-wider">markitx.ai</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Expert AI business automation services. Streamline workflows, boost productivity, and save 10+ hours weekly with proven automation solutions.
+              Transforming businesses through intelligent automation. 
+              Save time, reduce errors, and focus on what matters most.
             </p>
           </div>
 
@@ -75,7 +75,7 @@ const Footer = () => {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <p className="text-muted-foreground text-sm">
-              © 2025 Marktrix.ai. All rights reserved. AI Business Automation Services.
+              © 2024 markitx.ai. All rights reserved.
             </p>
             
             <div className="flex items-center space-x-6 mt-4 md:mt-0">
@@ -92,7 +92,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
 export default Footer;
