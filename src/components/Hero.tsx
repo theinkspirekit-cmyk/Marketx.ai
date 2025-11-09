@@ -13,7 +13,7 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
   };
   
   return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background image */}
+      {/* Background image with lazy loading */}
       <div 
         className="absolute inset-0 z-0"
         style={{
@@ -22,7 +22,14 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
-      ></div>
+      >
+        <img 
+          src={gradientBg} 
+          alt="AI Automation gradient background" 
+          className="hidden"
+          loading="eager"
+        />
+      </div>
 
 
       {/* Main Content - exact typography matching reference */}

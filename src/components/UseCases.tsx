@@ -70,17 +70,20 @@ const UseCases = ({
                 </div>
               </div>
 
-              <button onClick={onBookCallClick} className="w-full bg-primary/10 hover:bg-primary hover:text-primary-foreground text-primary border border-primary/30 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group">
-                <span>See How It Works</span>
+              <button onClick={onBookCallClick} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground border-none py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group shadow-glow">
+                <span>🚀 Get Your Custom Plan</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>)}
         </div>
 
         <div className="text-center mt-12">
-          <button onClick={onBookCallClick} className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg transition-colors font-semibold rounded-full">
-            Book Your Free Strategy Call
+          <button onClick={onBookCallClick} className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg transition-colors font-semibold rounded-full shadow-glow hover:scale-105 duration-300">
+            💬 Book Your Free Strategy Call Now
           </button>
+          <p className="text-sm text-muted-foreground mt-4">
+            ⏱️ 30-minute call • 💡 Custom automation plan • 🎯 No commitment required
+          </p>
         </div>
       </div>
     </section>;

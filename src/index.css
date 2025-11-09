@@ -103,6 +103,15 @@ Matching the provided reference image exactly.
     background: hsl(var(--background));
     min-height: 100vh;
   }
+
+  /* Custom cursor for high conversion */
+  * {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="black" stroke-width="1"><circle cx="12" cy="12" r="5"/></svg>') 12 12, auto;
+  }
+
+  a, button, [role="button"], input[type="submit"], input[type="button"] {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="%2300A3FF" stroke="white" stroke-width="1"><circle cx="12" cy="12" r="6"/></svg>') 14 14, pointer;
+  }
 }
 
 @layer components {

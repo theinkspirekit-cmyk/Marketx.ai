@@ -26,9 +26,15 @@ const Header = ({
       <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-card border-b rounded-3xl mx-4 mt-4' : 'bg-transparent'}`}>
         <nav className="container mx-auto px-6 py-4 my-0">
           <div className="flex items-center justify-between mx-0">
-            {/* Logo */}
             <div className="flex items-center space-x-2">
-              <img src={logo} alt="markitx.ai" className="h-8" />
+              <img 
+                src={logo} 
+                alt="Marktrix.ai - AI Business Automation Services" 
+                className="h-8" 
+                loading="eager"
+                width="150"
+                height="32"
+              />
             </div>
             
             {/* Desktop Navigation */}
@@ -50,7 +56,7 @@ const Header = ({
             {/* Desktop CTA & Mobile Menu Button */}
             <div className="flex items-center space-x-4">
               <button onClick={onBookCallClick} className="hidden md:block btn-primary-ref">
-                Book a Free Call
+                🚀 Get Your Free Automation Plan
               </button>
               
               {/* Mobile Menu Button */}
@@ -83,7 +89,7 @@ const Header = ({
               onBookCallClick();
               setMobileMenuOpen(false);
             }} className="btn-primary-ref mt-4">
-                  Book a Free Call
+                  🚀 Get Your Free Automation Plan
                 </button>
               </div>
             </nav>

@@ -12,3 +12,13 @@ Allow: /
 
 User-agent: *
 Allow: /
+Sitemap: https://marktrix.ai/sitemap.xml
+
+# Block sensitive paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: *.json$
+
+# Crawl-delay for bots
+Crawl-delay: 1
+

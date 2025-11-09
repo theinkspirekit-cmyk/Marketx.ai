@@ -18,10 +18,15 @@ const CTA = ({
             </p>
           </div>
 
-          <div className="flex justify-center">
-            <button onClick={onBookCallClick} className="btn-secondary-ref px-10 py-5 text-lg">
-              Book Your Free Strategy Call
+          <div className="flex justify-center flex-col items-center gap-6">
+            <button onClick={onBookCallClick} className="btn-secondary-ref px-10 py-5 text-lg hover:scale-105 duration-300 shadow-glow">
+              🚀 Schedule My Free Strategy Call
             </button>
+            <div className="glass-card px-8 py-4 rounded-full">
+              <p className="text-sm text-muted-foreground">
+                ✅ 48-Hour Implementation • 💰 300-500% ROI • 🔒 30-Day Money-Back Guarantee
+              </p>
+            </div>
           </div>
         </div>
       </div>

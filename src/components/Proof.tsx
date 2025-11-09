@@ -95,7 +95,14 @@ const Proof = () => {
             <div className="flex flex-wrap justify-center items-center gap-8">
               {tools.map((tool, index) => (
                 <div key={index} className="flex items-center space-x-3 glass-card px-6 py-3">
-                  <img src={tool.logo} alt={tool.name} className="w-6 h-6 object-contain" />
+                  <img 
+                    src={tool.logo} 
+                    alt={`${tool.name} integration - Business automation platform`} 
+                    className="w-6 h-6 object-contain" 
+                    loading="lazy"
+                    width="24"
+                    height="24"
+                  />
                   <span className="font-semibold text-foreground">{tool.name}</span>
                 </div>
               ))}
