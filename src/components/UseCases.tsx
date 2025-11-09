@@ -1,10 +1,15 @@
 import { ArrowRight } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
+
 interface UseCaseProps {
   onBookCallClick: () => void;
 }
 const UseCases = ({
   onBookCallClick
 }: UseCaseProps) => {
+  const { ref: headerRef, isInView: headerInView } = useInView({ threshold: 0.3 });
+  const { ref: cardsRef, isInView: cardsInView } = useInView({ threshold: 0.1 });
+
   const cases = [{
     title: "Marketing Agency",
     problem: "Spending 15+ hours/week on manual lead tracking and client reporting",
@@ -32,7 +37,10 @@ const UseCases = ({
   }];
   return <section id="use-cases" className="py-20 relative">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div 
+          ref={headerRef}
+          className={`text-center mb-16 scroll-animate ${headerInView ? 'animate-reveal-up' : ''}`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="gradient-text">Success Stories</span>
             <br />
@@ -43,8 +51,13 @@ const UseCases = ({
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {cases.map((useCase, index) => <div key={index} className="glass-card p-8 hover-glow transition-all duration-300 hover:scale-[1.02]">
+        <div ref={cardsRef} className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {cases.map((useCase, index) => <div 
+            key={index} 
+            className={`glass-card p-8 hover-glow transition-all duration-300 hover:scale-[1.02] scroll-animate ${
+              cardsInView ? `${index % 2 === 0 ? 'animate-slide-left-fade' : 'animate-slide-right-fade'} stagger-${Math.floor(index / 2) + 1}` : ''
+            }`}
+          >
               
               <h3 className="text-2xl font-bold text-foreground mb-3">{useCase.title}</h3>
               

@@ -1,4 +1,10 @@
+import { useInView } from "@/hooks/useInView";
+
 const Problem = () => {
+  const { ref: headerRef, isInView: headerInView } = useInView({ threshold: 0.3 });
+  const { ref: cardsRef, isInView: cardsInView } = useInView({ threshold: 0.1 });
+  const { ref: solutionRef, isInView: solutionInView } = useInView({ threshold: 0.2 });
+
   const problems = [{
     icon: "⏰",
     title: "Repetitive Tasks",
@@ -18,7 +24,10 @@ const Problem = () => {
   }];
   return <section className="py-20 relative">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div 
+          ref={headerRef}
+          className={`text-center mb-16 scroll-animate ${headerInView ? 'animate-bounce-in' : ''}`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-muted-foreground">Stuck in the</span>
             <br />
@@ -30,8 +39,13 @@ const Problem = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {problems.map((problem, index) => <div key={index} className="glass-card p-6 hover-glow transition-all duration-300 hover:scale-105">
+        <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {problems.map((problem, index) => <div 
+            key={index} 
+            className={`glass-card p-6 hover-glow transition-all duration-300 hover:scale-105 scroll-animate ${
+              cardsInView ? `animate-scale-fade stagger-${index + 1}` : ''
+            }`}
+          >
               
               <h3 className="text-xl font-semibold mb-3 text-foreground">{problem.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{problem.description}</p>
@@ -39,7 +53,12 @@ const Problem = () => {
         </div>
 
         <div className="text-center">
-          <div className="glass-card p-8 max-w-3xl mx-auto rounded-3xl">
+          <div 
+            ref={solutionRef}
+            className={`glass-card p-8 max-w-3xl mx-auto rounded-3xl scroll-animate ${
+              solutionInView ? 'animate-slide-up-fade' : ''
+            }`}
+          >
             <h3 className="text-2xl font-bold mb-4 gradient-text">We Fix This With Smart Automations</h3>
             <p className="text-lg text-muted-foreground mb-6">
               Transform your business operations with AI-powered workflows that handle the boring stuff, 

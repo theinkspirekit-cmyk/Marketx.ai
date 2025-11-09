@@ -1,12 +1,19 @@
+import { useInView } from "@/hooks/useInView";
+
 interface CTAProps {
   onBookCallClick: () => void;
 }
 const CTA = ({
   onBookCallClick
 }: CTAProps) => {
+  const { ref: sectionRef, isInView } = useInView({ threshold: 0.3 });
+
   return <section id="cta" className="py-20 relative">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
+        <div 
+          ref={sectionRef}
+          className={`max-w-4xl mx-auto scroll-animate ${isInView ? 'animate-bounce-in' : ''}`}
+        >
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="gradient-text">Let's Automate</span>

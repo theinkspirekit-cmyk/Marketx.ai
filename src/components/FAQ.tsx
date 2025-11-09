@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
+
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { ref: headerRef, isInView: headerInView } = useInView({ threshold: 0.3 });
+  const { ref: faqsRef, isInView: faqsInView } = useInView({ threshold: 0.1 });
+
   const faqs = [{
     question: "How quickly can you implement automations?",
     answer: "Most automations are live within 48 hours. Simple workflows like email sequences can be ready in 24 hours, while complex multi-system integrations may take up to a week. We'll give you an exact timeline during your strategy call."
@@ -21,7 +26,10 @@ const FAQ = () => {
   return <section className="py-20 relative">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-16">
+          <div 
+            ref={headerRef}
+            className={`text-center mb-16 scroll-animate ${headerInView ? 'animate-reveal-up' : ''}`}
+          >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="gradient-text">Frequently Asked</span>
               <br />
@@ -32,8 +40,13 @@ const FAQ = () => {
             </p>
           </div>
 
-          <div className="space-y-4">
-            {faqs.map((faq, index) => <div key={index} className="glass-card overflow-hidden">
+          <div ref={faqsRef} className="space-y-4">
+            {faqs.map((faq, index) => <div 
+              key={index} 
+              className={`glass-card overflow-hidden scroll-animate ${
+                faqsInView ? `animate-slide-up-fade stagger-${index + 1}` : ''
+              }`}
+            >
                 <button onClick={() => setOpenIndex(openIndex === index ? null : index)} className="w-full p-6 text-left flex items-center justify-between hover-glow transition-all duration-200">
                   <h3 className="text-lg font-semibold text-foreground pr-4">{faq.question}</h3>
                   <div className="flex-shrink-0">

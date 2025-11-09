@@ -1,4 +1,10 @@
+import { useInView } from "@/hooks/useInView";
+
 const Proof = () => {
+  const { ref: headerRef, isInView: headerInView } = useInView({ threshold: 0.3 });
+  const { ref: statsRef, isInView: statsInView } = useInView({ threshold: 0.2 });
+  const { ref: testimonialsRef, isInView: testimonialsInView } = useInView({ threshold: 0.1 });
+
   const testimonials = [{
     name: "Sarah Chen",
     role: "E-commerce Owner",
@@ -54,7 +60,10 @@ const Proof = () => {
     <section id="proof" className="py-20 relative">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div 
+            ref={headerRef}
+            className={`text-center mb-16 scroll-animate ${headerInView ? 'animate-reveal-up' : ''}`}
+          >
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-foreground">Proven Results</span>
               <br />
@@ -66,9 +75,14 @@ const Proof = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
+              <div 
+                key={index} 
+                className={`text-center scroll-animate ${
+                  statsInView ? `animate-scale-fade stagger-${index + 1}` : ''
+                }`}
+              >
                 <div className="text-3xl md:text-5xl font-bold text-primary mb-2">{stat.number}</div>
                 <div className="text-muted-foreground font-medium">{stat.label}</div>
               </div>
@@ -76,9 +90,14 @@ const Proof = () => {
           </div>
 
           {/* Testimonials */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div ref={testimonialsRef} className="grid md:grid-cols-3 gap-8 mb-16">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="glass-card p-6">
+              <div 
+                key={index} 
+                className={`glass-card p-6 scroll-animate ${
+                  testimonialsInView ? `animate-slide-up-fade stagger-${index + 1}` : ''
+                }`}
+              >
                 <div className="text-primary font-bold text-lg mb-3">{testimonial.metric}</div>
                 <p className="text-muted-foreground mb-4 italic">"{testimonial.content}"</p>
                 <div>

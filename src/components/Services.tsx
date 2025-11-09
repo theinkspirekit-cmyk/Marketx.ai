@@ -1,6 +1,9 @@
 import { Target, ShoppingCart, Share2, Bot } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
 
 const Services = () => {
+  const { ref: headerRef, isInView: headerInView } = useInView({ threshold: 0.3 });
+  const { ref: cardsRef, isInView: cardsInView } = useInView({ threshold: 0.1 });
   const services = [
     {
       title: "Lead Generation Automation",
@@ -63,7 +66,10 @@ const Services = () => {
   return (
     <section id="services" className="py-20 relative">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div 
+          ref={headerRef}
+          className={`text-center mb-16 scroll-animate ${headerInView ? 'animate-reveal-up' : ''}`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-foreground">Automation Services</span>
             <br />
@@ -74,13 +80,15 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div ref={cardsRef} className="grid lg:grid-cols-2 gap-8">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
               <div
                 key={index}
-                className="glass-card p-8 hover-glow transition-all duration-300 hover:scale-[1.02]"
+                className={`glass-card p-8 hover-glow transition-all duration-300 hover:scale-[1.02] scroll-animate ${
+                  cardsInView ? `animate-slide-up-fade stagger-${index + 1}` : ''
+                }`}
               >
                 <div className="flex items-start space-x-4 mb-6">
                   <div className={`${service.iconBg} p-3 rounded-full flex-shrink-0`}>

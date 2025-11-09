@@ -1,5 +1,6 @@
 import { Play, AlertCircle } from "lucide-react";
 import { useState } from "react";
+import { useInView } from "@/hooks/useInView";
 import {
   Dialog,
   DialogContent,
@@ -10,11 +11,15 @@ import {
 
 const VideoSection = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { ref: sectionRef, isInView } = useInView({ threshold: 0.2 });
 
   return (
     <section className="py-20 relative">
       <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto">
+        <div 
+          ref={sectionRef}
+          className={`max-w-5xl mx-auto scroll-animate ${isInView ? 'animate-scale-fade' : ''}`}
+        >
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="gradient-text">See How It Works</span>
