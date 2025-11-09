@@ -27,14 +27,7 @@ const Header = ({
         <nav className="container mx-auto px-6 py-4 my-0">
           <div className="flex items-center justify-between mx-0">
             <div className="flex items-center space-x-2">
-              <img 
-                src={logo} 
-                alt="Marktrix.ai - AI Business Automation Services" 
-                className="h-8" 
-                loading="eager"
-                width="150"
-                height="32"
-              />
+              <img src={logo} alt="Marktrix.ai - AI Business Automation Services" className="h-8" loading="eager" width="150" height="32" />
             </div>
             
             {/* Desktop Navigation */}
@@ -55,9 +48,7 @@ const Header = ({
 
             {/* Desktop CTA & Mobile Menu Button */}
             <div className="flex items-center space-x-4">
-              <button onClick={onBookCallClick} className="hidden md:block btn-primary-ref">
-                🚀 Get Your Free Automation Plan
-              </button>
+              <button onClick={onBookCallClick} className="hidden md:block btn-primary-ref">Get Your Free Automation Plan</button>
               
               {/* Mobile Menu Button */}
               <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-foreground p-2" aria-label="Toggle menu">

@@ -1,19 +1,19 @@
 import { useInView } from "@/hooks/useInView";
-
 interface CTAProps {
   onBookCallClick: () => void;
 }
 const CTA = ({
   onBookCallClick
 }: CTAProps) => {
-  const { ref: sectionRef, isInView } = useInView({ threshold: 0.3 });
-
+  const {
+    ref: sectionRef,
+    isInView
+  } = useInView({
+    threshold: 0.3
+  });
   return <section id="cta" className="py-20 relative">
       <div className="container mx-auto px-6">
-        <div 
-          ref={sectionRef}
-          className={`max-w-4xl mx-auto scroll-animate ${isInView ? 'animate-bounce-in' : ''}`}
-        >
+        <div ref={sectionRef} className={`max-w-4xl mx-auto scroll-animate ${isInView ? 'animate-bounce-in' : ''}`}>
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="gradient-text">Let's Automate</span>
@@ -30,9 +30,7 @@ const CTA = ({
               🚀 Schedule My Free Strategy Call
             </button>
             <div className="glass-card px-8 py-4 rounded-full">
-              <p className="text-sm text-muted-foreground">
-                ✅ 48-Hour Implementation • 💰 300-500% ROI • 🔒 30-Day Money-Back Guarantee
-              </p>
+              <p className="text-sm text-muted-foreground">48-Hour Implementation •  300-500% ROI •  30-Day Money-Back Guarantee</p>
             </div>
           </div>
         </div>
