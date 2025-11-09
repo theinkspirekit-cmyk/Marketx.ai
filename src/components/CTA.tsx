@@ -19,7 +19,7 @@ const CTA = ({
           </div>
 
           <div className="flex justify-center flex-col items-center gap-6">
-            <button onClick={onBookCallClick} className="btn-secondary-ref px-10 py-5 text-lg hover:scale-105 duration-300 shadow-glow">
+            <button onClick={onBookCallClick} className="btn-secondary-ref px-10 py-5 text-lg hover:scale-105 duration-300">
               🚀 Schedule My Free Strategy Call
             </button>
             <div className="glass-card px-8 py-4 rounded-full">

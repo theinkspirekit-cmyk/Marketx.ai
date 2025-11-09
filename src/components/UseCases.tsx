@@ -70,7 +70,7 @@ const UseCases = ({
                 </div>
               </div>
 
-              <button onClick={onBookCallClick} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground border-none py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group shadow-glow">
+              <button onClick={onBookCallClick} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground border-none py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group">
                 <span>🚀 Get Your Custom Plan</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
@@ -78,7 +78,7 @@ const UseCases = ({
         </div>
 
         <div className="text-center mt-12">
-          <button onClick={onBookCallClick} className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg transition-colors font-semibold rounded-full shadow-glow hover:scale-105 duration-300">
+          <button onClick={onBookCallClick} className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg transition-colors font-semibold rounded-full hover:scale-105 duration-300">
             💬 Book Your Free Strategy Call Now
           </button>
           <p className="text-sm text-muted-foreground mt-4">
