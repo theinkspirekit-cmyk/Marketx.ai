@@ -84,6 +84,7 @@ Matching the provided reference image exactly.
 @layer base {
   * {
     @apply border-border;
+    cursor: url('/cursor.png') 16 16, auto;
   }
 
   body {
@@ -92,6 +93,10 @@ Matching the provided reference image exactly.
     background-image: var(--gradient-hero-bg);
     background-attachment: fixed;
     background-size: 100% 100%;
+  }
+
+  button, a, [role="button"], input[type="submit"] {
+    cursor: url('/cursor.png') 16 16, pointer;
   }
 
   html {

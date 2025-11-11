@@ -83,8 +83,8 @@ const UseCases = ({
                 </div>
               </div>
 
-              <button onClick={onBookCallClick} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground border-none py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group">
-                <span>🚀 Get Your Custom Plan</span>
+              <button onClick={onBookCallClick} className="w-full bg-background text-primary border-2 border-primary hover:bg-primary/10 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group">
+                <span>Get Your Custom Plan</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>)}
