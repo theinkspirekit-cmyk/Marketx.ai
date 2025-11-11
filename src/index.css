@@ -84,7 +84,7 @@ Matching the provided reference image exactly.
 @layer base {
   * {
     @apply border-border;
-    cursor: url('/cursor.png') 16 16, auto;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges"><polygon points="2,2 2,22 20,12" fill="%23ffffff" stroke="%23000000" stroke-width="2"/></svg>') 2 2, auto;
   }
 
   body {
@@ -96,7 +96,7 @@ Matching the provided reference image exactly.
   }
 
   button, a, [role="button"], input[type="submit"] {
-    cursor: url('/cursor.png') 16 16, pointer;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges"><polygon points="2,2 2,22 20,12" fill="%23ffffff" stroke="%23000000" stroke-width="2"/></svg>') 2 2, pointer;
   }
 
   html {
