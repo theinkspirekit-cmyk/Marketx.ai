@@ -1,46 +1,36 @@
-import { useState } from "react";
 import Header from "@/components/Header";
-import TrustBar from "@/components/TrustBar";
-import NewHero from "@/components/NewHero";
-import ProblemChecklist from "@/components/ProblemChecklist";
-import ComparisonTable from "@/components/ComparisonTable";
-import VideoDemo from "@/components/VideoDemo";
-import HowItWorks from "@/components/HowItWorks";
-import BenefitServices from "@/components/BenefitServices";
-import CaseStudies from "@/components/CaseStudies";
-import Guarantee from "@/components/Guarantee";
-import UpdatedFAQ from "@/components/UpdatedFAQ";
-import FinalCTA from "@/components/FinalCTA";
+import Hero from "@/components/Hero";
+import Problem from "@/components/Problem";
+import VideoSection from "@/components/VideoSection";
+import Services from "@/components/Services";
+import UseCases from "@/components/UseCases";
+import Offer from "@/components/Offer";
+import FAQ from "@/components/FAQ";
+import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import MobileCTA from "@/components/MobileCTA";
 import CalendlyModal from "@/components/CalendlyModal";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import ChatWidget from "@/components/ChatWidget";
+import { useState } from "react";
 
 const Index = () => {
   const [showCalendly, setShowCalendly] = useState(false);
-  const [showVideoModal, setShowVideoModal] = useState(false);
 
   return (
     <div className="min-h-screen">
-      <TrustBar />
       <Header onBookCallClick={() => setShowCalendly(true)} />
       
-      {/* High-Converting Funnel: Trust Bar → Hero with ROI Calc → Problem → Comparison → Video → How It Works → Services → Case Studies → Guarantee → FAQ → Final CTA */}
+      {/* One-page funnel: Hero → Problem → Video → Services → Use Cases → FAQ → CTA */}
       <main>
-        <NewHero 
-          onBookCallClick={() => setShowCalendly(true)} 
-          onVideoClick={() => setShowVideoModal(true)}
-        />
-        <ProblemChecklist onBookCallClick={() => setShowCalendly(true)} />
-        <ComparisonTable />
-        <VideoDemo onBookCallClick={() => setShowCalendly(true)} />
-        <HowItWorks />
-        <BenefitServices onBookCallClick={() => setShowCalendly(true)} />
-        <CaseStudies onBookCallClick={() => setShowCalendly(true)} />
-        <Guarantee onBookCallClick={() => setShowCalendly(true)} />
-        <UpdatedFAQ />
-        <FinalCTA onBookCallClick={() => setShowCalendly(true)} />
+        <Hero onBookCallClick={() => setShowCalendly(true)} />
+        <Problem />
+        <VideoSection />
+        <Services />
+        <UseCases onBookCallClick={() => setShowCalendly(true)} />
+        <Offer />
+        <FAQ />
+        <CTA onBookCallClick={() => setShowCalendly(true)} />
       </main>
 
       <Footer />
