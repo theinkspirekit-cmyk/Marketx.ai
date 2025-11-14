@@ -24,13 +24,26 @@ Matching the provided reference image exactly.
     --popover: 0 0% 5%;
     --popover-foreground: 0 0% 100%;
 
-    /* Primary - blue for automation branding */
-    --primary: 212 100% 50%;
+    /* Primary - blue gradient for conversion-focused design */
+    --primary: 214 100% 60%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 212 100% 60%;
+    --primary-glow: 214 100% 70%;
+    --primary-dark: 214 100% 50%;
+    
+    /* Cyan accent */
+    --cyan: 189 94% 55%;
+    --cyan-foreground: 0 0% 100%;
+    
+    /* Success green */
+    --success: 151 83% 43%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Urgency red */
+    --urgency: 4 90% 58%;
+    --urgency-foreground: 0 0% 100%;
 
-    /* Secondary - dark grays */
-    --secondary: 0 0% 10%;
+    /* Secondary - dark slate */
+    --secondary: 215 25% 15%;
     --secondary-foreground: 0 0% 90%;
 
     /* Muted elements - matching reference subtitle color */

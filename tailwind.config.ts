@@ -30,6 +30,19 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
           glow: "hsl(var(--primary-glow))",
+          dark: "hsl(var(--primary-dark))",
+        },
+        cyan: {
+          DEFAULT: "hsl(var(--cyan))",
+          foreground: "hsl(var(--cyan-foreground))",
+        },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+        urgency: {
+          DEFAULT: "hsl(var(--urgency))",
+          foreground: "hsl(var(--urgency-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
