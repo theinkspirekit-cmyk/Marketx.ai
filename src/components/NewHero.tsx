@@ -63,22 +63,22 @@ const NewHero = ({ onBookCallClick, onVideoClick }: NewHeroProps) => {
 
           {/* Stats Row */}
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div className="glass-card p-6 rounded-2xl hover-glow transition-all duration-300">
+            <div className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] transition-all duration-300">
               <Clock className="w-12 h-12 text-primary mx-auto mb-3" />
-              <p className="text-4xl font-bold text-foreground mb-2">47 Hours</p>
-              <p className="text-muted-foreground">Saved per month (avg)</p>
+              <p className="text-[4rem] font-bold text-foreground mb-2 leading-none">47</p>
+              <p className="text-muted-foreground">Hours saved per month (avg)</p>
             </div>
 
-            <div className="glass-card p-6 rounded-2xl hover-glow transition-all duration-300">
+            <div className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:scale-105 hover:shadow-[0_0_30px_rgba(16,185,129,0.3)] transition-all duration-300">
               <DollarSign className="w-12 h-12 text-success mx-auto mb-3" />
-              <p className="text-4xl font-bold text-foreground mb-2">$12,450</p>
+              <p className="text-[4rem] font-bold text-foreground mb-2 leading-none">$12,450</p>
               <p className="text-muted-foreground">Cost reduction (avg)</p>
             </div>
 
-            <div className="glass-card p-6 rounded-2xl hover-glow transition-all duration-300">
-              <Users className="w-12 h-12 text-cyan mx-auto mb-3" />
-              <p className="text-4xl font-bold text-foreground mb-2">60 Days</p>
-              <p className="text-muted-foreground">Average time to ROI</p>
+            <div className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:scale-105 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] transition-all duration-300">
+              <Users className="w-12 h-12 text-purple-500 mx-auto mb-3" />
+              <p className="text-[4rem] font-bold text-foreground mb-2 leading-none">60</p>
+              <p className="text-muted-foreground">Days to ROI (avg)</p>
             </div>
           </div>
         </div>
