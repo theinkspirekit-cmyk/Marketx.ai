@@ -51,13 +51,13 @@ const CaseStudies = ({ onBookCallClick }: CaseStudiesProps) => {
   ];
 
   return (
-    <section className="py-20 relative">
+    <section className="py-20 bg-white relative">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-bold text-center mb-6">
             <span className="gradient-text">Real Results</span>
           </h2>
-          <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
             See how businesses like yours transformed their operations
           </p>
 
@@ -65,70 +65,64 @@ const CaseStudies = ({ onBookCallClick }: CaseStudiesProps) => {
             {cases.map((caseStudy, index) => (
               <div
                 key={index}
-                className="glass-card p-8 md:p-12 rounded-3xl hover-glow transition-all duration-300 bg-background/50"
+                className="bg-white p-8 md:p-12 rounded-3xl border border-gray-200 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="grid md:grid-cols-[1fr_2fr] gap-8">
-                  {/* Left Column - Company Info */}
-                  <div>
-                    <div className="text-6xl mb-4">{caseStudy.logo}</div>
-                    <h3 className="text-3xl font-bold text-foreground mb-2">{caseStudy.company}</h3>
-                    <div className="flex items-center space-x-2 text-muted-foreground mb-6">
-                      <MapPin className="w-4 h-4" />
-                      <span>{caseStudy.location}</span>
-                    </div>
-
-                    {/* Results Metrics */}
-                    <div className="space-y-4">
-                      {caseStudy.results.map((result, idx) => (
-                        <div key={idx} className="bg-success/10 border border-success/30 rounded-xl p-4">
-                          <div className="flex items-center space-x-2 mb-1">
-                            <TrendingUp className="w-4 h-4 text-success" />
-                            <span className="text-2xl font-bold text-success">{result.value}</span>
-                          </div>
-                          <p className="text-sm text-foreground/80">{result.label}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Right Column - Details */}
-                  <div className="flex flex-col justify-between">
-                    <div className="space-y-6 mb-6">
-                      {/* Before */}
-                      <div>
-                        <div className="flex items-center space-x-2 mb-2">
-                          <div className="w-2 h-2 bg-urgency rounded-full"></div>
-                          <span className="text-sm font-semibold text-urgency">THE PROBLEM</span>
-                        </div>
-                        <p className="text-foreground/80">{caseStudy.before}</p>
-                      </div>
-
-                      {/* Solution */}
-                      <div>
-                        <div className="flex items-center space-x-2 mb-2">
-                          <div className="w-2 h-2 bg-primary rounded-full"></div>
-                          <span className="text-sm font-semibold text-primary">OUR SOLUTION</span>
-                        </div>
-                        <p className="text-foreground/90 font-medium">{caseStudy.solution}</p>
-                      </div>
-
-                      {/* Testimonial */}
-                      <div className="border-l-4 border-primary pl-6 py-2">
-                        <p className="text-lg italic text-foreground mb-2">"{caseStudy.quote}"</p>
-                        <p className="text-sm text-muted-foreground">— {caseStudy.author}</p>
-                      </div>
-                    </div>
-
-                    {/* CTA */}
-                    <button
-                      onClick={onBookCallClick}
-                      className="inline-flex items-center space-x-2 text-primary hover:text-primary-glow font-semibold group"
-                    >
-                      <span>Read Full Case Study</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
+                {/* Top Section */}
+                <div className="text-center mb-8">
+                  <div className="text-6xl mb-4">{caseStudy.logo}</div>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-2">{caseStudy.company}</h3>
+                  <div className="flex items-center justify-center space-x-2 text-gray-600 mb-4">
+                    <MapPin className="w-4 h-4" />
+                    <span>{caseStudy.location}</span>
                   </div>
                 </div>
+
+                {/* Huge Metrics */}
+                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                  {caseStudy.results.map((result, idx) => (
+                    <div key={idx} className="bg-success/10 border-2 border-success/30 rounded-2xl p-6 text-center">
+                      <div className="flex items-center justify-center space-x-2 mb-2">
+                        <TrendingUp className="w-6 h-6 text-success" />
+                      </div>
+                      <p className="text-[3rem] font-bold text-success leading-none mb-2">{result.value}</p>
+                      <p className="text-sm text-gray-700 font-medium">{result.label}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Problem & Solution */}
+                <div className="space-y-4 mb-6">
+                  <div>
+                    <div className="flex items-center space-x-2 mb-2">
+                      <div className="w-2 h-2 bg-urgency rounded-full"></div>
+                      <span className="text-sm font-semibold text-urgency">THE PROBLEM</span>
+                    </div>
+                    <p className="text-gray-700">{caseStudy.before}</p>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center space-x-2 mb-2">
+                      <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      <span className="text-sm font-semibold text-primary">OUR SOLUTION</span>
+                    </div>
+                    <p className="text-gray-900 font-medium">{caseStudy.solution}</p>
+                  </div>
+                </div>
+
+                {/* Testimonial */}
+                <div className="border-l-4 border-primary pl-6 py-2 mb-6 bg-gray-50 rounded-r-xl">
+                  <p className="text-lg italic text-gray-900 mb-2">"{caseStudy.quote}"</p>
+                  <p className="text-sm text-gray-600">— {caseStudy.author}</p>
+                </div>
+
+                {/* CTA */}
+                <button
+                  onClick={onBookCallClick}
+                  className="inline-flex items-center space-x-2 text-primary hover:text-primary-glow font-semibold group"
+                >
+                  <span>Read Full Case Study</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
               </div>
             ))}
           </div>
@@ -140,7 +134,7 @@ const CaseStudies = ({ onBookCallClick }: CaseStudiesProps) => {
             >
               Book Your Free Strategy Call Now
             </button>
-            <p className="text-sm text-muted-foreground mt-4">
+            <p className="text-sm text-gray-600 mt-4">
               ⏱️ 30-minute call • 📋 Custom automation plan • ✅ No commitment required
             </p>
           </div>

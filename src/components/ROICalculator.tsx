@@ -31,12 +31,15 @@ const ROICalculator = () => {
         </div>
       </div>
 
-      <div className="bg-urgency/20 border-2 border-urgency rounded-2xl p-6 text-center">
-        <p className="text-muted-foreground mb-2">You're currently wasting</p>
-        <p className="text-5xl font-bold text-urgency mb-2">
+      <div className="bg-white/10 border-2 border-urgency rounded-2xl p-6 text-center animate-pulse shadow-[0_0_20px_rgba(239,68,68,0.5)]">
+        <p className="text-foreground/90 mb-2 flex items-center justify-center gap-2">
+          <span className="text-2xl">⚠️</span>
+          <span>You're currently wasting</span>
+        </p>
+        <p className="text-[2.5rem] font-bold mb-2 bg-gradient-to-r from-urgency via-orange-500 to-urgency bg-clip-text text-transparent">
           ${monthlyWaste.toLocaleString()}
         </p>
-        <p className="text-foreground/80">per month on work that could be automated</p>
+        <p className="text-foreground/90">per month on work that could be automated</p>
       </div>
 
       <p className="text-sm text-muted-foreground text-center mt-4">

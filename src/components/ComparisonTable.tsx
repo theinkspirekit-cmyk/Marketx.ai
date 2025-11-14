@@ -22,13 +22,16 @@ const ComparisonTable = () => {
 
           <div className="grid md:grid-cols-[1fr_auto_1fr] gap-8 items-center mb-12">
             {/* Old Way Column */}
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-urgency mb-6 text-center md:text-left">WITHOUT AUTOMATION</h3>
+            <div className="space-y-4 p-6 rounded-3xl bg-red-950/30 border-2 border-urgency/30 shadow-[0_0_40px_rgba(239,68,68,0.2)]">
+              <h3 className="text-2xl font-bold text-urgency mb-6 text-center md:text-left flex items-center justify-center md:justify-start gap-2">
+                <X className="w-6 h-6" />
+                WITHOUT AUTOMATION
+              </h3>
               {comparisons.map((item, index) => (
-                <div key={index} className="glass-card p-4 rounded-xl border-l-4 border-urgency">
+                <div key={index} className="bg-red-950/40 p-4 rounded-xl border-l-4 border-urgency">
                   <div className="flex items-start space-x-3">
-                    <X className="w-5 h-5 text-urgency flex-shrink-0 mt-0.5" />
-                    <p className="text-foreground/80">{item.old}</p>
+                    <X className="w-6 h-6 text-urgency flex-shrink-0 mt-0.5" />
+                    <p className="text-foreground text-lg">{item.old}</p>
                   </div>
                 </div>
               ))}
@@ -36,22 +39,25 @@ const ComparisonTable = () => {
 
             {/* Arrow Column */}
             <div className="hidden md:flex flex-col items-center justify-center">
-              <div className="bg-primary/20 rounded-full p-6">
-                <ArrowRight className="w-8 h-8 text-primary" />
+              <div className="bg-primary/20 rounded-full p-6 animate-pulse">
+                <ArrowRight className="w-10 h-10 text-primary" />
               </div>
-              <p className="text-sm font-semibold text-primary mt-4 text-center max-w-[120px]">
-                We handle the transformation
+              <p className="text-sm font-bold text-primary mt-4 text-center max-w-[120px] uppercase tracking-wide">
+                WE HANDLE THIS
               </p>
             </div>
 
             {/* New Way Column */}
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-success mb-6 text-center md:text-left">WITH OUR AUTOMATION</h3>
+            <div className="space-y-4 p-6 rounded-3xl bg-green-950/30 border-2 border-success/30 shadow-[0_0_40px_rgba(16,185,129,0.2)]">
+              <h3 className="text-2xl font-bold text-success mb-6 text-center md:text-left flex items-center justify-center md:justify-start gap-2">
+                <Check className="w-6 h-6" />
+                WITH AUTOMATION
+              </h3>
               {comparisons.map((item, index) => (
-                <div key={index} className="glass-card p-4 rounded-xl border-l-4 border-success bg-success/5">
+                <div key={index} className="bg-green-950/40 p-4 rounded-xl border-l-4 border-success">
                   <div className="flex items-start space-x-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                    <p className="text-foreground font-medium">{item.new}</p>
+                    <Check className="w-6 h-6 text-success flex-shrink-0 mt-0.5" />
+                    <p className="text-foreground font-medium text-lg">{item.new}</p>
                   </div>
                 </div>
               ))}
@@ -60,8 +66,8 @@ const ComparisonTable = () => {
 
           {/* Mobile Arrow */}
           <div className="md:hidden flex justify-center mb-8">
-            <div className="bg-primary/20 rounded-full p-4">
-              <ArrowRight className="w-6 h-6 text-primary rotate-90" />
+            <div className="bg-primary/20 rounded-full p-4 animate-pulse">
+              <ArrowRight className="w-8 h-8 text-primary rotate-90" />
             </div>
           </div>
         </div>

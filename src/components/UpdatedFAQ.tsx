@@ -32,13 +32,13 @@ const UpdatedFAQ = () => {
   ];
 
   return (
-    <section className="py-20 relative">
+    <section className="py-20 bg-gray-50 relative">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-bold text-center mb-6">
             <span className="gradient-text">Frequently Asked Questions</span>
           </h2>
-          <p className="text-xl text-muted-foreground text-center mb-16">
+          <p className="text-xl text-gray-600 text-center mb-16">
             Everything you need to know about our automation services
           </p>
 
@@ -46,13 +46,13 @@ const UpdatedFAQ = () => {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="glass-card rounded-2xl overflow-hidden transition-all duration-300 hover-glow"
+                className="bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-md hover:shadow-lg border border-gray-200"
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full flex items-center justify-between p-6 text-left"
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
                 >
-                  <span className="text-lg font-semibold text-foreground pr-4">{faq.question}</span>
+                  <span className="text-lg font-semibold text-gray-900 pr-4">{faq.question}</span>
                   <ChevronDown
                     className={`w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300 ${
                       openIndex === index ? "rotate-180" : ""
@@ -65,8 +65,8 @@ const UpdatedFAQ = () => {
                     openIndex === index ? "max-h-96" : "max-h-0"
                   }`}
                 >
-                  <div className="px-6 pb-6">
-                    <p className="text-foreground/80 leading-relaxed">{faq.answer}</p>
+                  <div className="px-6 pb-6 border-t border-gray-100">
+                    <p className="text-gray-700 leading-relaxed pt-4">{faq.answer}</p>
                   </div>
                 </div>
               </div>
