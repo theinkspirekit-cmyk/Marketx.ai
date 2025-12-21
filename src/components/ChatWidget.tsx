@@ -2,7 +2,7 @@ import { useState } from "react";
 import { MessageCircle, X, Send, Settings } from "lucide-react";
 
 // Default webhook URL - can be configured
-const DEFAULT_WEBHOOK_URL = "https://dheekshit19.app.n8n.cloud/webhook/website-chat";
+const DEFAULT_WEBHOOK_URL = "https://dheekshit19.app.n8n.cloud/webhook-test/website-chat";
 
 interface ChatWidgetProps {
   onBookCallClick: () => void;
