@@ -1,18 +1,48 @@
 import { useState } from "react";
-import { MessageCircle, X, Send } from "lucide-react";
+import { MessageCircle, X, Send, Settings } from "lucide-react";
+
+// Default webhook URL - can be configured
+const DEFAULT_WEBHOOK_URL = "";
+
 interface ChatWidgetProps {
   onBookCallClick: () => void;
 }
+
 const ChatWidget = ({
   onBookCallClick
 }: ChatWidgetProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
+  const [webhookUrl, setWebhookUrl] = useState(DEFAULT_WEBHOOK_URL);
   const [messages, setMessages] = useState([{
     text: "Hi! 👋 I'm here to help you learn about our automation services. Ask me anything!",
     sender: "bot"
   }]);
   const [input, setInput] = useState("");
   const quickReplies = ["How does it work?", "Pricing information", "Book a call", "Success stories"];
+
+  const sendToWebhook = async (userMessage: string, botResponse: string) => {
+    if (!webhookUrl) return;
+    
+    try {
+      await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify({
+          timestamp: new Date().toISOString(),
+          userMessage,
+          botResponse,
+          source: window.location.origin,
+        }),
+      });
+      console.log("Webhook triggered successfully");
+    } catch (error) {
+      console.error("Error triggering webhook:", error);
+    }
+  };
   const handleSend = () => {
     if (!input.trim()) return;
     const userMessage = {
@@ -22,9 +52,10 @@ const ChatWidget = ({
     setMessages([...messages, userMessage]);
 
     // Simple bot responses
+    const currentInput = input;
     setTimeout(() => {
       let botResponse = "";
-      const lowerInput = input.toLowerCase();
+      const lowerInput = currentInput.toLowerCase();
       if (lowerInput.includes("price") || lowerInput.includes("cost")) {
         botResponse = "Our pricing is customized based on your needs. Most automations range from $500-$2000. Book a free call to get an exact quote tailored to your business.";
       } else if (lowerInput.includes("how") || lowerInput.includes("work")) {
@@ -44,6 +75,9 @@ const ChatWidget = ({
         text: botResponse,
         sender: "bot"
       }]);
+      
+      // Send to webhook
+      sendToWebhook(currentInput, botResponse);
     }, 1000);
     setInput("");
   };
@@ -68,10 +102,30 @@ const ChatWidget = ({
               <h3 className="font-semibold">Automation Assistant</h3>
               <p className="text-xs opacity-90">Usually replies instantly</p>
             </div>
-            <button onClick={() => setIsOpen(false)} className="hover:bg-white/10 rounded-full p-1 transition-colors">
-              <X className="w-5 h-5" />
-            </button>
+            <div className="flex items-center gap-1">
+              <button onClick={() => setShowSettings(!showSettings)} className="hover:bg-white/10 rounded-full p-1 transition-colors">
+                <Settings className="w-5 h-5" />
+              </button>
+              <button onClick={() => setIsOpen(false)} className="hover:bg-white/10 rounded-full p-1 transition-colors">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
           </div>
+
+          {/* Settings Panel */}
+          {showSettings && (
+            <div className="p-4 border-b border-border bg-background/50">
+              <label className="text-xs text-muted-foreground mb-2 block">Webhook URL</label>
+              <input
+                type="text"
+                value={webhookUrl}
+                onChange={e => setWebhookUrl(e.target.value)}
+                placeholder="https://hooks.zapier.com/..."
+                className="w-full glass-input text-foreground px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
+              />
+              <p className="text-xs text-muted-foreground mt-2">Messages will be sent to this webhook</p>
+            </div>
+          )}
 
           {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
