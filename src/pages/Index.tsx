@@ -4,6 +4,7 @@ import Problem from "@/components/Problem";
 import VideoSection from "@/components/VideoSection";
 import Services from "@/components/Services";
 import UseCases from "@/components/UseCases";
+import WhyUs from "@/components/WhyUs";
 import Offer from "@/components/Offer";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
@@ -28,6 +29,7 @@ const Index = () => {
         <VideoSection />
         <Services />
         <UseCases onBookCallClick={() => setShowCalendly(true)} />
+        <WhyUs />
         <Offer />
         <FAQ />
         <CTA onBookCallClick={() => setShowCalendly(true)} />
