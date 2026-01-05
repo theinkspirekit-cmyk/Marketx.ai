@@ -30,7 +30,7 @@ const CTA = ({
               🚀 Schedule My Free Strategy Call
             </button>
             <div className="glass-card px-8 py-4 rounded-full">
-              <p className="text-sm text-muted-foreground">48-Hour Implementation •  300-500% ROI •  30-Day Money-Back Guarantee</p>
+              <p className="text-sm text-muted-foreground">Fast Implementation • Proven Results • 30-Day Money-Back Guarantee</p>
             </div>
           </div>
         </div>
