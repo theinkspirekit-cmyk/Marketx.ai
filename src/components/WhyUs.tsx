@@ -1,15 +1,19 @@
-import { Users, Award, Zap, Shield } from "lucide-react";
+import { Award, Zap, Shield } from "lucide-react";
+import dheekshitImg from "@/assets/dheekshit.jpg";
+import mayankImg from "@/assets/mayank.jpg";
 
 const WhyUs = () => {
   const teamMembers = [
     {
       name: "Dheekshit Datta",
       role: "Founder",
+      image: dheekshitImg,
       description: "Automation expert with a passion for helping businesses scale through intelligent workflows."
     },
     {
       name: "Mayank Goel",
       role: "Partner",
+      image: mayankImg,
       description: "Technology strategist focused on delivering innovative AI solutions for business growth."
     }
   ];
@@ -18,7 +22,7 @@ const WhyUs = () => {
     {
       icon: Zap,
       title: "Speed & Efficiency",
-      description: "We deliver working automations in days, not months."
+      description: "We deliver working automations quickly, not months."
     },
     {
       icon: Shield,
@@ -52,8 +56,12 @@ const WhyUs = () => {
               key={index}
               className="bg-card border border-border rounded-2xl p-8 text-center hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
             >
-              <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-10 h-10 text-primary" />
+              <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-primary/30">
+                <img 
+                  src={member.image} 
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-1 font-poppins">{member.name}</h3>
               <span className="text-primary font-semibold text-sm">{member.role}</span>

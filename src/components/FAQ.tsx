@@ -9,7 +9,7 @@ const FAQ = () => {
 
   const faqs = [{
     question: "How quickly can you implement automations?",
-    answer: "Most automations are live within 48 hours. Simple workflows like email sequences can be ready in 24 hours, while complex multi-system integrations may take up to a week. We'll give you an exact timeline during your strategy call."
+    answer: "We work efficiently to get your automations live as quickly as possible. Simple workflows like email sequences can be ready fast, while complex multi-system integrations may take longer. We'll give you an exact timeline during your strategy call."
   }, {
     question: "What if the automation doesn't work or save time?",
     answer: "You don't pay. We offer a 30-day money-back guarantee. If the automation doesn't work as promised or doesn't save you the expected time, we'll refund your investment and fix the issues at no cost."
@@ -21,7 +21,7 @@ const FAQ = () => {
     answer: "Zero. We handle all the technical setup and provide simple dashboards for monitoring. You'll get training on how to use your new automations, but no technical skills are required to operate them."
   }, {
     question: "What's the typical ROI on automation investments?",
-    answer: "Most clients see 300-500% ROI within the first month. If you're spending 10 hours/week on manual tasks worth $50/hour, that's $2,000/month in opportunity cost. Our automations typically cost a fraction of that."
+    answer: "Most clients see significant ROI within the first month. If you're spending 10 hours/week on manual tasks worth $50/hour, that's $2,000/month in opportunity cost. Our automations typically cost a fraction of that."
   }];
   return <section className="py-20 relative">
       <div className="container mx-auto px-6">

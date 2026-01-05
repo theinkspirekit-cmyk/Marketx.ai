@@ -53,7 +53,7 @@ const Services = () => {
       icon: Bot,
       iconBg: "bg-primary/20",
       idealFor: "All Industries • Complex Processes",
-      typicalResults: "300-500% ROI • Fully customized",
+      typicalResults: "Fully customized • Maximum efficiency",
       features: [
         "Process analysis",
         "Custom workflows",
