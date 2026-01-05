@@ -12,7 +12,7 @@ const WhyUs = () => {
     },
     {
       name: "Mayank Goel",
-      role: "Partner",
+      role: "CSO",
       image: mayankImg,
       description: "Technology strategist focused on delivering innovative AI solutions for business growth."
     }
