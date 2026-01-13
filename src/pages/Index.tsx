@@ -12,7 +12,6 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import MobileCTA from "@/components/MobileCTA";
 import CalendlyModal from "@/components/CalendlyModal";
-import ExitIntentPopup from "@/components/ExitIntentPopup";
 import ChatWidget from "@/components/ChatWidget";
 import { useState } from "react";
 
@@ -40,7 +39,7 @@ const Index = () => {
       <Footer />
       <MobileCTA onBookCallClick={() => setShowCalendly(true)} />
       <CalendlyModal isOpen={showCalendly} onClose={() => setShowCalendly(false)} />
-      <ExitIntentPopup onBookCallClick={() => setShowCalendly(true)} />
+      <ChatWidget onBookCallClick={() => setShowCalendly(true)} />
       <ChatWidget onBookCallClick={() => setShowCalendly(true)} />
     </div>
   );
