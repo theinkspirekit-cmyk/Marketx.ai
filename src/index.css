@@ -8,72 +8,68 @@ Matching the provided reference image exactly.
 
 @layer base {
   :root {
-    /* Pure black theme matching reference */
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
+    /* Clean white and blue theme */
+    --background: 0 0% 100%;
+    --foreground: 220 20% 15%;
 
-    /* Liquid Glass system with dynamic adaptation */
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 100%;
-    --card-glass: 0 0% 8%;
-    --glass-light: 0 0% 15%;
+    /* Card system for white theme */
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+    --card-glass: 220 30% 97%;
+    --glass-light: 220 30% 95%;
     --glass-highlight: 0 0% 100%;
-    --glass-shadow: 0 0% 0%;
+    --glass-shadow: 220 20% 10%;
 
     /* Popover elements */
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
 
-    /* Primary - blue for automation branding */
-    --primary: 212 100% 50%;
+    /* Primary - vibrant blue */
+    --primary: 220 90% 55%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 212 100% 60%;
+    --primary-glow: 220 90% 65%;
 
-    /* Secondary - dark grays */
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 90%;
+    /* Secondary - light blue/gray */
+    --secondary: 220 30% 96%;
+    --secondary-foreground: 220 20% 25%;
 
-    /* Muted elements - matching reference subtitle color */
-    --muted: 0 0% 8%;
-    --muted-foreground: 0 0% 60%;
+    /* Muted elements */
+    --muted: 220 20% 96%;
+    --muted-foreground: 220 15% 45%;
 
     /* Accent colors */
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 220 30% 94%;
+    --accent-foreground: 220 20% 20%;
 
     /* Destructive states */
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     /* Borders and inputs */
-    --border: 0 0% 20%;
-    --input: 0 0% 15%;
-    --ring: 158 64% 52%;
+    --border: 220 20% 88%;
+    --input: 220 20% 94%;
+    --ring: 220 90% 55%;
 
     /* Border radius */
     --radius: 0.75rem;
 
-    /* AI Automation workflow gradients - matching reference image exactly */
-    --gradient-radial: radial-gradient(800px circle at 50% 20%, hsl(85 60% 65% / 0.35) 0%, hsl(170 70% 55% / 0.4) 20%, hsl(200 80% 50% / 0.5) 35%, hsl(220 90% 45% / 0.7) 55%, hsl(230 95% 30% / 0.85) 75%, hsl(0 0% 0%) 100%);
-    --gradient-hero-bg: radial-gradient(1400px circle at 50% 20%, hsl(85 60% 65% / 0.25), hsl(170 70% 55% / 0.35) 15%, hsl(200 80% 50% / 0.45) 30%, hsl(220 90% 45% / 0.65) 50%, hsl(230 95% 30% / 0.8) 70%, hsl(0 0% 0%) 100%);
-    --gradient-text: linear-gradient(135deg, hsl(0 0% 100%), hsl(212 100% 70%));
+    /* Blue gradient backgrounds */
+    --gradient-radial: radial-gradient(800px circle at 50% 20%, hsl(220 90% 55% / 0.08) 0%, hsl(220 90% 60% / 0.05) 50%, transparent 100%);
+    --gradient-hero-bg: linear-gradient(180deg, hsl(220 30% 98%) 0%, hsl(0 0% 100%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(220 90% 50%), hsl(220 90% 65%));
     
     /* Subtle gradients for components */
-    --gradient-primary: linear-gradient(135deg, hsl(212 100% 50% / 0.9), hsl(212 100% 60% / 0.7));
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 8% / 0.8), hsl(0 0% 5% / 0.6));
+    --gradient-primary: linear-gradient(135deg, hsl(220 90% 55%), hsl(220 90% 60%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 30% 98%));
 
-    /* Apple Liquid Glass shadows with specular highlights */
-    --shadow-glass: 0 8px 32px 0 hsl(var(--glass-shadow) / 0.37), 
-                    inset 0 1px 1px 0 hsl(var(--glass-highlight) / 0.1),
-                    inset 0 -1px 1px 0 hsl(var(--glass-shadow) / 0.1);
-    --shadow-glow: 0 0 60px hsl(212 100% 50% / 0.4), 
-                   0 0 100px hsl(212 100% 50% / 0.2),
-                   inset 0 1px 0 hsl(0 0% 100% / 0.1);
-    --shadow-card: 0 4px 24px hsl(var(--glass-shadow) / 0.5), 
-                   inset 0 1px 0 hsl(var(--glass-highlight) / 0.05),
-                   inset 0 -1px 0 hsl(var(--glass-shadow) / 0.1);
-    --shadow-specular: inset 0 1px 2px 0 hsl(var(--glass-highlight) / 0.15),
-                       inset 0 -1px 1px 0 hsl(var(--glass-shadow) / 0.2);
+    /* Clean shadows for white theme */
+    --shadow-glass: 0 4px 24px 0 hsl(220 30% 15% / 0.08), 
+                    0 1px 3px 0 hsl(220 30% 15% / 0.06);
+    --shadow-glow: 0 0 40px hsl(220 90% 55% / 0.15), 
+                   0 0 80px hsl(220 90% 55% / 0.08);
+    --shadow-card: 0 2px 16px hsl(220 30% 15% / 0.06), 
+                   0 1px 4px hsl(220 30% 15% / 0.04);
+    --shadow-specular: 0 1px 2px 0 hsl(220 30% 15% / 0.05);
 
     /* Animation timings */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -90,9 +86,6 @@ Matching the provided reference image exactly.
   body {
     @apply bg-background text-foreground font-inter antialiased;
     background: hsl(var(--background));
-    background-image: var(--gradient-hero-bg);
-    background-attachment: fixed;
-    background-size: 100% 100%;
   }
 
   button, a, [role="button"], input[type="submit"] {
@@ -103,7 +96,6 @@ Matching the provided reference image exactly.
     scroll-behavior: smooth;
   }
 
-  /* Ensure pure black background */
   #root {
     background: hsl(var(--background));
     min-height: 100vh;
@@ -114,227 +106,106 @@ Matching the provided reference image exactly.
 @layer components {
   /* ==================== Apple Liquid Glass System ==================== */
   
-  /* Base Liquid Glass with translucency and blur - matching reference exactly */
+  /* Clean card style for white theme */
   .glass-card {
-    background: linear-gradient(135deg, 
-                hsl(0 0% 8% / 0.3), 
-                hsl(0 0% 5% / 0.2));
-    backdrop-filter: blur(60px) saturate(200%);
-    -webkit-backdrop-filter: blur(60px) saturate(200%);
-    border: 1.5px solid hsl(0 0% 100% / 0.15);
-    box-shadow: 0 8px 40px hsl(0 0% 0% / 0.6),
-                inset 0 2px 4px hsl(0 0% 100% / 0.1),
-                inset 0 -2px 4px hsl(0 0% 0% / 0.3);
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
     border-radius: var(--radius);
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
   }
 
-  /* Specular highlight effect - top shine */
-  .glass-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60%;
-    background: linear-gradient(180deg, 
-                hsl(0 0% 100% / 0.12), 
-                transparent);
-    pointer-events: none;
-    border-radius: var(--radius) var(--radius) 0 0;
-  }
-
-  /* Dynamic hover effect with real-time rendering */
   .glass-card:hover {
-    background: linear-gradient(135deg, 
-                hsl(0 0% 12% / 0.4), 
-                hsl(0 0% 8% / 0.3));
-    border-color: hsl(0 0% 100% / 0.2);
-    box-shadow: 0 16px 60px hsl(0 0% 0% / 0.7),
-                inset 0 2px 4px hsl(0 0% 100% / 0.15),
-                inset 0 -2px 4px hsl(0 0% 0% / 0.3);
+    box-shadow: 0 8px 32px hsl(220 30% 15% / 0.1);
     transform: translateY(-2px);
   }
 
-  /* Liquid Glass Button - Primary - matching reference exactly */
+  /* Clean button styles */
   .glass-button-primary {
-    background: linear-gradient(135deg, 
-                hsl(0 0% 10% / 0.4), 
-                hsl(0 0% 6% / 0.25));
-    backdrop-filter: blur(50px) saturate(200%);
-    -webkit-backdrop-filter: blur(50px) saturate(200%);
-    border: 1.5px solid hsl(0 0% 100% / 0.18);
-    box-shadow: 0 8px 32px hsl(0 0% 0% / 0.5),
-                inset 0 2px 3px hsl(0 0% 100% / 0.12),
-                inset 0 -2px 3px hsl(0 0% 0% / 0.2);
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border: none;
+    box-shadow: 0 4px 14px hsl(220 90% 55% / 0.25);
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
   }
 
-  .glass-button-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 55%;
-    background: linear-gradient(180deg, 
-                hsl(0 0% 100% / 0.1), 
-                transparent);
-    pointer-events: none;
-    border-radius: inherit;
-  }
-
   .glass-button-primary:hover {
-    background: linear-gradient(135deg, 
-                hsl(0 0% 15% / 0.5), 
-                hsl(0 0% 10% / 0.35));
-    border-color: hsl(0 0% 100% / 0.25);
-    box-shadow: 0 12px 48px hsl(0 0% 0% / 0.6),
-                inset 0 2px 3px hsl(0 0% 100% / 0.15),
-                inset 0 -2px 3px hsl(0 0% 0% / 0.2);
+    background: hsl(220 90% 50%);
+    box-shadow: 0 6px 20px hsl(220 90% 55% / 0.35);
     transform: translateY(-2px);
   }
 
-  /* Liquid Glass Input/Control - matching reference exactly */
+  /* Clean input styles */
   .glass-input {
-    background: linear-gradient(135deg, 
-                hsl(0 0% 8% / 0.35), 
-                hsl(0 0% 5% / 0.25));
-    backdrop-filter: blur(50px) saturate(200%);
-    -webkit-backdrop-filter: blur(50px) saturate(200%);
-    border: 1.5px solid hsl(0 0% 100% / 0.15);
-    box-shadow: 0 4px 20px hsl(0 0% 0% / 0.5),
-                inset 0 2px 2px hsl(0 0% 100% / 0.08),
-                inset 0 -2px 2px hsl(0 0% 0% / 0.2);
+    background: hsl(var(--input));
+    border: 1px solid hsl(var(--border));
     transition: var(--transition-smooth);
   }
 
   .glass-input:focus {
-    background: linear-gradient(135deg, 
-                hsl(0 0% 12% / 0.45), 
-                hsl(0 0% 8% / 0.35));
-    border-color: hsl(0 0% 100% / 0.2);
-    box-shadow: 0 0 0 3px hsl(var(--primary) / 0.2),
-                0 4px 24px hsl(0 0% 0% / 0.6),
-                inset 0 2px 2px hsl(0 0% 100% / 0.1),
-                inset 0 -2px 2px hsl(0 0% 0% / 0.2);
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1);
   }
 
-  /* Translucent overlay for modals/dialogs */
+  /* Clean overlay */
   .glass-overlay {
-    background: hsl(0 0% 0% / 0.7);
-    backdrop-filter: blur(12px) saturate(150%);
-    -webkit-backdrop-filter: blur(12px) saturate(150%);
+    background: hsl(220 20% 10% / 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
-  /* Liquid Glass Navigation/Tab Bar */
+  /* Clean navigation */
   .glass-nav {
-    background: linear-gradient(180deg, 
-                hsl(0 0% 8% / 0.4), 
-                hsl(0 0% 5% / 0.3));
-    backdrop-filter: blur(60px) saturate(200%);
-    -webkit-backdrop-filter: blur(60px) saturate(200%);
-    border-bottom: 1.5px solid hsl(0 0% 100% / 0.15);
-    box-shadow: 0 4px 30px hsl(0 0% 0% / 0.6),
-                inset 0 2px 2px hsl(0 0% 100% / 0.1);
+    background: hsl(var(--background) / 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid hsl(var(--border));
+    box-shadow: 0 1px 3px hsl(220 30% 15% / 0.05);
   }
 
-  /* Reference buttons with liquid glass - matching reference images */
+  /* Clean primary button */
   .btn-primary-ref {
-    background: linear-gradient(135deg, 
-                hsl(0 0% 12% / 0.5), 
-                hsl(0 0% 8% / 0.35));
-    backdrop-filter: blur(50px) saturate(200%);
-    -webkit-backdrop-filter: blur(50px) saturate(200%);
-    color: hsl(var(--foreground));
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
     border-radius: 100px;
     padding: 14px 28px;
     font-weight: 500;
     font-size: 15px;
     transition: var(--transition-smooth);
-    border: 1.5px solid hsl(0 0% 100% / 0.2);
-    box-shadow: 0 8px 32px hsl(0 0% 0% / 0.5), 
-                inset 0 2px 3px hsl(0 0% 100% / 0.12),
-                inset 0 -2px 3px hsl(0 0% 0% / 0.25);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .btn-primary-ref::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 55%;
-    background: linear-gradient(180deg, 
-                hsl(0 0% 100% / 0.12), 
-                transparent);
-    pointer-events: none;
-    border-radius: 100px 100px 0 0;
+    border: none;
+    box-shadow: 0 4px 14px hsl(220 90% 55% / 0.25);
   }
 
   .btn-primary-ref:hover {
-    background: linear-gradient(135deg, 
-                hsl(0 0% 18% / 0.6), 
-                hsl(0 0% 12% / 0.45));
-    border-color: hsl(0 0% 100% / 0.28);
-    box-shadow: 0 12px 48px hsl(0 0% 0% / 0.6), 
-                inset 0 2px 3px hsl(0 0% 100% / 0.15),
-                inset 0 -2px 3px hsl(0 0% 0% / 0.25);
+    background: hsl(220 90% 50%);
+    box-shadow: 0 6px 20px hsl(220 90% 55% / 0.35);
     transform: translateY(-2px);
   }
 
+  /* Clean secondary button */
   .btn-secondary-ref {
-    background: linear-gradient(135deg, 
-                hsl(0 0% 10% / 0.45), 
-                hsl(0 0% 6% / 0.3));
-    backdrop-filter: blur(50px) saturate(200%);
-    -webkit-backdrop-filter: blur(50px) saturate(200%);
-    color: hsl(var(--foreground));
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
     border-radius: 100px;
     padding: 14px 28px;
     font-weight: 500;
     font-size: 15px;
     transition: var(--transition-smooth);
-    border: 1.5px solid hsl(0 0% 100% / 0.18);
-    box-shadow: 0 8px 32px hsl(0 0% 0% / 0.5), 
-                inset 0 2px 3px hsl(0 0% 100% / 0.1),
-                inset 0 -2px 3px hsl(0 0% 0% / 0.2);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .btn-secondary-ref::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 55%;
-    background: linear-gradient(180deg, 
-                hsl(0 0% 100% / 0.1), 
-                transparent);
-    pointer-events: none;
-    border-radius: 100px 100px 0 0;
+    border: none;
+    box-shadow: 0 4px 14px hsl(220 90% 55% / 0.25);
   }
 
   .btn-secondary-ref:hover {
-    background: linear-gradient(135deg, 
-                hsl(0 0% 15% / 0.55), 
-                hsl(0 0% 10% / 0.4));
-    border-color: hsl(0 0% 100% / 0.25);
-    box-shadow: 0 12px 48px hsl(0 0% 0% / 0.6), 
-                inset 0 2px 3px hsl(0 0% 100% / 0.12),
-                inset 0 -2px 3px hsl(0 0% 0% / 0.2);
+    background: hsl(220 90% 50%);
+    box-shadow: 0 6px 20px hsl(220 90% 55% / 0.35);
     transform: translateY(-2px);
   }
 
-  /* Hero gradient text matching reference */
+  /* Gradient text for blue theme */
   .gradient-text-ref {
     background: var(--gradient-text);
     -webkit-background-clip: text;
@@ -381,15 +252,15 @@ Matching the provided reference image exactly.
     transform: translateY(-2px);
   }
 
-  /* Sophisticated animated gradient for text */
+  /* Animated gradient text for blue theme */
   .gradient-text-animated {
     background: linear-gradient(
       120deg,
-      hsl(var(--foreground)) 0%,
-      hsl(212 100% 65%) 30%,
-      hsl(212 100% 55%) 50%,
-      hsl(212 100% 65%) 70%,
-      hsl(var(--foreground)) 100%
+      hsl(220 90% 50%) 0%,
+      hsl(220 90% 60%) 30%,
+      hsl(220 90% 55%) 50%,
+      hsl(220 90% 60%) 70%,
+      hsl(220 90% 50%) 100%
     );
     background-size: 300% 100%;
     animation: gradient-slide 8s ease-in-out infinite;
