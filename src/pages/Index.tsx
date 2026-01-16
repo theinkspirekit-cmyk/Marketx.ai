@@ -20,7 +20,7 @@ const Index = () => {
   const [showCalendly, setShowCalendly] = useState(false);
 
   return (
-    <div className="min-h-screen font-manrope">
+    <div className="min-h-screen font-inter">
       <Header onBookCallClick={() => setShowCalendly(true)} />
       
       {/* One-page funnel: Hero → Problem → Video → Services → Features → Use Cases → FAQ → CTA */}

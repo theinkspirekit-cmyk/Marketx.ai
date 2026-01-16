@@ -5,23 +5,23 @@ const Problem = () => {
   const { ref: sectionRef, isInView } = useInView({ threshold: 0.3 });
 
   return (
-    <section className="py-24 md:py-32 relative bg-[#0a0f1a]">
+    <section className="py-24 md:py-32 relative bg-white">
       <div className="container mx-auto px-6">
         <div 
           ref={sectionRef}
           className={`text-center max-w-4xl mx-auto scroll-animate ${isInView ? 'animate-fade-in' : ''}`}
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
-            <span className="text-yellow-400">★</span>
-            <span className="text-sm text-muted-foreground tracking-wide uppercase">We Analyze Your Data</span>
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1a1a1a] mb-10">
+            <span className="text-white text-sm">★</span>
+            <span className="text-sm text-white font-medium tracking-wide uppercase">We Analyze Your Data</span>
           </div>
 
           {/* Quote */}
-          <p className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground/90 leading-relaxed font-light italic mb-10">
-            We find what to <span className="text-foreground font-medium not-italic underline decoration-primary/50 underline-offset-4">automate</span>, who your users are & how
-            AI can optimize your <span className="text-foreground font-medium not-italic underline decoration-primary/50 underline-offset-4">workflow</span>. Best part is we also
-            build and launch <span className="text-foreground font-medium not-italic underline decoration-primary/50 underline-offset-4">real solutions</span>."
+          <p className="text-3xl md:text-4xl lg:text-[42px] text-gray-500 leading-relaxed font-normal mb-12">
+            We find what to <span className="text-[#b8d4e8] italic">automate</span>, who your users are & how
+            AI can optimize your <span className="text-[#b8d4e8] italic">workflow</span>. Best part is we also
+            build and launch <span className="text-[#b8d4e8] italic">real solutions</span>."
           </p>
 
           {/* Author */}

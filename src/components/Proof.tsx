@@ -64,12 +64,10 @@ const Proof = () => {
             ref={headerRef}
             className={`text-center mb-16 scroll-animate ${headerInView ? 'animate-reveal-up' : ''}`}
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-foreground">Proven Results</span>
-              <br />
-              <span className="gradient-text">Real Success Stories</span>
+            <h2 className="text-4xl md:text-5xl font-medium mb-6 text-foreground">
+              Proven Results
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Join hundreds of businesses already saving time and money with our automation solutions.
             </p>
           </div>
