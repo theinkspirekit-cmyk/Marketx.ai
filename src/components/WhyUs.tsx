@@ -1,20 +1,22 @@
 import { Award, Zap, Shield } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
 import dheekshitImg from "@/assets/dheekshit.jpg";
 import mayankImg from "@/assets/mayank.jpg";
 
 const WhyUs = () => {
+  const { ref: headerRef, isInView: headerInView } = useInView({ threshold: 0.3 });
+  const { ref: teamRef, isInView: teamInView } = useInView({ threshold: 0.1 });
+
   const teamMembers = [
     {
       name: "Dheekshit Datta",
       role: "Founder",
       image: dheekshitImg,
-      description: "Automation expert with a passion for helping businesses scale through intelligent workflows."
     },
     {
       name: "Mayank Goel",
       role: "CSO",
       image: mayankImg,
-      description: "Technology strategist focused on delivering innovative AI solutions for business growth."
     }
   ];
 
@@ -37,37 +39,59 @@ const WhyUs = () => {
   ];
 
   return (
-    <section id="why-us" className="py-20 bg-secondary/30">
+    <section id="why-us" className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4 font-poppins">
-            Meet the Team Behind Your Success
+        <div 
+          ref={headerRef}
+          className={`text-center mb-16 scroll-animate ${headerInView ? 'animate-reveal-up' : ''}`}
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-card/80 mb-6">
+            <span className="text-sm text-muted-foreground font-medium">✨ Team</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-medium text-foreground mb-4">
+            Meet the <span className="text-muted-foreground italic font-normal">Team Behind</span> Marktrix
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            We're not just another automation agency. We're your partners in building systems that work.
+            We're a team of passionate engineers, designers, and strategists.
           </p>
         </div>
 
-        {/* Team Members */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+        {/* Team Members - Card Style like reference */}
+        <div 
+          ref={teamRef}
+          className={`grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-16 scroll-animate ${teamInView ? 'animate-reveal-up' : ''}`}
+        >
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="bg-card border border-border rounded-2xl p-8 text-center hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
+              className="bg-card border border-border/50 rounded-2xl p-4 hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
             >
-              <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-primary/30">
+              {/* Large Image */}
+              <div className="aspect-[4/3] rounded-xl overflow-hidden mb-4 bg-muted">
                 <img 
                   src={member.image} 
                   alt={member.name}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-1 font-poppins">{member.name}</h3>
-              <span className="text-primary font-semibold text-sm">{member.role}</span>
-              <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
-                {member.description}
-              </p>
+              
+              {/* Name and Role */}
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground">{member.name}</h3>
+                  <span className="text-sm text-muted-foreground">{member.role}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <button className="w-8 h-8 rounded-lg border border-border/50 flex items-center justify-center hover:bg-muted/50 transition-colors">
+                    <span className="text-sm font-medium text-muted-foreground">𝕏</span>
+                  </button>
+                  <button className="w-8 h-8 rounded-lg border border-border/50 flex items-center justify-center hover:bg-muted/50 transition-colors">
+                    <svg className="w-4 h-4 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
             </div>
           ))}
         </div>

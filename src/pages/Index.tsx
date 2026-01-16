@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
 import VideoSection from "@/components/VideoSection";
 import Services from "@/components/Services";
+import Features from "@/components/Features";
 import UseCases from "@/components/UseCases";
 import WhyUs from "@/components/WhyUs";
 import Integrations from "@/components/Integrations";
@@ -19,15 +20,16 @@ const Index = () => {
   const [showCalendly, setShowCalendly] = useState(false);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen font-manrope">
       <Header onBookCallClick={() => setShowCalendly(true)} />
       
-      {/* One-page funnel: Hero → Problem → Video → Services → Use Cases → FAQ → CTA */}
+      {/* One-page funnel: Hero → Problem → Video → Services → Features → Use Cases → FAQ → CTA */}
       <main>
         <Hero onBookCallClick={() => setShowCalendly(true)} />
         <Problem />
         <VideoSection />
         <Services />
+        <Features />
         <UseCases onBookCallClick={() => setShowCalendly(true)} />
         <WhyUs />
         <Integrations />
@@ -39,7 +41,6 @@ const Index = () => {
       <Footer />
       <MobileCTA onBookCallClick={() => setShowCalendly(true)} />
       <CalendlyModal isOpen={showCalendly} onClose={() => setShowCalendly(false)} />
-      <ChatWidget onBookCallClick={() => setShowCalendly(true)} />
       <ChatWidget onBookCallClick={() => setShowCalendly(true)} />
     </div>
   );
