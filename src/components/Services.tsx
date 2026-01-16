@@ -19,18 +19,18 @@ const Services = () => {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-foreground">Smarter Services, </span>
-            <span className="font-instrument-serif italic text-muted-foreground font-normal">Built with AI</span>
+            <span className="text-muted-foreground italic font-normal">Built with AI</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
             Everything you need to automate operations, boost productivity
           </p>
         </div>
 
-        {/* Services Grid with hover animations */}
+        {/* Services Grid */}
         <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           
           {/* Card 1 - Automate repetitive tasks */}
-          <div className={`glass-card p-6 rounded-2xl scroll-animate hover:scale-[1.02] transition-all duration-300 ${cardsInView ? 'animate-scale-fade stagger-1' : ''}`}>
+          <div className={`glass-card p-6 rounded-2xl scroll-animate ${cardsInView ? 'animate-scale-fade stagger-1' : ''}`}>
             <div className="bg-card/80 rounded-xl p-4 mb-6 border border-border/30">
               <div className="space-y-3">
                 <div className="flex items-center justify-between p-3 bg-background/50 rounded-lg border border-border/20">
@@ -69,43 +69,43 @@ const Services = () => {
           </div>
 
           {/* Card 2 - Automated Workflows (spans 2 columns on larger screens) */}
-          <div className={`glass-card p-6 rounded-2xl lg:col-span-2 scroll-animate hover:scale-[1.02] transition-all duration-300 ${cardsInView ? 'animate-scale-fade stagger-2' : ''}`}>
+          <div className={`glass-card p-6 rounded-2xl lg:col-span-2 scroll-animate ${cardsInView ? 'animate-scale-fade stagger-2' : ''}`}>
             <div className="bg-card/80 rounded-xl p-8 mb-6 border border-border/30 relative overflow-hidden min-h-[200px]">
-              {/* Floating icons around center with float animation */}
-              <div className="absolute top-4 left-8 animate-pulse">
+              {/* Floating icons around center */}
+              <div className="absolute top-4 left-8">
                 <div className="w-10 h-10 rounded-lg bg-background/80 border border-border/30 flex items-center justify-center">
                   <Mail className="w-5 h-5 text-muted-foreground" />
                 </div>
               </div>
-              <div className="absolute top-4 right-1/3 animate-pulse" style={{ animationDelay: '0.5s' }}>
+              <div className="absolute top-4 right-1/3">
                 <div className="w-10 h-10 rounded-lg bg-background/80 border border-border/30 flex items-center justify-center">
                   <Sparkles className="w-5 h-5 text-muted-foreground" />
                 </div>
               </div>
-              <div className="absolute top-8 right-8 animate-pulse" style={{ animationDelay: '1s' }}>
+              <div className="absolute top-8 right-8">
                 <div className="w-10 h-10 rounded-lg bg-background/80 border border-border/30 flex items-center justify-center">
                   <FileText className="w-5 h-5 text-muted-foreground" />
                 </div>
               </div>
-              <div className="absolute bottom-16 left-12 animate-pulse" style={{ animationDelay: '0.3s' }}>
+              <div className="absolute bottom-16 left-12">
                 <div className="w-10 h-10 rounded-lg bg-background/80 border border-border/30 flex items-center justify-center">
                   <Image className="w-5 h-5 text-muted-foreground" />
                 </div>
               </div>
-              <div className="absolute bottom-8 right-12 animate-pulse" style={{ animationDelay: '0.7s' }}>
+              <div className="absolute bottom-8 right-12">
                 <div className="w-10 h-10 rounded-lg bg-background/80 border border-border/30 flex items-center justify-center">
                   <span className="text-sm font-bold text-muted-foreground">N</span>
                 </div>
               </div>
-              <div className="absolute top-1/2 right-16 -translate-y-1/2 animate-pulse" style={{ animationDelay: '0.9s' }}>
+              <div className="absolute top-1/2 right-16 -translate-y-1/2">
                 <div className="w-10 h-10 rounded-lg bg-background/80 border border-border/30 flex items-center justify-center">
-                  <span className="text-lg font-bold text-muted-foreground">X</span>
+                  <span className="text-lg font-bold text-muted-foreground">𝕏</span>
                 </div>
               </div>
               
               {/* Center sparkle icon */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div className="w-16 h-16 rounded-full bg-foreground flex items-center justify-center pulse-glow">
+                <div className="w-16 h-16 rounded-full bg-foreground flex items-center justify-center">
                   <Sparkles className="w-8 h-8 text-background" />
                 </div>
               </div>
@@ -115,7 +115,7 @@ const Services = () => {
           </div>
 
           {/* Card 3 - Real-Time Intelligence */}
-          <div className={`glass-card p-6 rounded-2xl scroll-animate hover:scale-[1.02] transition-all duration-300 ${cardsInView ? 'animate-scale-fade stagger-3' : ''}`}>
+          <div className={`glass-card p-6 rounded-2xl scroll-animate ${cardsInView ? 'animate-scale-fade stagger-3' : ''}`}>
             <div className="bg-card/80 rounded-xl p-4 mb-6 border border-border/30">
               <div className="space-y-3">
                 <div className="flex items-center gap-2 p-3 bg-background/50 rounded-lg border border-border/20">
@@ -156,7 +156,7 @@ const Services = () => {
           </div>
 
           {/* Card 4 - Custom AI Agent development */}
-          <div className={`glass-card p-6 rounded-2xl scroll-animate hover:scale-[1.02] transition-all duration-300 ${cardsInView ? 'animate-scale-fade stagger-4' : ''}`}>
+          <div className={`glass-card p-6 rounded-2xl scroll-animate ${cardsInView ? 'animate-scale-fade stagger-4' : ''}`}>
             <div className="bg-card/80 rounded-xl p-4 mb-6 border border-border/30">
               <div className="flex items-center justify-between mb-3 pb-2 border-b border-border/20">
                 <div className="flex items-center gap-2">
@@ -214,7 +214,7 @@ const Services = () => {
           </div>
 
           {/* Card 5 - AI Strategy Consulting */}
-          <div className={`glass-card p-6 rounded-2xl scroll-animate hover:scale-[1.02] transition-all duration-300 ${cardsInView ? 'animate-scale-fade stagger-5' : ''}`}>
+          <div className={`glass-card p-6 rounded-2xl scroll-animate ${cardsInView ? 'animate-scale-fade stagger-5' : ''}`}>
             <div className="bg-card/80 rounded-xl p-8 mb-6 border border-border/30 relative min-h-[180px]">
               {/* Chart icon top left */}
               <div className="absolute top-4 left-4">

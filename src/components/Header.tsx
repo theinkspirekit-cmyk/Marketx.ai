@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, ArrowUpRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
-
 interface HeaderProps {
   onBookCallClick: () => void;
 }
-
-const Header = ({ onBookCallClick }: HeaderProps) => {
+const Header = ({
+  onBookCallClick
+}: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -17,16 +16,13 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: 'smooth'
     });
     setMobileMenuOpen(false);
   };
-
-  return (
-    <>
+  return <>
       <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-card border-b rounded-3xl mx-4 mt-4' : 'bg-transparent'}`}>
         <nav className="container mx-auto px-6 py-4 my-0">
           <div className="flex items-center justify-between mx-0">
@@ -52,14 +48,7 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
 
             {/* Desktop CTA & Mobile Menu Button */}
             <div className="flex items-center space-x-4">
-              <button 
-                onClick={onBookCallClick} 
-                className="hidden md:flex items-center gap-2 bg-foreground text-background px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-foreground/90 transition-all duration-300"
-              >
-                <Phone className="w-4 h-4" />
-                <span>Book a Call</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </button>
+              <button onClick={onBookCallClick} className="hidden md:block btn-primary-ref">Get Your Free Automation Plan</button>
               
               {/* Mobile Menu Button */}
               <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-foreground p-2" aria-label="Toggle menu">
@@ -71,8 +60,7 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
       </header>
 
       {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 md:hidden">
+      {mobileMenuOpen && <div className="fixed inset-0 z-40 md:hidden">
           <div className="fixed inset-0 bg-background/95 backdrop-blur-lg pt-20">
             <nav className="container mx-auto px-6 py-8">
               <div className="flex flex-col space-y-6">
@@ -88,24 +76,16 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
                 <button onClick={() => scrollToSection('faq')} className="text-2xl font-medium text-muted-foreground hover:text-foreground transition-colors text-left">
                   FAQ
                 </button>
-                <button 
-                  onClick={() => {
-                    onBookCallClick();
-                    setMobileMenuOpen(false);
-                  }} 
-                  className="flex items-center justify-center gap-2 bg-foreground text-background px-5 py-4 rounded-lg font-medium text-lg mt-4"
-                >
-                  <Phone className="w-5 h-5" />
-                  <span>Book a Call</span>
-                  <ArrowUpRight className="w-5 h-5" />
+                <button onClick={() => {
+              onBookCallClick();
+              setMobileMenuOpen(false);
+            }} className="btn-primary-ref mt-4">
+                  🚀 Get Your Free Automation Plan
                 </button>
               </div>
             </nav>
           </div>
-        </div>
-      )}
-    </>
-  );
+        </div>}
+    </>;
 };
-
 export default Header;

@@ -1,5 +1,4 @@
 import { useInView } from "@/hooks/useInView";
-import { Star } from "lucide-react";
 import dheekshitImg from "@/assets/dheekshit.jpg";
 
 const Problem = () => {
@@ -13,16 +12,16 @@ const Problem = () => {
           className={`text-center max-w-4xl mx-auto scroll-animate ${isInView ? 'animate-fade-in' : ''}`}
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground mb-10">
-            <Star className="w-4 h-4 text-background fill-background" />
-            <span className="text-sm text-background font-medium tracking-wide uppercase">We Analyze Your Data</span>
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1a1a1a] mb-10">
+            <span className="text-white text-sm">★</span>
+            <span className="text-sm text-white font-medium tracking-wide uppercase">We Analyze Your Data</span>
           </div>
 
           {/* Quote */}
-          <p className="text-3xl md:text-4xl lg:text-[42px] text-muted-foreground leading-relaxed font-normal mb-12">
-            We find what to <span className="font-instrument-serif italic text-[#b8d4e8]">automate</span>, who your users are & how
-            AI can optimize your <span className="font-instrument-serif italic text-[#b8d4e8]">workflow</span>. Best part is we also
-            build and launch <span className="font-instrument-serif italic text-[#b8d4e8]">real solutions</span>."
+          <p className="text-3xl md:text-4xl lg:text-[42px] text-gray-500 leading-relaxed font-normal mb-12">
+            We find what to <span className="text-[#b8d4e8] italic">automate</span>, who your users are & how
+            AI can optimize your <span className="text-[#b8d4e8] italic">workflow</span>. Best part is we also
+            build and launch <span className="text-[#b8d4e8] italic">real solutions</span>."
           </p>
 
           {/* Author */}
