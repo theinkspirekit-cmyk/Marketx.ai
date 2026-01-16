@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        'inter': ['Inter', 'sans-serif'],
-        'sans': ['Manrope', 'sans-serif'],
+        'inter': ['Inter', 'Inter Placeholder', 'sans-serif'],
+        'sans': ['Inter', 'Inter Placeholder', 'sans-serif'],
         'manrope': ['Manrope', 'sans-serif'],
         'orbitron': ['Orbitron', 'sans-serif'],
         'poppins': ['Poppins', 'sans-serif'],
