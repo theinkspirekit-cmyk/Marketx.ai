@@ -20,6 +20,7 @@ export default {
         'orbitron': ['Orbitron', 'sans-serif'],
         'poppins': ['Poppins', 'sans-serif'],
         'roboto': ['Roboto', 'sans-serif'],
+        'instrument-serif': ['"Instrument Serif"', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -1,4 +1,4 @@
-import { Award, Zap, Shield } from "lucide-react";
+import { Award, Zap, Shield, Sparkles } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 import dheekshitImg from "@/assets/dheekshit.jpg";
 import mayankImg from "@/assets/mayank.jpg";
@@ -46,10 +46,11 @@ const WhyUs = () => {
           className={`text-center mb-16 scroll-animate ${headerInView ? 'animate-reveal-up' : ''}`}
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-card/80 mb-6">
-            <span className="text-sm text-muted-foreground font-medium">✨ Team</span>
+            <Sparkles className="w-4 h-4 text-muted-foreground" />
+            <span className="text-sm text-muted-foreground font-medium">Team</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-medium text-foreground mb-4">
-            Meet the <span className="text-muted-foreground italic font-normal">Team Behind</span> Marktrix
+            Meet the <span className="font-instrument-serif italic text-muted-foreground font-normal">Team Behind</span> Marktrix
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             We're a team of passionate engineers, designers, and strategists.
@@ -83,7 +84,7 @@ const WhyUs = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <button className="w-8 h-8 rounded-lg border border-border/50 flex items-center justify-center hover:bg-muted/50 transition-colors">
-                    <span className="text-sm font-medium text-muted-foreground">𝕏</span>
+                    <span className="text-sm font-medium text-muted-foreground">X</span>
                   </button>
                   <button className="w-8 h-8 rounded-lg border border-border/50 flex items-center justify-center hover:bg-muted/50 transition-colors">
                     <svg className="w-4 h-4 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">

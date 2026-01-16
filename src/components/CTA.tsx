@@ -1,20 +1,24 @@
 import { useInView } from "@/hooks/useInView";
+import { Phone, ArrowUpRight } from "lucide-react";
+import logo from "@/assets/logo.png";
+
 interface CTAProps {
   onBookCallClick: () => void;
 }
-const CTA = ({
-  onBookCallClick
-}: CTAProps) => {
-  const {
-    ref: sectionRef,
-    isInView
-  } = useInView({
-    threshold: 0.3
-  });
-  return <section id="cta" className="py-20 relative">
+
+const CTA = ({ onBookCallClick }: CTAProps) => {
+  const { ref: sectionRef, isInView } = useInView({ threshold: 0.3 });
+
+  return (
+    <section id="cta" className="py-20 relative">
       <div className="container mx-auto px-6">
         <div ref={sectionRef} className={`max-w-4xl mx-auto scroll-animate ${isInView ? 'animate-bounce-in' : ''}`}>
           <div className="text-center mb-12">
+            {/* Logo */}
+            <div className="flex justify-center mb-8">
+              <img src={logo} alt="Marktrix.ai" className="h-10" />
+            </div>
+            
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="gradient-text">Let's Automate</span>
               <br />
@@ -26,8 +30,13 @@ const CTA = ({
           </div>
 
           <div className="flex justify-center flex-col items-center gap-6">
-            <button onClick={onBookCallClick} className="btn-secondary-ref px-10 py-5 text-lg hover:scale-105 duration-300">
-              🚀 Schedule My Free Strategy Call
+            <button 
+              onClick={onBookCallClick} 
+              className="inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 rounded-lg font-medium text-lg hover:bg-foreground/90 transition-all duration-300 hover:scale-105"
+            >
+              <Phone className="w-5 h-5" />
+              <span>Schedule My Free Strategy Call</span>
+              <ArrowUpRight className="w-5 h-5" />
             </button>
             <div className="glass-card px-8 py-4 rounded-full">
               <p className="text-sm text-muted-foreground">Fast Implementation • Proven Results • 30-Day Money-Back Guarantee</p>
@@ -35,6 +44,8 @@ const CTA = ({
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default CTA;
