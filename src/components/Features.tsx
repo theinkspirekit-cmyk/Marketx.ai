@@ -96,7 +96,7 @@ const Features = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className={`bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 scroll-animate ${cardsInView ? `animate-scale-fade stagger-${index + 1}` : ''}`}
+              className={`bg-white/80 backdrop-blur-xl border border-white/40 rounded-2xl p-6 shadow-lg shadow-black/5 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 scroll-animate ${cardsInView ? `animate-scale-fade stagger-${index + 1}` : ''}`}
             >
               <div className="flex items-start justify-between mb-5">
                 <div className="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center">
