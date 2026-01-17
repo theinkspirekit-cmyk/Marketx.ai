@@ -1,37 +1,38 @@
 import { useInView } from "@/hooks/useInView";
-import dheekshitImg from "@/assets/dheekshit.jpg";
+import { Star } from "lucide-react";
+import mayankImg from "@/assets/mayank.jpg";
 
 const Problem = () => {
-  const { ref: sectionRef, isInView } = useInView({ threshold: 0.3 });
+  const { ref: contentRef, isInView: contentInView } = useInView({ threshold: 0.3 });
 
   return (
-    <section className="py-24 md:py-32 relative bg-white">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div 
-          ref={sectionRef}
-          className={`text-center max-w-4xl mx-auto scroll-animate ${isInView ? 'animate-fade-in' : ''}`}
+          ref={contentRef}
+          className={`max-w-4xl mx-auto text-center scroll-animate ${contentInView ? 'animate-reveal-up' : ''}`}
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1a1a1a] mb-10">
-            <span className="text-white text-sm">★</span>
-            <span className="text-sm text-white font-medium tracking-wide uppercase">We Analyze Your Data</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-foreground text-white mb-8">
+            <Star className="w-4 h-4 fill-current" />
+            <span className="text-sm font-medium">WE ANALYZE YOUR DATA</span>
           </div>
 
-          {/* Quote */}
-          <p className="text-3xl md:text-4xl lg:text-[42px] text-gray-500 leading-relaxed font-normal mb-12">
-            We find what to <span className="text-[#b8d4e8] italic">automate</span>, who your users are & how
-            AI can optimize your <span className="text-[#b8d4e8] italic">workflow</span>. Best part is we also
-            build and launch <span className="text-[#b8d4e8] italic">real solutions</span>."
+          {/* Main Quote */}
+          <p className="text-3xl md:text-4xl lg:text-5xl text-foreground leading-relaxed mb-12 font-medium">
+            We find what to <span className="italic text-muted-foreground font-normal">automate</span>, who your users are & how AI 
+            can optimize your <span className="italic text-muted-foreground font-normal">workflow</span>. Best part is we also build 
+            and launch <span className="italic text-muted-foreground font-normal">real solutions</span>."
           </p>
 
           {/* Author */}
           <div className="flex items-center justify-center gap-3">
             <img 
-              src={dheekshitImg} 
-              alt="Co-founder" 
+              src={mayankImg}
+              alt="Co-founder"
               className="w-10 h-10 rounded-full object-cover"
             />
-            <span className="text-sm text-muted-foreground">Co-founder & AI Strategy Lead</span>
+            <span className="text-muted-foreground font-medium">Co-founder & AI Strategy Lead</span>
           </div>
         </div>
       </div>

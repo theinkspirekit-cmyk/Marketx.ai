@@ -2,7 +2,6 @@ import { useInView } from "@/hooks/useInView";
 
 const Integrations = () => {
   const { ref: headerRef, isInView: headerInView } = useInView({ threshold: 0.3 });
-  const { ref: toolsRef, isInView: toolsInView } = useInView({ threshold: 0.1 });
 
   const tools = [
     { name: "Make", logo: "/logos/make.png" },
@@ -13,15 +12,18 @@ const Integrations = () => {
     { name: "HubSpot", logo: "/logos/hubspot.png" },
   ];
 
+  // Duplicate for seamless loop
+  const duplicatedTools = [...tools, ...tools, ...tools];
+
   return (
-    <section id="integrations" className="py-20 relative">
+    <section id="integrations" className="py-20 relative overflow-hidden bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div 
             ref={headerRef}
             className={`text-center mb-16 scroll-animate ${headerInView ? 'animate-reveal-up' : ''}`}
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <h2 className="text-4xl md:text-6xl font-medium mb-6">
               <span className="text-foreground">Integrate All of Your</span>
               <br />
               <span className="gradient-text">Favorite Tools</span>
@@ -31,37 +33,59 @@ const Integrations = () => {
             </p>
           </div>
 
-          <div 
-            ref={toolsRef}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
-          >
-            {tools.map((tool, index) => (
-              <div 
-                key={index} 
-                className={`glass-card p-6 flex flex-col items-center justify-center gap-4 hover:scale-105 transition-transform duration-300 scroll-animate ${
-                  toolsInView ? `animate-scale-fade stagger-${index + 1}` : ''
-                }`}
-              >
-                <img 
-                  src={tool.logo} 
-                  alt={`${tool.name} integration`} 
-                  className="w-12 h-12 object-contain"
-                  loading="lazy"
-                  width="48"
-                  height="48"
-                />
-                <span className="font-semibold text-foreground text-center">{tool.name}</span>
+          {/* Marquee Container */}
+          <div className="relative">
+            {/* Gradient Overlays for fade effect */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+            
+            {/* Scrolling Container */}
+            <div className="overflow-hidden">
+              <div className="flex animate-marquee gap-6">
+                {duplicatedTools.map((tool, index) => (
+                  <div 
+                    key={index} 
+                    className="flex-shrink-0 bg-white/80 backdrop-blur-xl border border-white/40 shadow-lg shadow-black/5 rounded-2xl px-8 py-6 flex items-center gap-4 hover:scale-105 transition-transform duration-300"
+                  >
+                    <img 
+                      src={tool.logo} 
+                      alt={`${tool.name} integration`} 
+                      className="w-10 h-10 object-contain"
+                      loading="lazy"
+                      width="40"
+                      height="40"
+                    />
+                    <span className="font-semibold text-foreground whitespace-nowrap">{tool.name}</span>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
 
-          <div className={`text-center mt-12 scroll-animate ${toolsInView ? 'animate-reveal-up' : ''}`}>
+          <div className={`text-center mt-12 scroll-animate ${headerInView ? 'animate-reveal-up' : ''}`}>
             <p className="text-muted-foreground">
               <span className="text-primary font-semibold">100+</span> integrations available and growing
             </p>
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-33.333%);
+          }
+        }
+        .animate-marquee {
+          animation: marquee 20s linear infinite;
+        }
+        .animate-marquee:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 };

@@ -14,12 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        'inter': ['Inter', 'Inter Placeholder', 'sans-serif'],
-        'sans': ['Inter', 'Inter Placeholder', 'sans-serif'],
-        'manrope': ['Manrope', 'sans-serif'],
-        'orbitron': ['Orbitron', 'sans-serif'],
-        'poppins': ['Poppins', 'sans-serif'],
-        'roboto': ['Roboto', 'sans-serif'],
+        'geist': ['Geist', 'Geist Fallback', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'sans': ['Geist', 'Geist Fallback', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

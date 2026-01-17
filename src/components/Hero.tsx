@@ -1,58 +1,30 @@
-import gradientBg from "@/assets/gradient-bg.png";
-
 interface HeroProps {
   onBookCallClick: () => void;
 }
 
 const Hero = ({ onBookCallClick }: HeroProps) => {
-  
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: 'smooth'
     });
   };
   
-  return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background image with lazy loading */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${gradientBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <img 
-          src={gradientBg} 
-          alt="AI Automation gradient background" 
-          className="hidden"
-          loading="eager"
-        />
-      </div>
-
-
-      {/* Main Content - exact typography matching reference */}
-      <div className="container mx-auto px-6 text-center z-10 relative">
+  return (
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white">
+      {/* Main Content */}
+      <div className="container mx-auto px-6 text-center z-10 relative pt-24">
         <div className="max-w-6xl mx-auto">
-          {/* Small unlock button matching reference */}
-          <div className="mb-8">
-            
-          </div>
-
-          {/* Main heading matching reference exactly */}
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 leading-tight tracking-tight">
-            <span className="text-foreground text-4xl sm:text-6xl md:text-8xl block mb-2 animate-fade-in">Automate Your Business.</span>
-            <span className="gradient-text-animated text-4xl sm:text-6xl md:text-8xl px-0 my-0 mx-0 py-2 md:py-[15px] block">Save 10+ Hours/Week</span>
+          {/* Main heading */}
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-medium mb-6 leading-tight tracking-tight">
+            <span className="text-foreground block mb-2 animate-fade-in">Automate Your Business.</span>
+            <span className="gradient-text-animated px-0 my-0 mx-0 py-2 md:py-[15px] block">Save 10+ Hours/Week</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in max-w-3xl mx-auto leading-relaxed">
             Automate the hustle, <span className="text-primary font-semibold bg-primary/10 px-2 rounded">amplify the win</span>.
           </p>
-          
-          
 
-          {/* Buttons matching reference style */}
+          {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in">
             <button
               onClick={onBookCallClick}
@@ -68,11 +40,6 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
               Discover More
             </button>
           </div>
-
-          {/* Bottom scroll indicator matching reference */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-            
-          </div>
         </div>
       </div>
 
@@ -83,6 +50,8 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
           <div className="w-8 h-px bg-muted-foreground mt-2"></div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
