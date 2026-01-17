@@ -1,7 +1,7 @@
 import { Award, Zap, Shield } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 import dheekshitImg from "@/assets/dheekshit.jpg";
-import venugopalImg from "@/assets/venugopal.jpg";
+import mayankImg from "@/assets/mayank.jpg";
 
 const WhyUs = () => {
   const { ref: headerRef, isInView: headerInView } = useInView({ threshold: 0.3 });
@@ -14,9 +14,9 @@ const WhyUs = () => {
       image: dheekshitImg,
     },
     {
-      name: "Venugopal",
+      name: "Mayank Goel",
       role: "CSO",
-      image: venugopalImg,
+      image: mayankImg,
     }
   ];
 
@@ -49,7 +49,7 @@ const WhyUs = () => {
             <span className="text-sm text-muted-foreground font-medium">✨ Team</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-medium text-foreground mb-4">
-            Meet the <span className="text-primary italic font-normal">Team Behind</span> Marktrix
+            Meet the <span className="text-muted-foreground italic font-normal">Team Behind</span> Marktrix
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             We're a team of passionate engineers, designers, and strategists.
