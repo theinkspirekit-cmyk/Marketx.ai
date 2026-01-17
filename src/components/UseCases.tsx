@@ -46,10 +46,10 @@ const UseCases = ({
   return <section id="use-cases" className="py-20 relative">
       <div className="container mx-auto px-6">
         <div ref={headerRef} className={`text-center mb-16 scroll-animate ${headerInView ? 'animate-reveal-up' : ''}`}>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="gradient-text">Success Stories</span>
+          <h2 className="text-4xl md:text-5xl font-medium mb-6">
+            <span className="text-foreground">Your Industry,</span>
             <br />
-            <span className="text-muted-foreground">Real Results from Real Businesses</span>
+            <span className="text-primary italic font-normal">Our Favorite</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             See how businesses like yours are saving time and scaling with automation

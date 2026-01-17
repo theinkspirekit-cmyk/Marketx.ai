@@ -17,9 +17,9 @@ const Services = () => {
             <Sparkles className="w-4 h-4 text-muted-foreground" />
             <span className="text-sm text-muted-foreground">SERVICES</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-medium mb-4">
             <span className="text-foreground">Smarter Services, </span>
-            <span className="text-muted-foreground italic font-normal">Built with AI</span>
+            <span className="text-primary italic font-normal">Built with AI</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
             Everything you need to automate operations, boost productivity
