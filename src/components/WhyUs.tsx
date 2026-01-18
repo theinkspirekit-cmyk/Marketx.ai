@@ -1,7 +1,7 @@
 import { Award, Zap, Shield, Users } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
-import dheekshitImg from "@/assets/dheekshit.jpg";
-import venugopalImg from "@/assets/venugopal.png";
+import dheekshitImg from "@/assets/dheekshit-new.jpg";
+import venugopalImg from "@/assets/venugopal-new.png";
 
 const WhyUs = () => {
   const { ref: headerRef, isInView: headerInView } = useInView({ threshold: 0.3 });
@@ -65,7 +65,7 @@ const WhyUs = () => {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="glass-card p-4"
+              className="liquid-glass-container p-4"
             >
               {/* Large Image */}
               <div className="aspect-[4/3] rounded-xl overflow-hidden mb-4 bg-muted">
@@ -102,7 +102,7 @@ const WhyUs = () => {
           {reasons.map((reason, index) => (
             <div
               key={index}
-              className="flex items-start space-x-4 p-6 glass-card"
+              className="flex items-start space-x-4 p-6 liquid-glass-container"
             >
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                 <reason.icon className="w-6 h-6 text-primary" />

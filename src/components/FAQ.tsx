@@ -43,7 +43,7 @@ const FAQ = () => {
           <div ref={faqsRef} className="space-y-4">
             {faqs.map((faq, index) => <div 
               key={index} 
-              className={`glass-card overflow-hidden scroll-animate ${
+              className={`liquid-glass-container overflow-hidden scroll-animate ${
                 faqsInView ? `animate-slide-up-fade stagger-${index + 1}` : ''
               }`}
             >
@@ -62,7 +62,7 @@ const FAQ = () => {
           </div>
 
           <div className="text-center mt-12">
-            <div className="glass-card p-8 rounded-3xl">
+            <div className="liquid-glass-container p-8">
               <h3 className="text-xl font-semibold mb-4 text-foreground">Still have questions?</h3>
               <p className="text-muted-foreground mb-6">
                 Book a free 15-minute call and we'll answer all your questions about automation.

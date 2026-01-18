@@ -530,4 +530,114 @@ Inspired by Apple's Liquid Glass aesthetic on light backgrounds
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  /* ==================== True Liquid Glass Effect ==================== */
+  
+  /* Advanced liquid glass with SVG filter simulation */
+  .liquid-glass-container {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.7) 50%,
+      rgba(255, 255, 255, 0.85) 100%
+    );
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
+    box-shadow: 
+      0 8px 40px rgba(0, 0, 0, 0.06),
+      0 2px 12px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Top highlight for liquid glass */
+  .liquid-glass-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 1) 30%,
+      rgba(255, 255, 255, 1) 70%,
+      transparent
+    );
+    pointer-events: none;
+  }
+
+  /* Inner light reflection */
+  .liquid-glass-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.15) 0%,
+      transparent 100%
+    );
+    pointer-events: none;
+    border-radius: 24px 24px 0 0;
+  }
+
+  .liquid-glass-container:hover {
+    box-shadow: 
+      0 16px 60px rgba(0, 0, 0, 0.08),
+      0 4px 20px rgba(0, 0, 0, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 1),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+  }
+
+  /* Liquid glass button variant */
+  .liquid-glass-button {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.8) 100%
+    );
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 100px;
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 1);
+    transition: all 0.3s ease;
+  }
+
+  .liquid-glass-button:hover {
+    box-shadow: 
+      0 8px 30px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 1);
+    transform: translateY(-1px);
+  }
+
+  /* Testimonial marquee animation */
+  @keyframes testimonial-slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33.333%);
+    }
+  }
+
+  .animate-testimonial-slide {
+    animation: testimonial-slide 20s linear infinite;
+  }
+
+  .animate-testimonial-slide:hover {
+    animation-play-state: paused;
+  }
 }
