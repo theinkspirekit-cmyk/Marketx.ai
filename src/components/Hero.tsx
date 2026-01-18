@@ -1,3 +1,5 @@
+import heroBg from "@/assets/hero-bg.png";
+
 interface HeroProps {
   onBookCallClick: () => void;
 }
@@ -10,7 +12,21 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
   };
   
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${heroBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      
+      {/* White overlay for readability */}
+      <div className="absolute inset-0 bg-white/70 z-0" />
+      
       {/* Main Content */}
       <div className="container mx-auto px-6 text-center z-10 relative pt-24">
         <div className="max-w-6xl mx-auto">
@@ -44,7 +60,7 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
       </div>
 
       {/* Bottom right label */}
-      <div className="absolute bottom-16 right-8 opacity-70">
+      <div className="absolute bottom-16 right-8 opacity-70 z-10">
         <div className="text-right">
           <div className="text-sm text-muted-foreground font-medium">AI Automation</div>
           <div className="w-8 h-px bg-muted-foreground mt-2"></div>

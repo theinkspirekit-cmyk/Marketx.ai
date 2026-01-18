@@ -8,7 +8,7 @@ import WhyChoose from "@/components/WhyChoose";
 import UseCases from "@/components/UseCases";
 import WhyUs from "@/components/WhyUs";
 import Integrations from "@/components/Integrations";
-import Offer from "@/components/Offer";
+import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -24,7 +24,7 @@ const Index = () => {
     <div className="min-h-screen font-geist">
       <Header onBookCallClick={() => setShowCalendly(true)} />
       
-      {/* One-page funnel: Hero → Problem → Video → Services → Features → Why Choose → Use Cases → FAQ → CTA */}
+      {/* One-page funnel: Hero → Problem → Video → Services → Features → Why Choose → Use Cases → Testimonials → FAQ → CTA */}
       <main>
         <Hero onBookCallClick={() => setShowCalendly(true)} />
         <Problem />
@@ -35,7 +35,7 @@ const Index = () => {
         <UseCases onBookCallClick={() => setShowCalendly(true)} />
         <WhyUs />
         <Integrations />
-        <Offer />
+        <Testimonials />
         <FAQ />
         <CTA onBookCallClick={() => setShowCalendly(true)} />
       </main>

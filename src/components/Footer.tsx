@@ -1,15 +1,19 @@
+import { Mail, Phone, ExternalLink } from "lucide-react";
+
 const Footer = () => {
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: 'smooth'
     });
   };
-  return <footer className="py-12 border-t border-border">
+
+  return (
+    <footer className="py-12 border-t border-border">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <span className="font-bold text-lg text-foreground font-poppins tracking-wider">Marktrix.ai</span>
+              <span className="font-bold text-lg text-foreground tracking-wider">Marktrix.ai</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               AI-powered business automation that saves 10+ hours weekly. 
@@ -40,12 +44,9 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Company</h4>
             <div className="space-y-2">
-              
               <a href="#" className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
                 About Us
               </a>
-              
-              
             </div>
           </div>
 
@@ -53,14 +54,24 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Get Started</h4>
             <div className="space-y-3">
-              <a href="https://calendly.com/katkamdheekshitdatta/30min" target="_blank" rel="noopener noreferrer" className="block text-primary hover:text-primary-glow text-sm font-semibold transition-colors">
-                Book Free Call →
+              <a 
+                href="https://calendly.com/katkamdheekshitdatta/30min" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-2 text-primary hover:text-primary-glow text-sm font-semibold transition-colors"
+              >
+                Book Free Call
+                <ExternalLink className="w-3 h-3" />
               </a>
-              <div className="text-muted-foreground text-sm">
-                <div>
-                  📧 <a href="mailto:markitx.ai@gmail.com" className="hover:text-primary transition-colors">markitx.ai@gmail.com</a>
+              <div className="text-muted-foreground text-sm space-y-1">
+                <div className="flex items-center gap-2">
+                  <Mail className="w-4 h-4" />
+                  <a href="mailto:markitx.ai@gmail.com" className="hover:text-primary transition-colors">markitx.ai@gmail.com</a>
                 </div>
-                <div>📞 Available 24/7</div>
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4" />
+                  <span>Available 24/7</span>
+                </div>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <div className="w-2 h-2 bg-primary rounded-full pulse-glow"></div>
@@ -91,6 +102,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
