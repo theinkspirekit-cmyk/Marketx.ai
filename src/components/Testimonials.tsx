@@ -1,9 +1,10 @@
 import { useInView } from "@/hooks/useInView";
 import { Star, MessageSquare } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Testimonials = () => {
   const { ref: headerRef, isInView: headerInView } = useInView({ threshold: 0.3 });
-  const { ref: cardsRef, isInView: cardsInView } = useInView({ threshold: 0.1 });
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const testimonials = [
     {
@@ -29,40 +30,63 @@ const Testimonials = () => {
       quote: "We saw results within the first week, it was a game changer.",
       description: "Calisto helped us automate a huge chunk of our workflow without changing how we work. Their team truly understands both AI and business logic.",
       stars: 5
+    },
+    {
+      name: "Michael Chen",
+      role: "CTO",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
+      quote: "The ROI was visible within the first month.",
+      description: "Automation reduced our operational costs by 40%. The team delivered exactly what we needed.",
+      stars: 5
+    },
+    {
+      name: "Emily Torres",
+      role: "Marketing Director",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+      quote: "Our campaigns now run on autopilot.",
+      description: "From lead nurturing to reporting, everything is automated. Game changer for our marketing team.",
+      stars: 5
     }
   ];
 
-  return (
-    <section className="py-24 bg-background relative">
-      {/* Outer glass container */}
-      <div className="container mx-auto px-6">
-        <div className="glass-card p-8 md:p-12 rounded-3xl">
-          {/* Header */}
-          <div 
-            ref={headerRef}
-            className={`text-center mb-16 scroll-animate ${headerInView ? 'animate-reveal-up' : ''}`}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
-              <MessageSquare className="w-4 h-4 text-muted-foreground" />
-              <span className="text-sm text-muted-foreground font-medium">Testimonials</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-medium text-foreground mb-4">
-              What Our <span className="text-muted-foreground italic font-normal">Clients Are</span> Saying
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Trusted by teams and businesses across all industries.
-            </p>
-          </div>
+  // Auto-scroll testimonials
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % (testimonials.length - 2));
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
 
-          {/* Testimonial Cards */}
+  return (
+    <section className="py-24 bg-background relative overflow-hidden">
+      <div className="container mx-auto px-6">
+        {/* Header */}
+        <div 
+          ref={headerRef}
+          className={`text-center mb-16 scroll-animate ${headerInView ? 'animate-reveal-up' : ''}`}
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-container mb-6">
+            <MessageSquare className="w-4 h-4 text-muted-foreground" />
+            <span className="text-sm text-muted-foreground font-medium">Testimonials</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-medium text-foreground mb-4">
+            What Our <span className="text-muted-foreground italic font-normal">Clients Are</span> Saying
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Trusted by teams and businesses across all industries.
+          </p>
+        </div>
+
+        {/* Animated Testimonial Cards Container */}
+        <div className="relative overflow-hidden">
           <div 
-            ref={cardsRef}
-            className="grid md:grid-cols-3 gap-6"
+            className="flex gap-6 transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * (100 / 3)}%)` }}
           >
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className={`glass-card p-6 scroll-animate ${cardsInView ? `animate-scale-fade stagger-${index + 1}` : ''}`}
+                className="flex-shrink-0 w-full md:w-[calc(33.333%-1rem)] liquid-glass-container p-6"
               >
                 {/* Header with avatar and stars */}
                 <div className="flex items-center justify-between mb-6">
@@ -96,17 +120,32 @@ const Testimonials = () => {
               </div>
             ))}
           </div>
+        </div>
 
-          {/* Logo strip */}
-          <div className="mt-16 pt-8 border-t border-border/30">
-            <div className="flex items-center justify-center gap-12 opacity-40">
-              <span className="text-xl font-bold tracking-wider text-foreground">IPSUM</span>
-              <span className="text-xl font-bold tracking-wider text-foreground">LOGO</span>
-              <span className="text-xl font-bold tracking-wider text-foreground">///</span>
-              <span className="text-xl font-bold tracking-wider text-foreground">∞</span>
-              <span className="text-xl font-bold tracking-wider text-foreground">||||</span>
-              <span className="text-xl font-bold tracking-wider text-foreground">LOGO</span>
-            </div>
+        {/* Navigation dots */}
+        <div className="flex justify-center gap-2 mt-8">
+          {[...Array(testimonials.length - 2)].map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                index === currentIndex 
+                  ? 'bg-primary w-6' 
+                  : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Logo strip */}
+        <div className="mt-16 pt-8 border-t border-border/30">
+          <div className="flex items-center justify-center gap-12 opacity-40">
+            <span className="text-xl font-bold tracking-wider text-foreground">IPSUM</span>
+            <span className="text-xl font-bold tracking-wider text-foreground">LOGO</span>
+            <span className="text-xl font-bold tracking-wider text-foreground">///</span>
+            <span className="text-xl font-bold tracking-wider text-foreground">∞</span>
+            <span className="text-xl font-bold tracking-wider text-foreground">||||</span>
+            <span className="text-xl font-bold tracking-wider text-foreground">LOGO</span>
           </div>
         </div>
       </div>

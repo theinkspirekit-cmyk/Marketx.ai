@@ -5,7 +5,7 @@ import VideoSection from "@/components/VideoSection";
 import Services from "@/components/Services";
 import Features from "@/components/Features";
 import WhyChoose from "@/components/WhyChoose";
-import UseCases from "@/components/UseCases";
+import Projects from "@/components/Projects";
 import WhyUs from "@/components/WhyUs";
 import Integrations from "@/components/Integrations";
 import Testimonials from "@/components/Testimonials";
@@ -24,7 +24,6 @@ const Index = () => {
     <div className="min-h-screen font-geist">
       <Header onBookCallClick={() => setShowCalendly(true)} />
       
-      {/* One-page funnel: Hero → Problem → Video → Services → Features → Why Choose → Use Cases → Testimonials → FAQ → CTA */}
       <main>
         <Hero onBookCallClick={() => setShowCalendly(true)} />
         <Problem />
@@ -32,7 +31,7 @@ const Index = () => {
         <Services />
         <Features />
         <WhyChoose />
-        <UseCases onBookCallClick={() => setShowCalendly(true)} />
+        <Projects />
         <WhyUs />
         <Integrations />
         <Testimonials />

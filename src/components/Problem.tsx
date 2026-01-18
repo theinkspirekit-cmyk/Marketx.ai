@@ -1,6 +1,6 @@
 import { useInView } from "@/hooks/useInView";
 import { Star } from "lucide-react";
-import mayankImg from "@/assets/mayank.jpg";
+import venugopalImg from "@/assets/venugopal-new.png";
 
 const Problem = () => {
   const { ref: contentRef, isInView: contentInView } = useInView({ threshold: 0.3 });
@@ -28,7 +28,7 @@ const Problem = () => {
           {/* Author */}
           <div className="flex items-center justify-center gap-3">
             <img 
-              src={mayankImg}
+              src={venugopalImg}
               alt="Co-founder"
               className="w-10 h-10 rounded-full object-cover"
             />

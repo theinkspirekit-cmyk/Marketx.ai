@@ -31,7 +31,7 @@ const CTA = ({ onBookCallClick }: CTAProps) => {
               <Rocket className="w-5 h-5" />
               Schedule My Free Strategy Call
             </button>
-            <div className="glass-card px-8 py-4 rounded-full flex items-center gap-4">
+            <div className="liquid-glass-container px-8 py-4 rounded-full flex items-center gap-4">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <CheckCircle className="w-4 h-4 text-primary" />
                 <span>Fast Implementation</span>

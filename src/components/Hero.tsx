@@ -13,9 +13,9 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
   
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image with reduced opacity */}
       <div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 opacity-30"
         style={{
           backgroundImage: `url(${heroBg})`,
           backgroundSize: 'cover',
@@ -24,8 +24,8 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
         }}
       />
       
-      {/* White overlay for readability */}
-      <div className="absolute inset-0 bg-white/70 z-0" />
+      {/* Light gray/white overlay for the clean look like reference */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-100/80 via-white/60 to-white z-0" />
       
       {/* Main Content */}
       <div className="container mx-auto px-6 text-center z-10 relative pt-24">
@@ -40,21 +40,18 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
             Automate the hustle, <span className="text-primary font-semibold bg-primary/10 px-2 rounded">amplify the win</span>.
           </p>
 
-          {/* Buttons */}
+          {/* Circular Glass Button like reference */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in">
-            <button
-              onClick={onBookCallClick}
-              className="btn-secondary-ref inline-flex items-center space-x-2 group hover:scale-105 transition-all duration-300"
-            >
-              <span>Book Free Call</span>
-              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-            
-            <button onClick={() => scrollToSection('services')} className="btn-primary-ref hover:scale-105 transition-all duration-300">
-              Discover More
-            </button>
+            <div className="relative group">
+              {/* Outer ring */}
+              <div className="absolute inset-0 rounded-full border border-primary/30 scale-110 group-hover:scale-125 transition-transform duration-500" />
+              <button
+                onClick={onBookCallClick}
+                className="relative w-36 h-36 rounded-full bg-gradient-to-b from-primary to-primary/80 text-white font-medium shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 hover:scale-105"
+              >
+                <span className="text-base">Get Started</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
