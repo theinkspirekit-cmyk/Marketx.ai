@@ -20,9 +20,9 @@ const Problem = () => {
 
           {/* Main Quote */}
           <p className="text-3xl md:text-4xl lg:text-5xl text-foreground leading-relaxed mb-12 font-medium">
-            We find what to <span className="italic text-muted-foreground font-normal">automate</span>, who your users are & how AI 
-            can optimize your <span className="italic text-muted-foreground font-normal">workflow</span>. Best part is we also build 
-            and launch <span className="italic text-muted-foreground font-normal">real solutions</span>."
+            We find what to <span className="font-instrument-serif italic text-muted-foreground font-normal">automate</span>, who your users are & how AI 
+            can optimize your <span className="font-instrument-serif italic text-muted-foreground font-normal">workflow</span>. Best part is we also build 
+            and launch <span className="font-instrument-serif italic text-muted-foreground font-normal">real solutions</span>."
           </p>
 
           {/* Author */}

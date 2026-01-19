@@ -19,7 +19,7 @@ const Services = () => {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-foreground">Smarter Services, </span>
-            <span className="text-muted-foreground italic font-normal">Built with AI</span>
+            <span className="font-instrument-serif italic text-muted-foreground font-normal">Built with AI</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
             Everything you need to automate operations, boost productivity

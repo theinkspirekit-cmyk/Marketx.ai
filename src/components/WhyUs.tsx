@@ -50,7 +50,7 @@ const WhyUs = () => {
             <span className="text-sm text-muted-foreground font-medium">Team</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-medium text-foreground mb-4">
-            Meet the <span className="text-muted-foreground italic font-normal">Team Behind</span> Marktrix
+            Meet the <span className="font-instrument-serif italic text-muted-foreground font-normal">Team Behind</span> Marktrix
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             We're a team of passionate engineers, designers, and strategists.
