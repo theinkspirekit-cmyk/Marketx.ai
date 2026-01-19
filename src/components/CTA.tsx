@@ -14,9 +14,9 @@ const CTA = ({ onBookCallClick }: CTAProps) => {
         <div ref={sectionRef} className={`max-w-4xl mx-auto scroll-animate ${isInView ? 'animate-bounce-in' : ''}`}>
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="gradient-text">Let's Automate</span>
+              <span className="gradient-text">Let's <span className="font-instrument-serif italic font-normal">Automate</span></span>
               <br />
-              <span className="text-muted-foreground">Your Business Today</span>
+              <span className="text-muted-foreground">Your <span className="font-instrument-serif italic font-normal">Workflow</span> Today</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Book your free strategy call and discover which automations will save you the most time and money.

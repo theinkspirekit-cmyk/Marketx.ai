@@ -70,7 +70,7 @@ const Testimonials = () => {
             <span className="text-sm text-muted-foreground font-medium">Testimonials</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-medium text-foreground mb-4">
-            What Our <span className="text-muted-foreground italic font-normal">Clients Are</span> Saying
+            What Our <span className="font-instrument-serif italic text-muted-foreground font-normal">Clients Are</span> Saying
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Trusted by teams and businesses across all industries.

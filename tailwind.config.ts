@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         'geist': ['Geist', 'Geist Fallback', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         'sans': ['Geist', 'Geist Fallback', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'instrument-serif': ['"Instrument Serif"', '"Instrument Serif Placeholder"', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
