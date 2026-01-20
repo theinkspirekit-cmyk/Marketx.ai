@@ -43,7 +43,7 @@ const CalendlyModal = ({ isOpen, onClose }: CalendlyModalProps) => {
         )}
         
         <iframe
-          src="https://cal.com/dheekshit-datta-hc4xco/30min"
+          src="https://cal.com/dheekshit-datta-hc4xco/30-min-meeting"
           width="100%"
           height="100%"
           frameBorder="0"
