@@ -50,40 +50,74 @@ const Integrations = () => {
             </p>
           </div>
 
-          {/* Tools Grid - Matching reference exactly */}
-          <div className="bg-white rounded-3xl p-10 shadow-sm border border-border/20">
-            {/* Row 1 */}
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 mb-10">
-              {toolsRow1.map((tool, index) => (
-                <div 
-                  key={index} 
-                  className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center hover:scale-110 transition-transform duration-300"
-                >
-                  <img 
-                    src={tool.logo} 
-                    alt={`${tool.name} integration`} 
-                    className="w-full h-full object-contain"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
+          {/* Tools Grid with Marquee Animation */}
+          <div className="bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-border/20 overflow-hidden">
+            {/* Row 1 - Moving Left */}
+            <div className="relative mb-8 overflow-hidden">
+              <div className="flex animate-marquee-left">
+                {/* First set */}
+                {toolsRow1.map((tool, index) => (
+                  <div 
+                    key={`row1-a-${index}`} 
+                    className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 mx-6 md:mx-8 flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                  >
+                    <img 
+                      src={tool.logo} 
+                      alt={`${tool.name} integration`} 
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+                {/* Duplicate set for seamless loop */}
+                {toolsRow1.map((tool, index) => (
+                  <div 
+                    key={`row1-b-${index}`} 
+                    className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 mx-6 md:mx-8 flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                  >
+                    <img 
+                      src={tool.logo} 
+                      alt={`${tool.name} integration`} 
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Row 2 */}
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-              {toolsRow2.map((tool, index) => (
-                <div 
-                  key={index} 
-                  className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center hover:scale-110 transition-transform duration-300"
-                >
-                  <img 
-                    src={tool.logo} 
-                    alt={`${tool.name} integration`} 
-                    className="w-full h-full object-contain"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
+            {/* Row 2 - Moving Right */}
+            <div className="relative overflow-hidden">
+              <div className="flex animate-marquee-right">
+                {/* First set */}
+                {toolsRow2.map((tool, index) => (
+                  <div 
+                    key={`row2-a-${index}`} 
+                    className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 mx-6 md:mx-8 flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                  >
+                    <img 
+                      src={tool.logo} 
+                      alt={`${tool.name} integration`} 
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+                {/* Duplicate set for seamless loop */}
+                {toolsRow2.map((tool, index) => (
+                  <div 
+                    key={`row2-b-${index}`} 
+                    className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 mx-6 md:mx-8 flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                  >
+                    <img 
+                      src={tool.logo} 
+                      alt={`${tool.name} integration`} 
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

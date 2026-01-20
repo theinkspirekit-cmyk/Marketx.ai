@@ -55,7 +55,7 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground mb-4">Get Started</h4>
             <div className="space-y-3">
               <a 
-                href="https://calendly.com/katkamdheekshitdatta/30min" 
+                href="https://cal.com/dheekshit-datta-hc4xco/30min" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="flex items-center gap-2 text-primary hover:text-primary-glow text-sm font-semibold transition-colors"
