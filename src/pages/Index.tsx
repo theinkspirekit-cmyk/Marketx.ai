@@ -1,49 +1,48 @@
-import "@/styles/enterprise-theme.css";
-import { useState } from "react";
-import TrustBanner from "@/components/enterprise/TrustBanner";
-import EnterpriseHeader from "@/components/enterprise/EnterpriseHeader";
-import EnterpriseHero from "@/components/enterprise/EnterpriseHero";
-import IndustryRecognition from "@/components/enterprise/IndustryRecognition";
-import TrustedBy from "@/components/enterprise/TrustedBy";
-import CoreSolutions from "@/components/enterprise/CoreSolutions";
-import PlatformSection from "@/components/enterprise/PlatformSection";
-import EnterpriseIntegrations from "@/components/enterprise/EnterpriseIntegrations";
-import IndustryUseCases from "@/components/enterprise/IndustryUseCases";
-import TechnicalArchitecture from "@/components/enterprise/TechnicalArchitecture";
-import CustomerStories from "@/components/enterprise/CustomerStories";
-import WhyChooseUs from "@/components/enterprise/WhyChooseUs";
-import StrategicPartners from "@/components/enterprise/StrategicPartners";
-import PricingSection from "@/components/enterprise/PricingSection";
-import EnterpriseCTA from "@/components/enterprise/EnterpriseCTA";
-import EnterpriseFooter from "@/components/enterprise/EnterpriseFooter";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Problem from "@/components/Problem";
+import VideoSection from "@/components/VideoSection";
+import Services from "@/components/Services";
+import Features from "@/components/Features";
+import WhyChoose from "@/components/WhyChoose";
+import Projects from "@/components/Projects";
+import WhyUs from "@/components/WhyUs";
+import Integrations from "@/components/Integrations";
+import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
+import CTA from "@/components/CTA";
+import Footer from "@/components/Footer";
+import MobileCTA from "@/components/MobileCTA";
 import CalendlyModal from "@/components/CalendlyModal";
+import ChatWidget from "@/components/ChatWidget";
+import { useState } from "react";
 
 const Index = () => {
   const [showCalendly, setShowCalendly] = useState(false);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      <TrustBanner />
-      <EnterpriseHeader onBookCallClick={() => setShowCalendly(true)} />
+    <div className="min-h-screen font-geist">
+      <Header onBookCallClick={() => setShowCalendly(true)} />
       
       <main>
-        <EnterpriseHero onBookCallClick={() => setShowCalendly(true)} />
-        <IndustryRecognition />
-        <TrustedBy />
-        <CoreSolutions />
-        <PlatformSection />
-        <EnterpriseIntegrations />
-        <IndustryUseCases />
-        <TechnicalArchitecture />
-        <CustomerStories />
-        <WhyChooseUs />
-        <StrategicPartners />
-        <PricingSection />
-        <EnterpriseCTA onBookCallClick={() => setShowCalendly(true)} />
+        <Hero onBookCallClick={() => setShowCalendly(true)} />
+        <Problem />
+        <VideoSection />
+        <Services />
+        <Features />
+        <WhyChoose />
+        <Projects />
+        <WhyUs />
+        <Integrations />
+        <Testimonials />
+        <FAQ />
+        <CTA onBookCallClick={() => setShowCalendly(true)} />
       </main>
 
-      <EnterpriseFooter />
+      <Footer />
+      <MobileCTA onBookCallClick={() => setShowCalendly(true)} />
       <CalendlyModal isOpen={showCalendly} onClose={() => setShowCalendly(false)} />
+      <ChatWidget onBookCallClick={() => setShowCalendly(true)} />
     </div>
   );
 };

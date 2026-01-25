@@ -1,4 +1,5 @@
-import { Calendar, ExternalLink, X } from "lucide-react";
+import { useState } from "react";
+import { Progress } from "@/components/ui/progress";
 
 interface CalendlyModalProps {
   isOpen: boolean;
@@ -6,12 +7,9 @@ interface CalendlyModalProps {
 }
 
 const CalendlyModal = ({ isOpen, onClose }: CalendlyModalProps) => {
-  if (!isOpen) return null;
+  const [isLoading, setIsLoading] = useState(true);
 
-  const handleBooking = () => {
-    window.open("https://cal.com/dheekshit-datta-hc4xco/30-min-meeting", "_blank");
-    onClose();
-  };
+  if (!isOpen) return null;
 
   return (
     <div 
@@ -19,62 +17,39 @@ const CalendlyModal = ({ isOpen, onClose }: CalendlyModalProps) => {
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-md bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+        className="relative w-full max-w-4xl h-[90vh] md:h-[80vh] bg-white rounded-lg md:rounded-xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 text-white/60 hover:text-white transition-colors"
+          className="absolute top-2 right-2 md:top-4 md:right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors"
           aria-label="Close"
         >
-          <X className="w-6 h-6" />
+          <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
         </button>
         
-        <div className="p-8 text-center">
-          <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-            <Calendar className="w-8 h-8 text-white" />
-          </div>
-          
-          <h2 className="text-2xl font-bold text-white mb-3">
-            Schedule Your Strategy Call
-          </h2>
-          
-          <p className="text-white/60 mb-8 leading-relaxed">
-            Book a free 30-minute consultation with our AI automation experts. 
-            We'll discuss your needs and create a custom automation roadmap.
-          </p>
-          
-          <div className="space-y-4">
-            <button
-              onClick={handleBooking}
-              className="w-full py-4 px-6 rounded-xl font-semibold text-white flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02]"
-              style={{
-                background: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 100%)',
-                boxShadow: '0 8px 32px rgba(37, 99, 235, 0.4)'
-              }}
-            >
-              Open Booking Page
-              <ExternalLink className="w-4 h-4" />
-            </button>
-            
-            <p className="text-sm text-white/40">
-              Opens in a new tab for faster loading
-            </p>
-          </div>
-          
-          <div className="mt-8 pt-6 border-t border-white/10">
-            <div className="flex items-center justify-center gap-6 text-sm text-white/50">
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-500"></span>
-                30 min call
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                Free consultation
-              </span>
+        {isLoading && (
+          <div className="absolute inset-0 flex items-center justify-center bg-white z-20">
+            <div className="w-full max-w-md px-8">
+              <div className="text-center mb-6">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+                <p className="text-muted-foreground">Loading calendar...</p>
+              </div>
+              <Progress value={66} className="h-2" />
             </div>
           </div>
-        </div>
+        )}
+        
+        <iframe
+          src="https://cal.com/dheekshit-datta-hc4xco/30-min-meeting"
+          width="100%"
+          height="100%"
+          frameBorder="0"
+          title="Schedule a meeting"
+          onLoad={() => setIsLoading(false)}
+        ></iframe>
       </div>
     </div>
   );
