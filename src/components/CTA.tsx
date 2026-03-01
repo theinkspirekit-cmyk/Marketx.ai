@@ -1,48 +1,72 @@
 import { useInView } from "@/hooks/useInView";
-import { Rocket, CheckCircle } from "lucide-react";
+import { ChevronRight, Calendar } from "lucide-react";
 
 interface CTAProps {
   onBookCallClick: () => void;
 }
 
 const CTA = ({ onBookCallClick }: CTAProps) => {
-  const { ref: sectionRef, isInView } = useInView({ threshold: 0.3 });
+  const { ref, isInView } = useInView({ threshold: 0.3 });
 
   return (
-    <section id="cta" className="py-20 relative">
+    <section id="cta" className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div ref={sectionRef} className={`max-w-4xl mx-auto scroll-animate ${isInView ? 'animate-bounce-in' : ''}`}>
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="gradient-text">Let's <span className="font-instrument-serif italic font-normal">Automate</span></span>
-              <br />
-              <span className="text-muted-foreground">Your <span className="font-instrument-serif italic font-normal">Workflow</span> Today</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Book your free strategy call and discover which automations will save you the most time and money.
-            </p>
-          </div>
+        <div ref={ref} className={`max-w-5xl mx-auto scroll-animate ${isInView ? 'animate-bounce-in' : ''}`}>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left - Text */}
+            <div>
+              <h2 className="text-4xl md:text-5xl font-medium mb-6 leading-tight">
+                Book Your{" "}
+                <span className="font-instrument-serif italic text-primary font-normal">Free Audit</span>
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                In 30 minutes, we'll show you exactly which automations will save you the most time and money. No commitment required.
+              </p>
+              <button
+                onClick={onBookCallClick}
+                className="group btn-primary-ref px-8 py-4 text-base inline-flex items-center gap-2"
+              >
+                Schedule My Free Audit
+                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </button>
+            </div>
 
-          <div className="flex justify-center flex-col items-center gap-6">
-            <button 
-              onClick={onBookCallClick} 
-              className="btn-secondary-ref px-10 py-5 text-lg hover:scale-105 duration-300 inline-flex items-center gap-2"
-            >
-              <Rocket className="w-5 h-5" />
-              Schedule My Free Strategy Call
-            </button>
-            <div className="liquid-glass-container px-8 py-4 rounded-full flex items-center gap-4">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <CheckCircle className="w-4 h-4 text-primary" />
-                <span>Fast Implementation</span>
+            {/* Right - Calendar Mock */}
+            <div className="mock-widget">
+              <div className="flex items-center gap-3 mb-6">
+                <Calendar className="w-5 h-5 text-primary" />
+                <span className="font-semibold text-foreground">Pick a Time</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <CheckCircle className="w-4 h-4 text-primary" />
-                <span>Proven Results</span>
+              <div className="grid grid-cols-7 gap-1 mb-4">
+                {["M","T","W","T","F","S","S"].map((d, i) => (
+                  <div key={i} className="text-center text-xs text-muted-foreground font-medium py-1">{d}</div>
+                ))}
+                {Array.from({ length: 28 }, (_, i) => (
+                  <div
+                    key={i}
+                    className={`text-center text-xs py-2 rounded-lg cursor-pointer transition-colors ${
+                      i === 14
+                        ? 'bg-primary text-primary-foreground font-bold'
+                        : 'text-foreground hover:bg-muted'
+                    }`}
+                  >
+                    {i + 1}
+                  </div>
+                ))}
               </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <CheckCircle className="w-4 h-4 text-primary" />
-                <span>30-Day Money-Back Guarantee</span>
+              <div className="flex gap-2">
+                {["9:00 AM", "10:30 AM", "2:00 PM"].map((time, i) => (
+                  <div
+                    key={i}
+                    className={`flex-1 text-center py-2 rounded-lg text-xs font-medium border transition-colors cursor-pointer ${
+                      i === 1
+                        ? 'border-primary bg-accent text-primary'
+                        : 'border-border text-muted-foreground hover:border-primary/50'
+                    }`}
+                  >
+                    {time}
+                  </div>
+                ))}
               </div>
             </div>
           </div>

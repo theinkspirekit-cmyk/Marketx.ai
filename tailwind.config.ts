@@ -27,7 +27,6 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -52,7 +51,6 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-          glass: "hsl(var(--card-glass))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -72,24 +70,12 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
-        },
-        shimmer: {
-          "0%": { transform: "translateX(-100%)" },
-          "100%": { transform: "translateX(100%)" },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
         "marquee-left": {
           "0%": { transform: "translateX(0%)" },
@@ -103,24 +89,9 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "float": "float 3s ease-in-out infinite",
-        "pulse-glow": "pulse-glow 2s infinite",
         "fade-in": "fade-in 0.6s ease-out",
-        "slide-up": "slide-up 0.6s ease-out",
-        "shimmer": "shimmer 2s infinite",
-        "marquee-left": "marquee-left 25s linear infinite",
-        "marquee-right": "marquee-right 25s linear infinite",
-      },
-      backgroundImage: {
-        "gradient-primary": "var(--gradient-primary)",
-        "gradient-hero": "var(--gradient-hero)",
-        "gradient-card": "var(--gradient-card)",
-        "gradient-glow": "var(--gradient-glow)",
-      },
-      boxShadow: {
-        "glass": "var(--shadow-glass)",
-        "glow": "var(--shadow-glow)",
-        "card": "var(--shadow-card)",
+        "marquee-left": "marquee-left 20s linear infinite",
+        "marquee-right": "marquee-right 20s linear infinite",
       },
     },
   },
