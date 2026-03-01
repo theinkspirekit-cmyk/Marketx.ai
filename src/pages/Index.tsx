@@ -1,12 +1,14 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Problem from "@/components/Problem";
+import VideoSection from "@/components/VideoSection";
+import Services from "@/components/Services";
+import Features from "@/components/Features";
+import WhyChoose from "@/components/WhyChoose";
+import Projects from "@/components/Projects";
+import WhyUs from "@/components/WhyUs";
 import Integrations from "@/components/Integrations";
-import RevenueDisappears from "@/components/RevenueDisappears";
-import SolutionComparison from "@/components/SolutionComparison";
-import HowItWorks from "@/components/HowItWorks";
-import ProcessSteps from "@/components/ProcessSteps";
 import Testimonials from "@/components/Testimonials";
-import BuiltForBusiness from "@/components/BuiltForBusiness";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -21,16 +23,18 @@ const Index = () => {
   return (
     <div className="min-h-screen font-geist">
       <Header onBookCallClick={() => setShowCalendly(true)} />
-
+      
       <main>
         <Hero onBookCallClick={() => setShowCalendly(true)} />
+        <Problem />
+        <VideoSection />
+        <Services />
+        <Features />
+        <WhyChoose />
+        <Projects />
+        <WhyUs />
         <Integrations />
-        <RevenueDisappears />
-        <SolutionComparison />
-        <HowItWorks />
-        <ProcessSteps />
         <Testimonials />
-        <BuiltForBusiness />
         <FAQ />
         <CTA onBookCallClick={() => setShowCalendly(true)} />
       </main>

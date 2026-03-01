@@ -1,5 +1,5 @@
 import { useInView } from "@/hooks/useInView";
-import { Star } from "lucide-react";
+import { Star, MessageSquare } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Testimonials = () => {
@@ -20,15 +20,15 @@ const Testimonials = () => {
       role: "Creative Director",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
       quote: "It feels like having an extra project manager but smarter.",
-      description: "The task automation system they built saved our team hours every week. Everything just flows now.",
+      description: "The task automation system they built saved our team hours every week. Everything just flows now, with zero micromanagement.",
       stars: 5
     },
     {
       name: "Sarah Malik",
       role: "Head of Operations",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
-      quote: "We saw results within the first week.",
-      description: "They helped us automate a huge chunk of our workflow without changing how we work. Truly understands both AI and business.",
+      quote: "We saw results within the first week, it was a game changer.",
+      description: "Calisto helped us automate a huge chunk of our workflow without changing how we work. Their team truly understands both AI and business logic.",
       stars: 5
     },
     {
@@ -49,6 +49,7 @@ const Testimonials = () => {
     }
   ];
 
+  // Auto-scroll testimonials
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % (testimonials.length - 2));
@@ -60,34 +61,38 @@ const Testimonials = () => {
     <section className="py-24 bg-background relative overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div
+        <div 
           ref={headerRef}
           className={`text-center mb-16 scroll-animate ${headerInView ? 'animate-reveal-up' : ''}`}
         >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-container mb-6">
+            <MessageSquare className="w-4 h-4 text-muted-foreground" />
+            <span className="text-sm text-muted-foreground font-medium">Testimonials</span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-medium text-foreground mb-4">
-            What Clients{" "}
-            <span className="font-instrument-serif italic text-primary font-normal">Experience</span>
+            What Our <span className="font-instrument-serif italic text-muted-foreground font-normal">Clients Are</span> Saying
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Trusted by teams and businesses across all industries.
           </p>
         </div>
 
-        {/* Cards */}
+        {/* Animated Testimonial Cards Container */}
         <div className="relative overflow-hidden">
-          <div
+          <div 
             className="flex gap-6 transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * (100 / 3)}%)` }}
           >
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-full md:w-[calc(33.333%-1rem)] clean-card p-6"
+                className="flex-shrink-0 w-full md:w-[calc(33.333%-1rem)] liquid-glass-container p-6"
               >
+                {/* Header with avatar and stars */}
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-3">
-                    <img
-                      src={testimonial.image}
+                    <img 
+                      src={testimonial.image} 
                       alt={testimonial.name}
                       className="w-10 h-10 rounded-full object-cover"
                     />
@@ -102,9 +107,13 @@ const Testimonials = () => {
                     ))}
                   </div>
                 </div>
+
+                {/* Quote */}
                 <blockquote className="text-lg font-medium text-foreground mb-4">
                   "{testimonial.quote}"
                 </blockquote>
+
+                {/* Description */}
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {testimonial.description}
                 </p>
@@ -120,12 +129,24 @@ const Testimonials = () => {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentIndex
-                  ? 'bg-primary w-6'
+                index === currentIndex 
+                  ? 'bg-primary w-6' 
                   : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
               }`}
             />
           ))}
+        </div>
+
+        {/* Logo strip */}
+        <div className="mt-16 pt-8 border-t border-border/30">
+          <div className="flex items-center justify-center gap-12 opacity-40">
+            <span className="text-xl font-bold tracking-wider text-foreground">IPSUM</span>
+            <span className="text-xl font-bold tracking-wider text-foreground">LOGO</span>
+            <span className="text-xl font-bold tracking-wider text-foreground">///</span>
+            <span className="text-xl font-bold tracking-wider text-foreground">∞</span>
+            <span className="text-xl font-bold tracking-wider text-foreground">||||</span>
+            <span className="text-xl font-bold tracking-wider text-foreground">LOGO</span>
+          </div>
         </div>
       </div>
     </section>
