@@ -1,50 +1,49 @@
+import { useState } from "react";
 import { useInView } from "@/hooks/useInView";
-import { Rocket, CheckCircle } from "lucide-react";
+import { Progress } from "@/components/ui/progress";
 
-interface CTAProps {
-  onBookCallClick: () => void;
-}
-
-const CTA = ({ onBookCallClick }: CTAProps) => {
-  const { ref: sectionRef, isInView } = useInView({ threshold: 0.3 });
+const CTA = () => {
+  const { ref, isInView } = useInView({ threshold: 0.2 });
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <section id="cta" className="py-20 relative">
+    <section id="cta" className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div ref={sectionRef} className={`max-w-4xl mx-auto scroll-animate ${isInView ? 'animate-bounce-in' : ''}`}>
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="gradient-text">Let's <span className="font-instrument-serif italic font-normal">Automate</span></span>
-              <br />
-              <span className="text-muted-foreground">Your <span className="font-instrument-serif italic font-normal">Workflow</span> Today</span>
+        <div ref={ref} className={`max-w-4xl mx-auto scroll-animate ${isInView ? "animate-reveal-up" : ""}`}>
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-background mb-8">
+              <span className="w-2 h-2 rounded-full bg-primary" />
+              <span className="text-sm text-muted-foreground font-medium uppercase tracking-wide">Get Started</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-foreground mb-4 leading-tight">
+              Book Your Free <span className="font-instrument-serif italic text-primary font-normal">Audit</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Book your free strategy call and discover which automations will save you the most time and money.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              15 minutes to understand your operations and show you exactly what we'd automate — no strings attached.
             </p>
           </div>
 
-          <div className="flex justify-center flex-col items-center gap-6">
-            <button 
-              onClick={onBookCallClick} 
-              className="btn-secondary-ref px-10 py-5 text-lg hover:scale-105 duration-300 inline-flex items-center gap-2"
-            >
-              <Rocket className="w-5 h-5" />
-              Schedule My Free Strategy Call
-            </button>
-            <div className="liquid-glass-container px-8 py-4 rounded-full flex items-center gap-4">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <CheckCircle className="w-4 h-4 text-primary" />
-                <span>Fast Implementation</span>
+          <div className="relative bg-background border border-border/40 rounded-2xl overflow-hidden" style={{ minHeight: "650px" }}>
+            {isLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-background z-10">
+                <div className="w-full max-w-xs px-8">
+                  <div className="text-center mb-4">
+                    <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary mx-auto mb-3" />
+                    <p className="text-sm text-muted-foreground">Loading calendar...</p>
+                  </div>
+                  <Progress value={66} className="h-1.5" />
+                </div>
               </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <CheckCircle className="w-4 h-4 text-primary" />
-                <span>Proven Results</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <CheckCircle className="w-4 h-4 text-primary" />
-                <span>30-Day Money-Back Guarantee</span>
-              </div>
-            </div>
+            )}
+            <iframe
+              src="https://cal.com/dheekshit-datta-hc4xco/30-min-meeting"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              title="Book a meeting"
+              className="absolute inset-0 w-full h-full"
+              onLoad={() => setIsLoading(false)}
+            />
           </div>
         </div>
       </div>
