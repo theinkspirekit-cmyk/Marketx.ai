@@ -52,7 +52,7 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <button
               onClick={onBookCallClick}
-              className="group px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold text-base transition-all duration-300 hover:scale-105 flex items-center gap-2 shadow-[0_4px_14px_hsl(217_91%_60%/0.3)]"
+              className="group px-8 py-4 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 text-white font-semibold text-base transition-all duration-300 hover:scale-105 flex items-center gap-2 shadow-[0_4px_20px_rgba(59,130,246,0.4)]"
             >
               Book Free Call
               <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -60,7 +60,7 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
 
             <button
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 rounded-full font-medium text-base transition-all duration-300 hover:scale-105 liquid-glass-button text-foreground"
+              className="px-8 py-4 rounded-full font-medium text-base transition-all duration-300 hover:scale-105 bg-white text-foreground shadow-md"
             >
               Discover More
             </button>
