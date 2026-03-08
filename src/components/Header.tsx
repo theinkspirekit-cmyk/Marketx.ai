@@ -48,16 +48,16 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8 text-sm">
-              <button onClick={() => scrollToSection('home')} className="transition-colors font-medium hover:text-foreground text-muted-foreground">
+              <button onClick={() => scrollToSection('home')} className={`transition-colors font-medium ${isScrolled ? 'hover:text-foreground text-muted-foreground' : 'hover:text-white text-white/70'}`}>
                 Home
               </button>
-              <button onClick={() => scrollToSection('services')} className="transition-colors font-medium hover:text-foreground text-muted-foreground">
+              <button onClick={() => scrollToSection('services')} className={`transition-colors font-medium ${isScrolled ? 'hover:text-foreground text-muted-foreground' : 'hover:text-white text-white/70'}`}>
                 Services
               </button>
-              <button onClick={() => scrollToSection('features')} className="transition-colors font-medium hover:text-foreground text-muted-foreground">
+              <button onClick={() => scrollToSection('features')} className={`transition-colors font-medium ${isScrolled ? 'hover:text-foreground text-muted-foreground' : 'hover:text-white text-white/70'}`}>
                 Features
               </button>
-              <button onClick={() => scrollToSection('faq')} className="transition-colors font-medium hover:text-foreground text-muted-foreground">
+              <button onClick={() => scrollToSection('faq')} className={`transition-colors font-medium ${isScrolled ? 'hover:text-foreground text-muted-foreground' : 'hover:text-white text-white/70'}`}>
                 FAQ
               </button>
             </div>
