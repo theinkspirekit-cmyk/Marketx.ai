@@ -75,7 +75,7 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
               {/* Mobile Menu Button */}
               <button 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
-                className="md:hidden p-2 text-foreground" 
+                className={`md:hidden p-2 ${isScrolled ? 'text-foreground' : 'text-white'}`}
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
