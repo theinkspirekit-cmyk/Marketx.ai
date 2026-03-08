@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        'geist': ['Geist', 'Geist Fallback', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        'sans': ['Geist', 'Geist Fallback', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'geist': ['Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'sans': ['Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'manrope': ['Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         'instrument-serif': ['"Instrument Serif"', '"Instrument Serif Placeholder"', 'serif'],
       },
       colors: {
