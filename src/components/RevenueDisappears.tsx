@@ -116,11 +116,11 @@ const RevenueDisappears = () => {
           </div>
 
           {/* Heading - left aligned, large */}
-          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-foreground leading-[1.1] mb-0" style={{ lineHeight: '66px' }}>
-            Where Your Revenue
+          <h2 className="text-4xl md:text-[48px] font-bold leading-[1.1] mb-0" style={{ lineHeight: '66px', fontFamily: "'Manrope', sans-serif", fontWeight: 700 }}>
+            <span style={{ color: 'rgb(0, 0, 0)' }}>Where Your Revenue</span>
           </h2>
-          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-muted-foreground leading-[1.1] mb-6" style={{ lineHeight: '66px' }}>
-            Disappears
+          <h2 className="text-4xl md:text-[48px] font-bold leading-[1.1] mb-6" style={{ lineHeight: '66px', fontFamily: "'Manrope', sans-serif", fontWeight: 700 }}>
+            <span style={{ color: 'rgb(137, 137, 137)' }}>Disappears</span>
           </h2>
 
           {/* Subtitle - left aligned */}
