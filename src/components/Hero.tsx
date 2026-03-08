@@ -7,11 +7,18 @@ interface HeroProps {
 const Hero = ({ onBookCallClick }: HeroProps) => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
-      {/* Grid pattern background */}
-      <div className="absolute inset-0 z-0" style={{
+      {/* Liquid glass background with wavy gradients */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-primary/8 blur-3xl" />
+        <div className="absolute top-1/3 right-1/3 w-[400px] h-[400px] rounded-full bg-accent/30 blur-3xl" />
+      </div>
+
+      {/* Subtle grid overlay */}
+      <div className="absolute inset-0 z-0 opacity-30" style={{
         backgroundImage: `
-          linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px)
+          linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)
         `,
         backgroundSize: '60px 60px',
       }} />
@@ -25,7 +32,7 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
       <div className="container mx-auto px-6 text-center z-10 relative pt-24">
         <div className="max-w-5xl mx-auto">
           {/* Small label */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-sm bg-white/80 border border-black/[0.06] text-muted-foreground">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-sm liquid-glass-button text-muted-foreground">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             AI-Powered Business Automation
           </div>
@@ -45,7 +52,7 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <button
               onClick={onBookCallClick}
-              className="group px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base transition-all duration-300 hover:scale-105 flex items-center gap-2 shadow-[0_4px_14px_rgba(37,99,235,0.3)]"
+              className="group px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold text-base transition-all duration-300 hover:scale-105 flex items-center gap-2 shadow-[0_4px_14px_hsl(217_91%_60%/0.3)]"
             >
               Book Free Call
               <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -53,7 +60,7 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
 
             <button
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 rounded-xl font-medium text-base transition-all duration-300 hover:scale-105 bg-white/90 border border-black/10 text-foreground"
+              className="px-8 py-4 rounded-full font-medium text-base transition-all duration-300 hover:scale-105 liquid-glass-button text-foreground"
             >
               Discover More
             </button>

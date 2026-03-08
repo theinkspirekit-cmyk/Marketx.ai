@@ -111,7 +111,7 @@
     @apply bg-background text-foreground font-geist antialiased;
     font-weight: 300;
     min-height: 100vh;
-    background: #F4F4F4;
+    background: #F9FAFB;
     background-attachment: fixed;
   }
 

@@ -21,7 +21,7 @@ const CTA = () => {
             </p>
           </div>
 
-          <div className="bg-background border border-border/50 rounded-2xl overflow-hidden" style={{ height: "660px" }}>
+          <div className="liquid-glass-container overflow-hidden" style={{ height: "660px" }}>
             <iframe
               src="https://cal.com/dheekshit/30-min-meeting?embed=true&theme=light"
               width="100%"

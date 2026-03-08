@@ -134,7 +134,7 @@ const RevenueDisappears = () => {
         {/* 3 Cards */}
         <div className="grid md:grid-cols-3 gap-5">
           {problems.map((problem, i) => (
-            <div key={i} className="bg-background border border-border/50 rounded-2xl overflow-hidden">
+            <div key={i} className="liquid-glass-container overflow-hidden">
               {/* Widget area */}
               <div className="p-4">
                 {problem.widget}
