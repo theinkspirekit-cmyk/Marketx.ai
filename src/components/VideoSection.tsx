@@ -21,9 +21,9 @@ const VideoSection = () => {
           className={`max-w-5xl mx-auto scroll-animate ${isInView ? 'animate-scale-fade' : ''}`}
         >
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ lineHeight: '66px' }}>
-              <span className="text-foreground">How It</span>{" "}
-              <span className="text-muted-foreground">Works</span>
+            <h2 className="text-4xl md:text-[48px] font-bold mb-6" style={{ lineHeight: '66px', fontFamily: "'Manrope', sans-serif", fontWeight: 700 }}>
+              <span style={{ color: 'rgb(0, 0, 0)' }}>How It </span>
+              <span style={{ color: 'rgb(137, 137, 137)' }}>Works</span>
             </h2>
             <p className="text-xl text-muted-foreground">
               Watch how we transform manual work into automated workflows

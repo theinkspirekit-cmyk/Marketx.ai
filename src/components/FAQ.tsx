@@ -41,9 +41,9 @@ const FAQ = () => {
             ref={headerRef}
             className={`text-center mb-16 scroll-animate ${headerInView ? 'animate-reveal-up' : ''}`}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground" style={{ lineHeight: '66px' }}>
-              Frequently Asked{" "}
-              <span className="text-muted-foreground">Questions</span>
+            <h2 className="text-4xl md:text-[48px] font-bold" style={{ lineHeight: '66px', fontFamily: "'Manrope', sans-serif", fontWeight: 700 }}>
+              <span style={{ color: 'rgb(0, 0, 0)' }}>Frequently Asked </span>
+              <span style={{ color: 'rgb(137, 137, 137)' }}>Questions</span>
             </h2>
           </div>
 
