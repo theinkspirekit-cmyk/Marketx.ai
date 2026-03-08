@@ -116,10 +116,10 @@ const RevenueDisappears = () => {
           </div>
 
           {/* Heading - left aligned, large */}
-          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-semibold text-foreground leading-[1.1] mb-0">
+          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-foreground leading-[1.1] mb-0" style={{ lineHeight: '66px' }}>
             Where Your Revenue
           </h2>
-          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-instrument-serif italic text-primary/60 font-normal leading-[1.1] mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-muted-foreground leading-[1.1] mb-6" style={{ lineHeight: '66px' }}>
             Disappears
           </h2>
 

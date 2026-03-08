@@ -83,8 +83,8 @@ const Features = () => {
             </svg>
             <span className="text-sm text-muted-foreground font-medium">Features</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-medium mb-4 text-foreground">
-            <span className="font-instrument-serif italic">Automate</span> Faster, Work Smarter
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground" style={{ lineHeight: '66px' }}>
+            Automate Faster, <span className="text-muted-foreground">Work Smarter</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
             Powerful features that gives you the tools to scale with confidence.

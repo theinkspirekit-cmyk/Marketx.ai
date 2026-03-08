@@ -34,7 +34,7 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
           <h1 className="text-4xl sm:text-5xl md:text-[60px] font-bold mb-6 leading-[1.1] tracking-tight text-foreground" style={{ lineHeight: '66px' }}>
             Automate Your Business.
             <br />
-            <span className="font-instrument-serif italic text-foreground">Save 10+ Hours/Week</span>
+            <span className="font-instrument-serif italic text-primary">Save 10+ Hours/Week</span>
           </h1>
           
           <p className="text-lg md:text-[18px] mb-12 max-w-2xl mx-auto text-muted-foreground" style={{ lineHeight: '27px', fontWeight: 300 }}>
@@ -45,7 +45,7 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <button
               onClick={onBookCallClick}
-              className="group px-8 py-4 rounded-xl bg-foreground text-background font-semibold text-base transition-all duration-300 hover:scale-105 flex items-center gap-2 shadow-[0_4px_14px_rgba(0,0,0,0.25)]"
+              className="group px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base transition-all duration-300 hover:scale-105 flex items-center gap-2 shadow-[0_4px_14px_rgba(37,99,235,0.3)]"
             >
               Book Free Call
               <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

@@ -12,8 +12,8 @@ const CTA = () => {
               <span className="w-2 h-2 rounded-full bg-primary" />
               <span className="text-xs text-primary font-semibold uppercase tracking-[0.2em]">Get Started</span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-[56px] font-semibold text-foreground mb-4 leading-tight">
-              Book Your Free <span className="font-instrument-serif italic text-primary font-normal">Audit</span>
+            <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-foreground mb-4 leading-tight" style={{ lineHeight: '66px' }}>
+              Book Your Free <span className="text-muted-foreground">Audit</span>
             </h2>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               15 minutes to understand your operations and show you exactly what we'd automate — no strings attached.
