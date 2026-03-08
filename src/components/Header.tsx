@@ -32,33 +32,33 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
       }`}>
         <nav className={`mx-auto transition-all duration-500 ${
           isScrolled 
-            ? 'max-w-4xl bg-white/90 backdrop-blur-xl border border-black/[0.06] rounded-full shadow-[0_2px_20px_rgba(0,0,0,0.06)] px-4 py-2.5' 
+            ? 'max-w-5xl bg-white/95 backdrop-blur-xl border border-black/[0.08] rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.06)] px-6 py-3' 
             : 'container bg-transparent px-6 py-2'
         }`}>
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <img 
                 src={markitxLogo} 
-                alt="Markitx - AI Business Automation Services" 
-                className={`transition-all duration-300 ${isScrolled ? 'h-6' : 'h-8'}`}
+                alt="Marktrix.ai - AI Business Automation Services" 
+                className={`transition-all duration-300 ${isScrolled ? 'h-8' : 'h-10'}`}
                 loading="eager" 
-                width="150" 
-                height="32" 
+                width="40" 
+                height="40" 
               />
             </div>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-6 text-sm">
-              <button onClick={() => scrollToSection('home')} className="transition-colors font-medium hover:text-black" style={{ color: isScrolled ? '#000' : 'rgba(0,0,0,0.6)' }}>
+            <div className="hidden md:flex items-center gap-8 text-sm">
+              <button onClick={() => scrollToSection('home')} className="transition-colors font-medium hover:text-foreground text-muted-foreground">
                 Home
               </button>
-              <button onClick={() => scrollToSection('services')} className="transition-colors font-medium hover:text-black" style={{ color: isScrolled ? '#000' : 'rgba(0,0,0,0.6)' }}>
+              <button onClick={() => scrollToSection('services')} className="transition-colors font-medium hover:text-foreground text-muted-foreground">
                 Services
               </button>
-              <button onClick={() => scrollToSection('features')} className="transition-colors font-medium hover:text-black" style={{ color: isScrolled ? '#000' : 'rgba(0,0,0,0.6)' }}>
+              <button onClick={() => scrollToSection('features')} className="transition-colors font-medium hover:text-foreground text-muted-foreground">
                 Features
               </button>
-              <button onClick={() => scrollToSection('faq')} className="transition-colors font-medium hover:text-black" style={{ color: isScrolled ? '#000' : 'rgba(0,0,0,0.6)' }}>
+              <button onClick={() => scrollToSection('faq')} className="transition-colors font-medium hover:text-foreground text-muted-foreground">
                 FAQ
               </button>
             </div>
@@ -67,11 +67,7 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
             <div className="flex items-center gap-3">
               <button 
                 onClick={onBookCallClick} 
-                className="hidden md:flex items-center gap-1.5 px-5 py-2.5 rounded-full text-white text-sm font-semibold transition-all duration-300 hover:scale-105"
-                style={{
-                  background: '#000',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-                }}
+                className="hidden md:flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-foreground text-background text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-[0_2px_8px_rgba(0,0,0,0.2)]"
               >
                 Get Started
                 <ChevronRight className="w-3.5 h-3.5" />
@@ -80,8 +76,7 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
               {/* Mobile Menu Button */}
               <button 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
-                className="md:hidden p-2" 
-                style={{ color: '#000' }}
+                className="md:hidden p-2 text-foreground" 
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -94,19 +89,19 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
-          <div className="fixed inset-0 pt-20" style={{ background: 'rgba(244,244,244,0.97)', backdropFilter: 'blur(20px)' }}>
+          <div className="fixed inset-0 pt-20 bg-background/97 backdrop-blur-xl">
             <nav className="container mx-auto px-6 py-8">
               <div className="flex flex-col space-y-6">
-                <button onClick={() => scrollToSection('home')} className="text-2xl font-bold text-left" style={{ color: '#000' }}>
+                <button onClick={() => scrollToSection('home')} className="text-2xl font-bold text-left text-foreground">
                   Home
                 </button>
-                <button onClick={() => scrollToSection('services')} className="text-2xl font-bold text-left" style={{ color: '#000' }}>
+                <button onClick={() => scrollToSection('services')} className="text-2xl font-bold text-left text-foreground">
                   Services
                 </button>
-                <button onClick={() => scrollToSection('features')} className="text-2xl font-bold text-left" style={{ color: '#000' }}>
+                <button onClick={() => scrollToSection('features')} className="text-2xl font-bold text-left text-foreground">
                   Features
                 </button>
-                <button onClick={() => scrollToSection('faq')} className="text-2xl font-bold text-left" style={{ color: '#000' }}>
+                <button onClick={() => scrollToSection('faq')} className="text-2xl font-bold text-left text-foreground">
                   FAQ
                 </button>
                 <button 
@@ -114,8 +109,7 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
                     onBookCallClick();
                     setMobileMenuOpen(false);
                   }} 
-                  className="flex items-center gap-2 px-6 py-4 rounded-full text-white font-semibold mt-4"
-                  style={{ background: '#000' }}
+                  className="flex items-center gap-2 px-6 py-4 rounded-xl bg-foreground text-background font-semibold mt-4"
                 >
                   🚀 Get Your Free Automation Plan
                 </button>
