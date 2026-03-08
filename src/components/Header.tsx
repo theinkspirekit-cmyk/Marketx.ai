@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronRight } from "lucide-react";
 import markitxLogo from "@/assets/markitx-logo.png";
+import markitxLogoWhite from "@/assets/markitx-logo-white.png";
 
 interface HeaderProps {
   onBookCallClick: () => void;
