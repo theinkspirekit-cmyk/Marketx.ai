@@ -39,11 +39,9 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
             <div className="flex items-center">
               <img 
                 src={markitxLogo} 
-                alt="Marktrix.ai - AI Business Automation Services" 
-                className={`transition-all duration-300 ${isScrolled ? 'h-8' : 'h-10'}`}
+                alt="Markitx.ai - AI Business Automation Services" 
+                className={`transition-all duration-300 ${isScrolled ? 'h-8' : 'h-10'} w-auto`}
                 loading="eager" 
-                width="40" 
-                height="40" 
               />
             </div>
             
