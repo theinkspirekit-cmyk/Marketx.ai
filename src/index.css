@@ -19,9 +19,9 @@
   --radius-lg: 20px;
   --radius-md: 14px;
 
-  /* Clean white background */
-  --background: 220 20% 98%;
-  --foreground: 220 25% 12%;
+  /* Clean light gray background like Cal.com */
+  --background: 0 0% 96%;
+  --foreground: 0 0% 0%;
 
   /* Liquid glass card system */
   --card: 0 0% 100%;

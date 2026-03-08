@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronRight } from "lucide-react";
 import markitxLogo from "@/assets/markitx-logo.png";
 
 interface HeaderProps {
@@ -27,22 +27,20 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
 
   return (
     <>
-      <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'mx-4 mt-4 left-0 right-0' 
-          : ''
-      }`} style={{ width: isScrolled ? 'calc(100% - 32px)' : '100%' }}>
-        <nav className={`mx-auto px-6 py-4 transition-all duration-300 ${
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled ? 'py-3 px-4' : 'py-4 px-0'
+      }`}>
+        <nav className={`mx-auto transition-all duration-500 ${
           isScrolled 
-            ? 'bg-white/70 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg shadow-black/5' 
-            : 'bg-white/50 backdrop-blur-md'
+            ? 'max-w-4xl bg-white/90 backdrop-blur-xl border border-black/[0.06] rounded-full shadow-[0_2px_20px_rgba(0,0,0,0.06)] px-4 py-2.5' 
+            : 'container bg-transparent px-6 py-2'
         }`}>
-          <div className="flex items-center justify-between container mx-auto">
-            <div className="flex items-center space-x-2">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
               <img 
                 src={markitxLogo} 
                 alt="Markitx - AI Business Automation Services" 
-                className="h-8" 
+                className={`transition-all duration-300 ${isScrolled ? 'h-6' : 'h-8'}`}
                 loading="eager" 
                 width="150" 
                 height="32" 
@@ -50,31 +48,40 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
             </div>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8 text-sm">
-              <button onClick={() => scrollToSection('home')} className="text-foreground/70 hover:text-foreground transition-colors font-medium">
+            <div className="hidden md:flex items-center gap-6 text-sm">
+              <button onClick={() => scrollToSection('home')} className="transition-colors font-medium hover:text-black" style={{ color: isScrolled ? '#000' : 'rgba(0,0,0,0.6)' }}>
                 Home
               </button>
-              <button onClick={() => scrollToSection('services')} className="text-foreground/70 hover:text-foreground transition-colors font-medium">
+              <button onClick={() => scrollToSection('services')} className="transition-colors font-medium hover:text-black" style={{ color: isScrolled ? '#000' : 'rgba(0,0,0,0.6)' }}>
                 Services
               </button>
-              <button onClick={() => scrollToSection('features')} className="text-foreground/70 hover:text-foreground transition-colors font-medium">
+              <button onClick={() => scrollToSection('features')} className="transition-colors font-medium hover:text-black" style={{ color: isScrolled ? '#000' : 'rgba(0,0,0,0.6)' }}>
                 Features
               </button>
-              <button onClick={() => scrollToSection('faq')} className="text-foreground/70 hover:text-foreground transition-colors font-medium">
+              <button onClick={() => scrollToSection('faq')} className="transition-colors font-medium hover:text-black" style={{ color: isScrolled ? '#000' : 'rgba(0,0,0,0.6)' }}>
                 FAQ
               </button>
             </div>
 
             {/* Desktop CTA & Mobile Menu Button */}
-            <div className="flex items-center space-x-4">
-              <button onClick={onBookCallClick} className="hidden md:block btn-primary-ref">
-                Get Your Free Automation Plan
+            <div className="flex items-center gap-3">
+              <button 
+                onClick={onBookCallClick} 
+                className="hidden md:flex items-center gap-1.5 px-5 py-2.5 rounded-full text-white text-sm font-semibold transition-all duration-300 hover:scale-105"
+                style={{
+                  background: '#000',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                }}
+              >
+                Get Started
+                <ChevronRight className="w-3.5 h-3.5" />
               </button>
               
               {/* Mobile Menu Button */}
               <button 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
-                className="md:hidden text-foreground p-2" 
+                className="md:hidden p-2" 
+                style={{ color: '#000' }}
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -87,19 +94,19 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
-          <div className="fixed inset-0 bg-white/90 backdrop-blur-xl pt-20">
+          <div className="fixed inset-0 pt-20" style={{ background: 'rgba(244,244,244,0.97)', backdropFilter: 'blur(20px)' }}>
             <nav className="container mx-auto px-6 py-8">
               <div className="flex flex-col space-y-6">
-                <button onClick={() => scrollToSection('home')} className="text-2xl font-medium text-foreground/70 hover:text-foreground transition-colors text-left">
+                <button onClick={() => scrollToSection('home')} className="text-2xl font-bold text-left" style={{ color: '#000' }}>
                   Home
                 </button>
-                <button onClick={() => scrollToSection('services')} className="text-2xl font-medium text-foreground/70 hover:text-foreground transition-colors text-left">
+                <button onClick={() => scrollToSection('services')} className="text-2xl font-bold text-left" style={{ color: '#000' }}>
                   Services
                 </button>
-                <button onClick={() => scrollToSection('features')} className="text-2xl font-medium text-foreground/70 hover:text-foreground transition-colors text-left">
+                <button onClick={() => scrollToSection('features')} className="text-2xl font-bold text-left" style={{ color: '#000' }}>
                   Features
                 </button>
-                <button onClick={() => scrollToSection('faq')} className="text-2xl font-medium text-foreground/70 hover:text-foreground transition-colors text-left">
+                <button onClick={() => scrollToSection('faq')} className="text-2xl font-bold text-left" style={{ color: '#000' }}>
                   FAQ
                 </button>
                 <button 
@@ -107,7 +114,8 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
                     onBookCallClick();
                     setMobileMenuOpen(false);
                   }} 
-                  className="btn-primary-ref mt-4"
+                  className="flex items-center gap-2 px-6 py-4 rounded-full text-white font-semibold mt-4"
+                  style={{ background: '#000' }}
                 >
                   🚀 Get Your Free Automation Plan
                 </button>
