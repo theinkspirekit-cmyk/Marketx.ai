@@ -67,9 +67,9 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
             <div className="flex items-center gap-3">
               <button 
                 onClick={onBookCallClick} 
-                className="hidden md:flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-foreground text-background text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-[0_2px_8px_rgba(0,0,0,0.2)]"
+                className="hidden md:flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-[0_2px_8px_rgba(37,99,235,0.3)]"
               >
-                Get Started
+                Book a Call
                 <ChevronRight className="w-3.5 h-3.5" />
               </button>
               

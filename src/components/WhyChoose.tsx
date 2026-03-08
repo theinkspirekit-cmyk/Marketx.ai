@@ -35,8 +35,8 @@ const WhyChoose = () => {
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm text-muted-foreground font-medium">Benefits</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-medium mb-4 text-foreground">
-            Why Choose <span className="italic font-normal">MARKITX</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground" style={{ lineHeight: '66px' }}>
+            Why Choose <span className="text-muted-foreground">MARKITX</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
             Here's why teams choose us over traditional tools.

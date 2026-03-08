@@ -69,8 +69,8 @@ const Testimonials = () => {
             <MessageSquare className="w-4 h-4 text-muted-foreground" />
             <span className="text-sm text-muted-foreground font-medium">Testimonials</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-medium text-foreground mb-4">
-            What Our <span className="font-instrument-serif italic text-muted-foreground font-normal">Clients Are</span> Saying
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4" style={{ lineHeight: '66px' }}>
+            What Our <span className="text-muted-foreground">Clients Are</span> Saying
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Trusted by teams and businesses across all industries.
