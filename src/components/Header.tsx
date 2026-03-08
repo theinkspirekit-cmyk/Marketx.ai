@@ -109,9 +109,9 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
                     onBookCallClick();
                     setMobileMenuOpen(false);
                   }} 
-                  className="flex items-center gap-2 px-6 py-4 rounded-xl bg-foreground text-background font-semibold mt-4"
+                  className="flex items-center gap-2 px-6 py-4 rounded-xl bg-primary text-primary-foreground font-semibold mt-4"
                 >
-                  🚀 Get Your Free Automation Plan
+                  🚀 Book a Call
                 </button>
               </div>
             </nav>
