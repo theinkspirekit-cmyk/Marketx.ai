@@ -58,7 +58,7 @@ const Testimonials = () => {
           className={`text-center mb-16 scroll-animate ${headerInView ? 'animate-reveal-up' : ''}`}
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-container mb-6">
-            <MessageSquare className="w-4 h-4 text-muted-foreground" />
+            <MessageSquare className="w-4 h-4 text-primary" />
             <span className="text-sm text-muted-foreground font-medium">Testimonials</span>
           </div>
           <h2 className="text-4xl md:text-[48px] font-bold mb-4" style={{ lineHeight: '66px', fontFamily: "'Manrope', sans-serif", fontWeight: 700 }}>
@@ -72,26 +72,8 @@ const Testimonials = () => {
 
         {/* Testimonial Card */}
         <div className="flex justify-center">
-          <div className="relative w-full max-w-2xl">
-            {/* Navigation buttons */}
-            <button
-              onClick={goPrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-14 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-border/50 flex items-center justify-center text-foreground hover:bg-muted transition-colors"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-
-            <button
-              onClick={goNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-14 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-border/50 flex items-center justify-center text-foreground hover:bg-muted transition-colors"
-              aria-label="Next testimonial"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-
-            {/* Card */}
-            <div className="bg-white rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.08)] p-10 md:p-14 text-center">
+          <div className="w-full max-w-4xl">
+            <div className="bg-white rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.08)] p-10 md:p-14 text-center relative">
               <blockquote className="text-xl md:text-2xl font-semibold text-foreground leading-relaxed mb-8">
                 "{current.quote}"
               </blockquote>
@@ -99,25 +81,43 @@ const Testimonials = () => {
               <p className="font-bold text-foreground text-base mb-1">{current.name}</p>
               <p className="text-sm text-muted-foreground mb-8">{current.role}</p>
 
-              {/* Avatar row */}
-              <div className="flex justify-center -space-x-3">
-                {testimonials.map((t, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setCurrentIndex(i)}
-                    className={`w-10 h-10 rounded-full border-2 overflow-hidden transition-all duration-300 ${
-                      i === currentIndex
-                        ? 'border-primary scale-110 z-10 ring-2 ring-primary/30'
-                        : 'border-white opacity-60 hover:opacity-100'
-                    }`}
-                  >
-                    <img
-                      src={t.image}
-                      alt={t.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </button>
-                ))}
+              {/* Avatar row + navigation */}
+              <div className="flex items-center justify-center gap-6">
+                <button
+                  onClick={goPrev}
+                  className="w-10 h-10 rounded-full bg-muted/50 border border-border/50 flex items-center justify-center text-foreground hover:bg-muted transition-colors flex-shrink-0"
+                  aria-label="Previous testimonial"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+
+                <div className="flex -space-x-3">
+                  {testimonials.map((t, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setCurrentIndex(i)}
+                      className={`w-10 h-10 rounded-full border-2 overflow-hidden transition-all duration-300 ${
+                        i === currentIndex
+                          ? 'border-primary scale-110 z-10 ring-2 ring-primary/30'
+                          : 'border-white opacity-60 hover:opacity-100'
+                      }`}
+                    >
+                      <img
+                        src={t.image}
+                        alt={t.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+
+                <button
+                  onClick={goNext}
+                  className="w-10 h-10 rounded-full bg-muted/50 border border-border/50 flex items-center justify-center text-foreground hover:bg-muted transition-colors flex-shrink-0"
+                  aria-label="Next testimonial"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
             </div>
           </div>

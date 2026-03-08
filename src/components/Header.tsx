@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronRight } from "lucide-react";
 import markitxLogo from "@/assets/markitx-logo.png";
+import markitxLogoWhite from "@/assets/markitx-logo-white.png";
 
 interface HeaderProps {
   onBookCallClick: () => void;
@@ -38,7 +39,7 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <img 
-                src={markitxLogo} 
+                src={isScrolled ? markitxLogo : markitxLogoWhite} 
                 alt="Markitx.ai - AI Business Automation Services" 
                 className={`transition-all duration-300 ${isScrolled ? 'h-8' : 'h-10'} w-auto`}
                 loading="eager" 
@@ -47,16 +48,16 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8 text-sm">
-              <button onClick={() => scrollToSection('home')} className="transition-colors font-medium hover:text-foreground text-muted-foreground">
+              <button onClick={() => scrollToSection('home')} className={`transition-colors font-medium ${isScrolled ? 'hover:text-foreground text-muted-foreground' : 'hover:text-white text-white/70'}`}>
                 Home
               </button>
-              <button onClick={() => scrollToSection('services')} className="transition-colors font-medium hover:text-foreground text-muted-foreground">
+              <button onClick={() => scrollToSection('services')} className={`transition-colors font-medium ${isScrolled ? 'hover:text-foreground text-muted-foreground' : 'hover:text-white text-white/70'}`}>
                 Services
               </button>
-              <button onClick={() => scrollToSection('features')} className="transition-colors font-medium hover:text-foreground text-muted-foreground">
+              <button onClick={() => scrollToSection('features')} className={`transition-colors font-medium ${isScrolled ? 'hover:text-foreground text-muted-foreground' : 'hover:text-white text-white/70'}`}>
                 Features
               </button>
-              <button onClick={() => scrollToSection('faq')} className="transition-colors font-medium hover:text-foreground text-muted-foreground">
+              <button onClick={() => scrollToSection('faq')} className={`transition-colors font-medium ${isScrolled ? 'hover:text-foreground text-muted-foreground' : 'hover:text-white text-white/70'}`}>
                 FAQ
               </button>
             </div>
@@ -65,7 +66,7 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
             <div className="flex items-center gap-3">
               <button 
                 onClick={onBookCallClick} 
-                className="hidden md:flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-[0_2px_8px_rgba(37,99,235,0.3)]"
+                className={`hidden md:flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 hover:scale-105 ${isScrolled ? 'bg-primary text-primary-foreground shadow-[0_2px_8px_rgba(37,99,235,0.3)]' : 'bg-white/15 backdrop-blur-md border border-white/20 text-white hover:bg-white/25'}`}
               >
                 Book a Call
                 <ChevronRight className="w-3.5 h-3.5" />
@@ -74,7 +75,7 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
               {/* Mobile Menu Button */}
               <button 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
-                className="md:hidden p-2 text-foreground" 
+                className={`md:hidden p-2 ${isScrolled ? 'text-foreground' : 'text-white'}`}
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
