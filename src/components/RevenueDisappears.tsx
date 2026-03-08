@@ -1,73 +1,82 @@
 import { useInView } from "@/hooks/useInView";
 
 const MissedInquiriesWidget = () => (
-  <div className="bg-muted/30 rounded-xl p-4 space-y-3">
-    <div className="flex items-center gap-2 mb-3">
-      <div className="w-2 h-2 rounded-full bg-green-500" />
-      <div className="w-2 h-2 rounded-full bg-yellow-500" />
-      <div className="w-2 h-2 rounded-full bg-red-500" />
-      <span className="text-[10px] text-muted-foreground ml-auto">Inbox</span>
-    </div>
-    <div className="space-y-2">
-      {[1, 2, 3].map((i) => (
-        <div key={i} className="flex items-center gap-2 bg-background rounded-lg px-3 py-2">
-          <div className="w-6 h-6 rounded-full bg-muted" />
-          <div className="flex-1">
-            <div className="h-2 w-20 bg-muted rounded" />
-            <div className="h-1.5 w-32 bg-muted/60 rounded mt-1" />
-          </div>
-          {i === 1 && (
-            <span className="text-[9px] font-bold bg-red-500 text-white px-1.5 py-0.5 rounded">MISSED</span>
-          )}
-        </div>
-      ))}
-    </div>
-    <div className="text-center">
-      <span className="text-[10px] text-red-500 font-semibold">3 leads unanswered today</span>
+  <div className="bg-[#f5f5f0] rounded-2xl p-6 flex items-center justify-center" style={{ minHeight: 180 }}>
+    <div className="w-full max-w-[220px] space-y-3">
+      {/* Row 1 - with MISSED badge */}
+      <div className="flex items-center gap-2">
+        <div className="w-3 h-3 rounded-full bg-red-400" />
+        <div className="h-2.5 w-24 bg-red-300 rounded-full" />
+        <span className="ml-auto text-[9px] font-bold bg-red-400 text-white px-2 py-0.5 rounded">MISSED</span>
+      </div>
+      {/* Row 2 */}
+      <div className="flex items-center gap-2">
+        <div className="w-3 h-3 rounded-full bg-green-500" />
+        <div className="h-2.5 w-28 bg-[#d6d6c8] rounded-full" />
+      </div>
+      {/* Row 3 */}
+      <div className="flex items-center gap-2">
+        <div className="w-3 h-3 rounded-full bg-green-500" />
+        <div className="h-2.5 w-20 bg-[#d6d6c8] rounded-full" />
+      </div>
     </div>
   </div>
 );
 
 const SlowFollowUpsWidget = () => (
-  <div className="bg-muted/30 rounded-xl p-4">
-    <div className="flex items-center justify-between mb-3">
-      <span className="text-[10px] font-semibold text-muted-foreground">RESPONSE TIME</span>
-    </div>
-    <div className="relative mb-4">
-      <div className="flex items-center justify-between text-[10px] text-muted-foreground mb-1">
+  <div className="bg-[#f5f5f0] rounded-2xl p-6 flex flex-col items-center justify-center" style={{ minHeight: 180 }}>
+    <div className="w-full max-w-[240px]">
+      {/* Top bar area */}
+      <div className="flex items-center gap-2 mb-2">
+        <div className="h-2.5 w-20 bg-[#d6d6c8] rounded-full" />
+        <div className="flex-1" />
+        <div className="w-5 h-5 rounded-full border-2 border-red-400 flex items-center justify-center">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-red-400" strokeWidth="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+      </div>
+      {/* Progress bar */}
+      <div className="h-3 w-full bg-[#e0e0d6] rounded-full overflow-hidden mb-1.5">
+        <div className="h-full w-full rounded-full bg-gradient-to-r from-green-500 via-yellow-400 to-red-500" />
+      </div>
+      <div className="flex items-center justify-between text-[10px] font-mono text-muted-foreground tracking-wider mb-4">
         <span>5 MIN</span>
         <span>48 HOURS LATER</span>
       </div>
-      <div className="h-2 bg-muted rounded-full overflow-hidden">
-        <div className="h-full w-[85%] rounded-full bg-gradient-to-r from-green-500 via-yellow-500 to-red-500" />
+      {/* LEAD IS COLD badge */}
+      <div className="bg-red-100 border border-red-300 rounded-lg px-4 py-2 text-center">
+        <span className="text-[11px] font-bold text-red-500 tracking-wider">LEAD IS COLD</span>
       </div>
     </div>
-    <div className="flex items-center gap-2 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
-      <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-      <span className="text-[10px] font-bold text-red-600">LEAD IS COLD</span>
-    </div>
-    <p className="text-[10px] text-muted-foreground mt-2 text-center">
-      Conversion drops 80% after 5 minutes
-    </p>
   </div>
 );
 
 const NoClearPictureWidget = () => (
-  <div className="bg-muted/30 rounded-xl p-4">
-    <div className="flex items-center justify-between mb-3">
-      <span className="text-[10px] font-semibold text-muted-foreground">DASHBOARD</span>
-      <span className="text-[9px] text-muted-foreground">No data</span>
-    </div>
-    <div className="grid grid-cols-3 gap-1.5">
-      {Array.from({ length: 9 }).map((_, i) => (
-        <div key={i} className="aspect-square rounded bg-muted flex items-center justify-center">
-          <span className="text-[8px] text-muted-foreground/50">—</span>
+  <div className="bg-[#f5f5f0] rounded-2xl p-6 flex items-center justify-center" style={{ minHeight: 180 }}>
+    <div className="w-full max-w-[260px]">
+      {/* Mock dashboard grid */}
+      <div className="flex gap-3">
+        {/* Left column - list items */}
+        <div className="flex-1 space-y-2">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="flex items-center gap-1.5">
+              <div className="h-2 w-2 rounded-sm bg-[#d6d6c8]" />
+              <div className="h-2 flex-1 bg-[#d6d6c8] rounded-full" />
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-    <div className="mt-3 flex items-center gap-2">
-      <div className="h-1.5 flex-1 bg-muted rounded" />
-      <div className="h-1.5 w-8 bg-muted rounded" />
+        {/* Right column - chart mockup */}
+        <div className="flex-1 relative">
+          <div className="grid grid-cols-3 gap-1">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className={`h-6 rounded-sm ${i === 2 || i === 4 ? 'bg-green-200' : i === 1 ? 'bg-red-200' : 'bg-[#e0e0d6]'}`} />
+            ))}
+          </div>
+          {/* Overlay dot */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 border-[#c0c0b0] bg-[#f5f5f0]" />
+          {/* Red dot indicator */}
+          <div className="absolute top-2 right-0 w-2 h-2 rounded-full bg-red-400" />
+        </div>
+      </div>
     </div>
   </div>
 );
@@ -75,17 +84,17 @@ const NoClearPictureWidget = () => (
 const problems = [
   {
     title: "Missed Inquiries",
-    description: "Leads come in at all hours. Without instant response, they move on to competitors.",
+    description: "Leads come in through WhatsApp, email, phone, and your website—but your team can't respond fast enough. By the time they do, prospects have moved on.",
     widget: <MissedInquiriesWidget />,
   },
   {
     title: "Slow Follow-Ups",
-    description: "Manual follow-ups are slow and inconsistent. By the time you respond, interest is gone.",
+    description: "Your team is busy. Follow-ups get delayed. Hot leads go cold. Studies show responding within 5 minutes is 21x more effective—but that rarely happens.",
     widget: <SlowFollowUpsWidget />,
   },
   {
     title: "No Clear Picture",
-    description: "Without centralized data, you're making decisions blind — and it's costing you revenue.",
+    description: "You don't know which leads are hot, which went cold, or why deals fall through. Without visibility, you can't fix what's broken.",
     widget: <NoClearPictureWidget />,
   },
 ];
@@ -94,33 +103,47 @@ const RevenueDisappears = () => {
   const { ref, isInView } = useInView({ threshold: 0.2 });
 
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6">
+    <section className="py-20 md:py-28 bg-background">
+      <div className="container mx-auto px-6 max-w-6xl">
         <div
           ref={ref}
-          className={`text-center mb-16 scroll-animate ${isInView ? "animate-reveal-up" : ""}`}
+          className={`mb-14 scroll-animate ${isInView ? "animate-reveal-up" : ""}`}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-background mb-8">
+          {/* Badge */}
+          <div className="flex items-center gap-2 mb-6">
             <span className="w-2 h-2 rounded-full bg-primary" />
-            <span className="text-sm text-muted-foreground font-medium uppercase tracking-wide">The Problem</span>
+            <span className="text-xs text-primary font-semibold uppercase tracking-[0.2em]">The Problem</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-foreground mb-6 leading-tight">
+          {/* Heading - left aligned, large */}
+          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-semibold text-foreground leading-[1.1] mb-0">
             Where Your Revenue
-            <br />
-            <span className="font-instrument-serif italic text-primary font-normal">Disappears</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Most businesses lose leads, waste time on manual tasks, and lack the data they need to grow. Here's where things break down.
+          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-instrument-serif italic text-primary/60 font-normal leading-[1.1] mb-6">
+            Disappears
+          </h2>
+
+          {/* Subtitle - left aligned */}
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed">
+            Every unanswered inquiry is money walking out the door. Every
+            forgotten follow-up is a deal that closes with your competitor instead of
+            you.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {/* 3 Cards */}
+        <div className="grid md:grid-cols-3 gap-5">
           {problems.map((problem, i) => (
-            <div key={i} className="bg-background border border-border/40 rounded-2xl p-6 hover:shadow-lg transition-shadow duration-300">
-              {problem.widget}
-              <h3 className="text-lg font-semibold text-foreground mt-5 mb-2">{problem.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{problem.description}</p>
+            <div key={i} className="bg-background border border-border/50 rounded-2xl overflow-hidden">
+              {/* Widget area */}
+              <div className="p-4">
+                {problem.widget}
+              </div>
+              {/* Text area */}
+              <div className="px-6 pb-6 pt-2">
+                <h3 className="text-xl font-semibold text-foreground mb-2">{problem.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{problem.description}</p>
+              </div>
             </div>
           ))}
         </div>
