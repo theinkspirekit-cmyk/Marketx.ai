@@ -1,11 +1,16 @@
 import { ChevronRight } from "lucide-react";
-import heroBg from "@/assets/hero-blue-bg.png";
+import { useTheme } from "next-themes";
+import heroDarkBg from "@/assets/hero-dark-bg.jpeg";
+import heroLightBg from "@/assets/hero-light-bg.jpeg";
 
 interface HeroProps {
   onBookCallClick: () => void;
 }
 
 const Hero = ({ onBookCallClick }: HeroProps) => {
+  const { resolvedTheme } = useTheme();
+  const heroBg = resolvedTheme === "dark" ? heroDarkBg : heroLightBg;
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background image */}

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronRight } from "lucide-react";
+import { Menu, X, ChevronRight, Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
 import markitxLogo from "@/assets/markitx-logo.png";
 import markitxLogoWhite from "@/assets/markitx-logo-white.png";
 
@@ -10,6 +11,10 @@ interface HeaderProps {
 const Header = ({ onBookCallClick }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,11 +25,13 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
   }, []);
 
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: 'smooth'
-    });
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     setMobileMenuOpen(false);
   };
+
+  const toggleTheme = () => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
+
+  const isDark = resolvedTheme === 'dark';
 
   return (
     <>
@@ -33,13 +40,13 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
       }`}>
         <nav className={`mx-auto transition-all duration-500 ${
           isScrolled 
-            ? 'max-w-5xl bg-white/95 backdrop-blur-xl border border-black/[0.08] rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.06)] px-6 py-3' 
+            ? `max-w-5xl backdrop-blur-xl border rounded-2xl px-6 py-3 ${isDark ? 'bg-[hsl(222,20%,10%)]/95 border-white/10 shadow-[0_2px_20px_rgba(0,0,0,0.3)]' : 'bg-white/95 border-black/[0.08] shadow-[0_2px_20px_rgba(0,0,0,0.06)]'}`
             : 'container bg-transparent px-6 py-2'
         }`}>
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <img 
-                src={isScrolled ? markitxLogo : markitxLogoWhite} 
+                src={isScrolled ? (isDark ? markitxLogoWhite : markitxLogo) : markitxLogoWhite} 
                 alt="Markitx.ai - AI Business Automation Services" 
                 className={`transition-all duration-300 ${isScrolled ? 'h-8' : 'h-10'} w-auto`}
                 loading="eager" 
@@ -48,25 +55,40 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8 text-sm">
-              <button onClick={() => scrollToSection('home')} className={`transition-colors font-medium ${isScrolled ? 'hover:text-foreground text-muted-foreground' : 'hover:text-white text-white/70'}`}>
-                Home
-              </button>
-              <button onClick={() => scrollToSection('services')} className={`transition-colors font-medium ${isScrolled ? 'hover:text-foreground text-muted-foreground' : 'hover:text-white text-white/70'}`}>
-                Services
-              </button>
-              <button onClick={() => scrollToSection('features')} className={`transition-colors font-medium ${isScrolled ? 'hover:text-foreground text-muted-foreground' : 'hover:text-white text-white/70'}`}>
-                Features
-              </button>
-              <button onClick={() => scrollToSection('faq')} className={`transition-colors font-medium ${isScrolled ? 'hover:text-foreground text-muted-foreground' : 'hover:text-white text-white/70'}`}>
-                FAQ
-              </button>
+              {['home', 'services', 'features', 'faq'].map((id) => (
+                <button key={id} onClick={() => scrollToSection(id)} className={`transition-colors font-medium capitalize ${
+                  isScrolled 
+                    ? (isDark ? 'text-white/60 hover:text-white' : 'text-muted-foreground hover:text-foreground')
+                    : 'text-white/70 hover:text-white'
+                }`}>
+                  {id === 'faq' ? 'FAQ' : id.charAt(0).toUpperCase() + id.slice(1)}
+                </button>
+              ))}
             </div>
 
-            {/* Desktop CTA & Mobile Menu Button */}
+            {/* Desktop CTA & Theme Toggle */}
             <div className="flex items-center gap-3">
+              {mounted && (
+                <button
+                  onClick={toggleTheme}
+                  className={`p-2 rounded-xl transition-all duration-300 ${
+                    isScrolled
+                      ? (isDark ? 'text-white/70 hover:text-white hover:bg-white/10' : 'text-muted-foreground hover:text-foreground hover:bg-black/5')
+                      : 'text-white/70 hover:text-white hover:bg-white/10'
+                  }`}
+                  aria-label="Toggle theme"
+                >
+                  {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                </button>
+              )}
+              
               <button 
                 onClick={onBookCallClick} 
-                className={`hidden md:flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 hover:scale-105 ${isScrolled ? 'bg-primary text-primary-foreground shadow-[0_2px_8px_rgba(37,99,235,0.3)]' : 'bg-white/15 backdrop-blur-md border border-white/20 text-white hover:bg-white/25'}`}
+                className={`hidden md:flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 hover:scale-105 ${
+                  isScrolled 
+                    ? 'bg-primary text-primary-foreground shadow-[0_2px_8px_rgba(37,99,235,0.3)]'
+                    : 'bg-white/15 backdrop-blur-md border border-white/20 text-white hover:bg-white/25'
+                }`}
               >
                 Book a Call
                 <ChevronRight className="w-3.5 h-3.5" />
@@ -75,7 +97,7 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
               {/* Mobile Menu Button */}
               <button 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
-                className={`md:hidden p-2 ${isScrolled ? 'text-foreground' : 'text-white'}`}
+                className={`md:hidden p-2 ${isScrolled ? (isDark ? 'text-white' : 'text-foreground') : 'text-white'}`}
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -91,23 +113,13 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
           <div className="fixed inset-0 pt-20 bg-background/97 backdrop-blur-xl">
             <nav className="container mx-auto px-6 py-8">
               <div className="flex flex-col space-y-6">
-                <button onClick={() => scrollToSection('home')} className="text-2xl font-bold text-left text-foreground">
-                  Home
-                </button>
-                <button onClick={() => scrollToSection('services')} className="text-2xl font-bold text-left text-foreground">
-                  Services
-                </button>
-                <button onClick={() => scrollToSection('features')} className="text-2xl font-bold text-left text-foreground">
-                  Features
-                </button>
-                <button onClick={() => scrollToSection('faq')} className="text-2xl font-bold text-left text-foreground">
-                  FAQ
-                </button>
+                {['home', 'services', 'features', 'faq'].map((id) => (
+                  <button key={id} onClick={() => scrollToSection(id)} className="text-2xl font-bold text-left text-foreground capitalize">
+                    {id === 'faq' ? 'FAQ' : id.charAt(0).toUpperCase() + id.slice(1)}
+                  </button>
+                ))}
                 <button 
-                  onClick={() => {
-                    onBookCallClick();
-                    setMobileMenuOpen(false);
-                  }} 
+                  onClick={() => { onBookCallClick(); setMobileMenuOpen(false); }} 
                   className="flex items-center gap-2 px-6 py-4 rounded-xl bg-primary text-primary-foreground font-semibold mt-4"
                 >
                   🚀 Book a Call
