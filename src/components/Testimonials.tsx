@@ -73,7 +73,7 @@ const Testimonials = () => {
         {/* Testimonial Card */}
         <div className="flex justify-center">
           <div className="w-full max-w-4xl">
-            <div className="bg-white rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.08)] p-10 md:p-14 text-center relative">
+            <div className="liquid-glass-container rounded-3xl p-10 md:p-14 text-center relative">
               <blockquote className="text-xl md:text-2xl font-semibold text-foreground leading-relaxed mb-8">
                 "{current.quote}"
               </blockquote>
