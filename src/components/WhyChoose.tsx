@@ -24,7 +24,7 @@ const WhyChoose = () => {
   ];
 
   return (
-    <section className="py-24 bg-[#f5f6f8]">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div 
