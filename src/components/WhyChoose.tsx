@@ -50,7 +50,7 @@ const WhyChoose = () => {
           className={`grid md:grid-cols-2 gap-6 max-w-5xl mx-auto scroll-animate ${cardsInView ? 'animate-reveal-up' : ''}`}
         >
           {/* MARKITX Card */}
-          <div className="bg-white/80 backdrop-blur-xl border border-white/40 rounded-3xl p-8 shadow-lg shadow-black/5">
+          <div className="liquid-glass-container rounded-3xl p-8">
             <div className="flex items-center justify-between mb-8">
               <h3 className="text-2xl font-semibold text-primary">Markitx</h3>
               <div className="w-3 h-3 rounded-full bg-primary"></div>
