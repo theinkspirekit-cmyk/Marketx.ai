@@ -77,7 +77,7 @@ const Features = () => {
           ref={headerRef}
           className={`text-center mb-16 scroll-animate ${headerInView ? 'animate-reveal-up' : ''}`}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-white mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-container mb-8">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
