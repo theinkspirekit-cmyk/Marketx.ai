@@ -70,7 +70,7 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="py-24 bg-[#f8f9fc]">
+    <section id="features" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div 
