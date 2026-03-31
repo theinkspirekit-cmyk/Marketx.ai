@@ -100,7 +100,7 @@ const Features = () => {
               className={`liquid-glass-container rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300 scroll-animate ${cardsInView ? `animate-scale-fade stagger-${index + 1}` : ''}`}
             >
               <div className="flex items-start justify-between mb-5">
-                <div className="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center">
+                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center shadow-[inset_0_1px_2px_hsl(220_15%_75%/0.3)]">
                   {feature.icon}
                 </div>
                 <button className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-300 hover:text-gray-400 transition-colors">

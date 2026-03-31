@@ -40,7 +40,7 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
       }`}>
         <nav className={`mx-auto transition-all duration-500 ${
           isScrolled 
-            ? `max-w-5xl backdrop-blur-xl border rounded-2xl px-6 py-3 ${isDark ? 'bg-[hsl(222,20%,10%)]/95 border-white/10 shadow-[0_2px_20px_rgba(0,0,0,0.3)]' : 'bg-white/95 border-black/[0.08] shadow-[0_2px_20px_rgba(0,0,0,0.06)]'}`
+            ? `max-w-5xl rounded-2xl px-6 py-3 ${isDark ? 'bg-gradient-to-b from-[hsl(222,18%,14%)] to-[hsl(222,18%,10%)] border-t border-t-[hsl(222,15%,20%)] border-b-2 border-b-[hsl(0,0%,0%,0.5)] shadow-[0_4px_12px_hsl(0,0%,0%,0.4),inset_0_1px_0_hsl(222,15%,20%)]' : 'bg-gradient-to-b from-white to-[hsl(220,15%,96%)] border-t border-t-white border-b-2 border-b-[hsl(220,15%,82%)] shadow-[0_4px_12px_hsl(220,20%,60%,0.15),inset_0_1px_0_white]'}`
             : 'container bg-transparent px-6 py-2'
         }`}>
           <div className="flex items-center justify-between">

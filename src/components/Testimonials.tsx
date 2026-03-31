@@ -113,7 +113,7 @@ const Testimonials = () => {
 
                 <button
                   onClick={goNext}
-                  className="w-10 h-10 rounded-full bg-muted/50 border border-border/50 flex items-center justify-center text-foreground hover:bg-muted transition-colors flex-shrink-0"
+                  className="w-10 h-10 rounded-full bg-gradient-to-b from-card to-secondary flex items-center justify-center text-foreground shadow-[var(--shadow-raised)] hover:shadow-[var(--shadow-raised-hover)] active:shadow-[var(--shadow-pressed)] active:translate-y-0.5 transition-all flex-shrink-0 border-t border-t-[var(--surface-border-light)] border-b-2 border-b-[var(--surface-border-dark)]"
                   aria-label="Next testimonial"
                 >
                   <ChevronRight className="w-5 h-5" />

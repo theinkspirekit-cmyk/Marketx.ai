@@ -66,7 +66,7 @@ const WhyChoose = () => {
           </div>
 
           {/* Other Tools Card */}
-          <div className="bg-white/60 backdrop-blur-xl border border-white/30 rounded-3xl p-8 shadow-lg shadow-black/5">
+          <div className="liquid-glass-container rounded-3xl p-8 opacity-80">
             <div className="flex items-center justify-between mb-8">
               <h3 className="text-2xl font-semibold text-foreground/70">Other tools</h3>
               <div className="w-3 h-3 rounded-full border-2 border-foreground/30"></div>
