@@ -70,14 +70,14 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="py-24 bg-[#f8f9fc]">
+    <section id="features" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div 
           ref={headerRef}
           className={`text-center mb-16 scroll-animate ${headerInView ? 'animate-reveal-up' : ''}`}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-white mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-container mb-8">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -97,10 +97,10 @@ const Features = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className={`bg-white/80 backdrop-blur-xl border border-white/40 rounded-2xl p-6 shadow-lg shadow-black/5 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 scroll-animate ${cardsInView ? `animate-scale-fade stagger-${index + 1}` : ''}`}
+              className={`liquid-glass-container rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300 scroll-animate ${cardsInView ? `animate-scale-fade stagger-${index + 1}` : ''}`}
             >
               <div className="flex items-start justify-between mb-5">
-                <div className="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center">
+                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center shadow-[inset_0_1px_2px_hsl(220_15%_75%/0.3)]">
                   {feature.icon}
                 </div>
                 <button className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-300 hover:text-gray-400 transition-colors">
