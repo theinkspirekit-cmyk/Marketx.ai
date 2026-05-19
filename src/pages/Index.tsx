@@ -4,9 +4,8 @@ import Integrations from "@/components/Integrations";
 import RevenueDisappears from "@/components/RevenueDisappears";
 import VideoSection from "@/components/VideoSection";
 import Services from "@/components/Services";
-import Features from "@/components/Features";
-import WhyChoose from "@/components/WhyChoose";
-import Testimonials from "@/components/Testimonials";
+import CaseStudies from "@/components/CaseStudies";
+import WhoFor from "@/components/WhoFor";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -17,28 +16,28 @@ import { useState } from "react";
 
 const Index = () => {
   const [showCalendly, setShowCalendly] = useState(false);
+  const openCal = () => setShowCalendly(true);
 
   return (
-    <div className="min-h-screen font-geist">
-      <Header onBookCallClick={() => setShowCalendly(true)} />
-      
+    <div className="min-h-screen font-geist bg-background">
+      <Header onBookCallClick={openCal} />
+
       <main>
-        <Hero onBookCallClick={() => setShowCalendly(true)} />
+        <Hero onBookCallClick={openCal} />
         <Integrations />
         <RevenueDisappears />
         <VideoSection />
         <Services />
-        <Features />
-        <WhyChoose />
-        <Testimonials />
+        <CaseStudies />
+        <WhoFor />
         <FAQ />
-        <CTA />
+        <CTA onBookCallClick={openCal} />
       </main>
 
       <Footer />
-      <MobileCTA onBookCallClick={() => setShowCalendly(true)} />
+      <MobileCTA onBookCallClick={openCal} />
       <CalendlyModal isOpen={showCalendly} onClose={() => setShowCalendly(false)} />
-      <ChatWidget onBookCallClick={() => setShowCalendly(true)} />
+      <ChatWidget onBookCallClick={openCal} />
     </div>
   );
 };

@@ -1,17 +1,21 @@
+import { ArrowRight } from "lucide-react";
+
 interface MobileCTAProps {
   onBookCallClick: () => void;
 }
-const MobileCTA = ({
-  onBookCallClick
-}: MobileCTAProps) => {
-  return <div className="md:hidden fixed bottom-4 left-4 right-4 z-50 animate-fade-in">
-      <button 
-        onClick={onBookCallClick} 
-        className="block w-full btn-secondary-ref py-4 text-lg text-center hover:scale-105 duration-300"
-        aria-label="Schedule your free automation strategy call"
+
+const MobileCTA = ({ onBookCallClick }: MobileCTAProps) => {
+  return (
+    <div className="md:hidden fixed bottom-4 left-4 right-4 z-40 animate-fade-in">
+      <button
+        onClick={onBookCallClick}
+        className="flex items-center justify-center gap-2 w-full py-4 rounded-full bg-white text-black font-semibold text-base shadow-[0_8px_24px_rgba(0,0,0,0.5)]"
+        aria-label="Book a call"
       >
-        🚀 Get Free Automation Plan
+        Book a Call <ArrowRight className="w-4 h-4" />
       </button>
-    </div>;
+    </div>
+  );
 };
+
 export default MobileCTA;

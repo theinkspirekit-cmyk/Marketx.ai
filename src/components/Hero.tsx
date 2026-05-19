@@ -1,5 +1,4 @@
-import { ChevronRight } from "lucide-react";
-import heroBg from "@/assets/hero-bg.png";
+import { ArrowRight } from "lucide-react";
 
 interface HeroProps {
   onBookCallClick: () => void;
@@ -7,51 +6,53 @@ interface HeroProps {
 
 const Hero = ({ onBookCallClick }: HeroProps) => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroBg}
-          alt=""
-          className="w-full h-full object-cover"
-        />
-      </div>
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background"
+    >
+      <div
+        className="absolute inset-0 z-0 opacity-60"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(255,255,255,0.06), transparent 70%)",
+        }}
+      />
+      <div
+        className="absolute inset-0 z-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+          maskImage: "radial-gradient(ellipse 60% 50% at 50% 50%, black, transparent)",
+        }}
+      />
 
-      {/* Subtle overlay for text readability */}
-      <div className="absolute inset-0 z-0 bg-black/30" />
-
-      {/* Main Content */}
       <div className="container mx-auto px-6 text-center z-10 relative pt-24">
-        <div className="max-w-5xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-sm bg-white/10 backdrop-blur-md border border-white/20 text-white/80">
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            AI-Powered Business Automation
+        <div className="max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-10 text-xs bg-white/5 border border-white/10 text-foreground/70 uppercase tracking-[0.2em]">
+            <span className="w-1.5 h-1.5 rounded-full bg-white" />
+            AI Infrastructure
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-[60px] font-bold mb-6 leading-[1.1] tracking-tight text-white" style={{ lineHeight: '66px' }}>
-            Automate Your Business.
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-8 leading-[1.05] tracking-tight text-foreground">
+            Building AI Infrastructure
             <br />
-            <span className="font-instrument-serif italic text-blue-300">Save 10+ Hours/Week</span>
+            <span className="text-foreground/50">for Businesses.</span>
           </h1>
 
-          <p className="text-lg md:text-[18px] mb-12 max-w-2xl mx-auto text-white/70" style={{ lineHeight: '27px', fontWeight: 300 }}>
-            Automate the hustle, <span className="font-instrument-serif italic text-white">amplify the win</span>. We build intelligent workflows that save your team 10+ hours every week.
+          <p className="text-base md:text-lg mb-12 max-w-2xl mx-auto text-foreground/60 leading-relaxed">
+            Automate the hustle, <span className="text-foreground">amplify the win</span>. We
+            engineer multi-agent systems, automated workflows, and operational intelligence — so
+            your business runs without you being in every process.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <div className="flex justify-center">
             <button
               onClick={onBookCallClick}
-              className="group px-8 py-4 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 text-white font-semibold text-base transition-all duration-300 hover:scale-105 flex items-center gap-2 shadow-[0_4px_20px_rgba(59,130,246,0.4)]"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-white/90 transition-all"
             >
-              Book Free Call
-              <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
-
-            <button
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 rounded-full font-medium text-base transition-all duration-300 hover:scale-105 bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20"
-            >
-              Discover More
+              Book a Call
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
           </div>
         </div>

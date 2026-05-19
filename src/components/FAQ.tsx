@@ -1,81 +1,80 @@
 import { useState } from "react";
-import { Plus, Minus, HelpCircle } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 
-const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const { ref: headerRef, isInView: headerInView } = useInView({ threshold: 0.3 });
+const faqs = [
+  {
+    question: "What kinds of businesses do you work with?",
+    answer:
+      "Primarily agencies, B2B operators, and founders running ops-heavy businesses. If your team is doing repetitive work that could be systemized, we can likely help.",
+  },
+  {
+    question: "How long does it take to build and deploy?",
+    answer:
+      "Depends on complexity. A single automated workflow can be live in under a week. A full multi-agent system typically takes 2-4 weeks from scoping to deployment.",
+  },
+  {
+    question: "Do we need technical people on our side?",
+    answer:
+      "No. We handle the entire build and deployment. You tell us how your business runs — we engineer the system around it.",
+  },
+  {
+    question: "What does this cost?",
+    answer:
+      "We scope every engagement individually. Book a call and we'll tell you exactly what makes sense for your operation and what it costs.",
+  },
+  {
+    question: "What if something breaks after you deploy?",
+    answer:
+      "We don't hand you a tool and leave. We stay involved to ensure the system runs correctly and improve it as your operation evolves.",
+  },
+  {
+    question: "How is this different from hiring a VA or using Zapier?",
+    answer:
+      "A VA is still a human doing manual work. Zapier is a tool you still have to run. We build infrastructure that operates autonomously — no one needs to manage it day to day.",
+  },
+];
 
-  const faqs = [
-    {
-      question: "How long until my system is live?",
-      answer: "Most automations are live within 48 hours. Simple workflows like email sequences can be ready in 24 hours, while complex multi-system integrations may take up to a week. We'll give you an exact timeline during your strategy call."
-    },
-    {
-      question: "Will this work with the tools I already use?",
-      answer: "Yes! We integrate with 100+ popular business tools including Google Workspace, Slack, HubSpot, Shopify, WordPress, and more. If we can't integrate with your specific tool, we'll find an alternative solution."
-    },
-    {
-      question: "What does this cost?",
-      answer: "Our pricing depends on the complexity and scope of your automation needs. We offer packages starting from simple single-workflow automations to full business process overhauls. Book a free call to get a custom quote."
-    },
-    {
-      question: "What if my business is different?",
-      answer: "Every automation we build is custom-tailored to your specific business processes. We've worked across dozens of industries and can adapt our solutions to fit your unique workflows and requirements."
-    },
-    {
-      question: "Do I or my team need to be technical?",
-      answer: "Zero technical knowledge required. We handle all the setup and provide simple dashboards for monitoring. You'll get training on how to use your new automations, but no technical skills are needed to operate them."
-    },
-    {
-      question: "How do I know this will actually work?",
-      answer: "We offer a 30-day money-back guarantee. If the automation doesn't work as promised or doesn't save you the expected time, we'll refund your investment and fix the issues at no cost."
-    }
-  ];
+const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { ref, isInView } = useInView({ threshold: 0.2 });
 
   return (
-    <section id="faq" className="py-20 relative bg-background">
-      <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto">
-          <div 
-            ref={headerRef}
-            className={`text-center mb-16 scroll-animate ${headerInView ? 'animate-reveal-up' : ''}`}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-container mb-6">
-              <HelpCircle className="w-4 h-4 text-primary" />
-              <span className="text-sm text-muted-foreground font-medium">FAQ's</span>
-            </div>
-            <h2 className="text-4xl md:text-[48px] font-bold" style={{ lineHeight: '66px', fontFamily: "'Manrope', sans-serif", fontWeight: 700 }}>
-              <span className="text-foreground">Frequently Asked </span>
-              <span className="text-muted-foreground">Questions</span>
-            </h2>
+    <section id="faq" className="py-24 md:py-32 bg-background">
+      <div className="container mx-auto px-6 max-w-3xl">
+        <div ref={ref} className={`mb-14 scroll-animate ${isInView ? "animate-reveal-up" : ""}`}>
+          <div className="flex items-center gap-2 mb-6">
+            <span className="w-2 h-2 rounded-full bg-white" />
+            <span className="text-xs text-foreground/70 font-semibold uppercase tracking-[0.25em]">
+              FAQ
+            </span>
           </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] text-foreground tracking-tight">
+            Questions, <span className="text-foreground/50">answered.</span>
+          </h2>
+        </div>
 
-          <div className="divide-y divide-black/10">
-            {faqs.map((faq, index) => (
-              <div key={index}>
-                <button
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full py-6 text-left flex items-center justify-between group transition-all duration-200"
-                >
-                  <h3 className="text-lg font-semibold text-foreground pr-4">{faq.question}</h3>
-                  <div className="flex-shrink-0 text-muted-foreground">
-                    {openIndex === index ? (
-                      <Minus className="w-5 h-5" />
-                    ) : (
-                      <Plus className="w-5 h-5" />
-                    )}
-                  </div>
-                </button>
-                
-                <div className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? 'max-h-60 pb-6' : 'max-h-0'
-                }`}>
-                  <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+        <div className="divide-y divide-white/10 border-y border-white/10">
+          {faqs.map((faq, index) => (
+            <div key={index}>
+              <button
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                className="w-full py-6 text-left flex items-center justify-between gap-4"
+              >
+                <h3 className="text-base md:text-lg font-semibold text-foreground">{faq.question}</h3>
+                <div className="flex-shrink-0 text-foreground/60">
+                  {openIndex === index ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
                 </div>
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  openIndex === index ? "max-h-60 pb-6" : "max-h-0"
+                }`}
+              >
+                <p className="text-foreground/60 leading-relaxed">{faq.answer}</p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
