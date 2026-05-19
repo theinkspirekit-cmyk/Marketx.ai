@@ -1,91 +1,52 @@
-import { Play, AlertCircle } from "lucide-react";
-import { useState } from "react";
 import { useInView } from "@/hooks/useInView";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+
+const steps = [
+  {
+    n: "01",
+    title: "Diagnose",
+    body: "We map your operations end to end — where work stalls, where humans are doing machine work, and where the biggest leverage points are.",
+  },
+  {
+    n: "02",
+    title: "Engineer",
+    body: "We build the system. Multi-agent workflows, automated pipelines, custom AI agents — designed specifically for how your business actually runs.",
+  },
+  {
+    n: "03",
+    title: "Deploy",
+    body: "We hand over infrastructure that runs without you. Not a template. Not a tool. A system built for your operation.",
+  },
+];
 
 const VideoSection = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const { ref: sectionRef, isInView } = useInView({ threshold: 0.2 });
+  const { ref, isInView } = useInView({ threshold: 0.2 });
 
   return (
-    <section className="py-20 relative">
-      <div className="container mx-auto px-6">
-        <div 
-          ref={sectionRef}
-          className={`max-w-5xl mx-auto scroll-animate ${isInView ? 'animate-scale-fade' : ''}`}
-        >
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-[48px] font-bold mb-6" style={{ lineHeight: '66px', fontFamily: "'Manrope', sans-serif", fontWeight: 700 }}>
-              <span style={{ color: 'rgb(0, 0, 0)' }}>How It </span>
-              <span style={{ color: 'rgb(137, 137, 137)' }}>Works</span>
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Watch how we transform manual work into automated workflows
-            </p>
+    <section id="process" className="py-24 md:py-32 bg-background">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <div ref={ref} className={`mb-16 scroll-animate ${isInView ? "animate-reveal-up" : ""}`}>
+          <div className="flex items-center gap-2 mb-6">
+            <span className="w-2 h-2 rounded-full bg-white" />
+            <span className="text-xs text-foreground/70 font-semibold uppercase tracking-[0.25em]">
+              The Process
+            </span>
           </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] text-foreground tracking-tight">
+            How we build your <span className="text-foreground/50">infrastructure.</span>
+          </h2>
+        </div>
 
-          <div className="relative aspect-video glass-card overflow-hidden rounded-2xl cursor-pointer" onClick={() => setIsOpen(true)}>
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/20 to-primary/5">
-              <button
-                className="group relative"
-              >
-                <div className="absolute inset-0 bg-primary rounded-full blur-2xl opacity-50"></div>
-                <div className="relative w-20 h-20 md:w-24 md:h-24 bg-primary rounded-full flex items-center justify-center">
-                  <Play className="w-10 h-10 md:w-12 md:h-12 text-primary-foreground ml-1" />
-                </div>
-              </button>
-              <div className="absolute bottom-6 left-6 right-6">
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">
-                  Manual Work → AI Workflow → Results
-                </h3>
-                <p className="text-muted-foreground">
-                  See the complete automation process from start to finish
-                </p>
-              </div>
+        <div className="grid md:grid-cols-3 gap-5">
+          {steps.map((s) => (
+            <div
+              key={s.n}
+              className="rounded-2xl bg-[#141414] border border-white/10 p-8 hover:border-white/20 transition-colors"
+            >
+              <div className="text-xs font-mono text-foreground/40 mb-6 tracking-widest">STEP {s.n}</div>
+              <h3 className="text-2xl font-bold text-foreground mb-3">{s.title}</h3>
+              <p className="text-sm text-foreground/60 leading-relaxed">{s.body}</p>
             </div>
-          </div>
-
-          <Dialog open={isOpen} onOpenChange={setIsOpen}>
-            <DialogContent className="max-w-2xl w-full">
-              <DialogHeader>
-                <DialogTitle>Video Unavailable</DialogTitle>
-                <DialogDescription>
-                  Watch how we transform manual work into automated workflows
-                </DialogDescription>
-              </DialogHeader>
-              <div className="aspect-video w-full bg-muted rounded-lg flex flex-col items-center justify-center gap-4 p-8">
-                <AlertCircle className="w-16 h-16 text-muted-foreground" />
-                <p className="text-lg font-semibold text-foreground">Cannot Play Video</p>
-                <p className="text-sm text-muted-foreground text-center">
-                  This video is currently unavailable. Please check back later.
-                </p>
-              </div>
-            </DialogContent>
-          </Dialog>
-
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">Step 1</div>
-              <h4 className="font-semibold text-foreground mb-2">Identify</h4>
-              <p className="text-sm text-muted-foreground">Manual tasks eating your time</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">Step 2</div>
-              <h4 className="font-semibold text-foreground mb-2">Automate</h4>
-              <p className="text-sm text-muted-foreground">Build intelligent workflows</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">Step 3</div>
-              <h4 className="font-semibold text-foreground mb-2">Scale</h4>
-              <p className="text-sm text-muted-foreground">Save 10+ hours every week</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

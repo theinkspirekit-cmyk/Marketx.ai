@@ -7,12 +7,12 @@
    ========================= */
 
 :root {
-  /* Skeuomorphic Surface Variables */
-  --surface-bg: hsl(220 20% 95%);
-  --surface-raised: hsl(0 0% 100%);
-  --surface-sunken: hsl(220 15% 91%);
-  --surface-border-light: hsl(0 0% 100%);
-  --surface-border-dark: hsl(220 15% 82%);
+  /* Dark infrastructure theme */
+  --surface-bg: hsl(0 0% 4%);
+  --surface-raised: hsl(0 0% 8%);
+  --surface-sunken: hsl(0 0% 3%);
+  --surface-border-light: hsl(0 0% 18%);
+  --surface-border-dark: hsl(0 0% 6%);
 
   --blur-strong: 24px;
   --blur-medium: 16px;
@@ -20,165 +20,64 @@
   --radius-lg: 16px;
   --radius-md: 12px;
 
-  /* Clean light background with subtle texture feel */
-  --background: 220 20% 95%;
-  --foreground: 220 25% 12%;
+  --background: 0 0% 4%;
+  --foreground: 0 0% 100%;
 
-  /* Raised card surfaces */
-  --card: 0 0% 100%;
-  --card-foreground: 220 25% 12%;
-  --card-glass: 220 20% 97%;
-  --glass-light: 220 20% 94%;
+  --card: 0 0% 8%;
+  --card-foreground: 0 0% 100%;
+  --card-glass: 0 0% 9%;
+  --glass-light: 0 0% 10%;
 
-  /* Popover elements */
-  --popover: 0 0% 100%;
-  --popover-foreground: 220 25% 12%;
+  --popover: 0 0% 8%;
+  --popover-foreground: 0 0% 100%;
 
-  /* Primary - vibrant blue */
-  --primary: 217 91% 60%;
-  --primary-foreground: 0 0% 100%;
-  --primary-glow: 217 91% 70%;
+  --primary: 0 0% 100%;
+  --primary-foreground: 0 0% 4%;
+  --primary-glow: 0 0% 95%;
 
-  /* Secondary */
-  --secondary: 220 20% 92%;
-  --secondary-foreground: 220 20% 30%;
+  --secondary: 0 0% 12%;
+  --secondary-foreground: 0 0% 95%;
 
-  /* Muted elements */
-  --muted: 220 15% 92%;
-  --muted-foreground: 220 12% 50%;
+  --muted: 0 0% 10%;
+  --muted-foreground: 0 0% 53%;
 
-  /* Accent colors */
-  --accent: 220 20% 93%;
-  --accent-foreground: 220 20% 20%;
+  --accent: 0 0% 12%;
+  --accent-foreground: 0 0% 95%;
 
-  /* Destructive states */
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  /* Borders and inputs */
-  --border: 220 15% 85%;
-  --input: 220 15% 91%;
-  --ring: 217 91% 60%;
+  --border: 0 0% 16%;
+  --input: 0 0% 12%;
+  --ring: 0 0% 100%;
 
-  /* Border radius */
   --radius: 0.875rem;
 
-  /* Text colors */
-  --text-main: hsl(220 25% 12%);
-  --text-muted: hsl(220 12% 50%);
+  --text-main: hsl(0 0% 100%);
+  --text-muted: hsl(0 0% 53%);
 
-  /* Skeuomorphic gradients */
-  --gradient-radial: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(217 91% 60% / 0.08) 0%, transparent 60%);
-  --gradient-hero-bg: linear-gradient(180deg, hsl(220 20% 95%) 0%, hsl(220 15% 97%) 50%, hsl(0 0% 100%) 100%);
-  --gradient-text: linear-gradient(135deg, hsl(217 91% 50%), hsl(217 91% 65%));
-  
-  /* Component gradients */
-  --gradient-primary: linear-gradient(180deg, hsl(217 91% 65%), hsl(217 91% 52%));
-  --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 20% 97%));
+  --gradient-radial: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(0 0% 100% / 0.04) 0%, transparent 60%);
+  --gradient-hero-bg: linear-gradient(180deg, hsl(0 0% 4%) 0%, hsl(0 0% 6%) 50%, hsl(0 0% 4%) 100%);
+  --gradient-text: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 70%));
 
-  /* Skeuomorphic shadows — raised surfaces */
-  --shadow-raised: 0 2px 4px hsl(220 20% 70% / 0.4),
-                   0 4px 12px hsl(220 20% 60% / 0.15),
-                   inset 0 1px 0 hsl(0 0% 100% / 0.9),
-                   inset 0 -1px 0 hsl(220 15% 85% / 0.5);
-  --shadow-raised-hover: 0 4px 8px hsl(220 20% 70% / 0.45),
-                         0 8px 24px hsl(220 20% 60% / 0.2),
-                         inset 0 1px 0 hsl(0 0% 100% / 0.95),
-                         inset 0 -1px 0 hsl(220 15% 85% / 0.5);
-  --shadow-pressed: inset 0 2px 4px hsl(220 20% 70% / 0.4),
-                    inset 0 1px 2px hsl(220 20% 60% / 0.2);
-  --shadow-glass: 0 2px 4px hsl(220 20% 70% / 0.3),
-                  0 4px 12px hsl(220 20% 60% / 0.12),
-                  inset 0 1px 0 hsl(0 0% 100% / 0.8);
-  --shadow-glass-hover: 0 4px 8px hsl(220 20% 70% / 0.35),
-                        0 8px 20px hsl(220 20% 60% / 0.15),
-                        inset 0 1px 0 hsl(0 0% 100% / 0.9);
-  --shadow-glow: 0 0 20px hsl(217 91% 60% / 0.25),
-                 0 0 40px hsl(217 91% 60% / 0.1);
-  --shadow-card: 0 1px 3px hsl(220 20% 70% / 0.3),
-                 0 4px 12px hsl(220 20% 60% / 0.1),
-                 inset 0 1px 0 hsl(0 0% 100% / 0.9);
-  --shadow-button: 0 2px 6px hsl(217 91% 50% / 0.35),
-                   0 4px 12px hsl(217 91% 50% / 0.2),
-                   inset 0 1px 0 hsl(0 0% 100% / 0.3);
+  --gradient-primary: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 92%));
+  --gradient-card: linear-gradient(180deg, hsl(0 0% 9%), hsl(0 0% 7%));
 
-  /* Animation timings */
+  --shadow-raised: inset 0 1px 0 hsl(0 0% 100% / 0.04), 0 8px 24px hsl(0 0% 0% / 0.5);
+  --shadow-raised-hover: inset 0 1px 0 hsl(0 0% 100% / 0.06), 0 12px 32px hsl(0 0% 0% / 0.6);
+  --shadow-pressed: inset 0 2px 4px hsl(0 0% 0% / 0.6);
+  --shadow-glass: inset 0 1px 0 hsl(0 0% 100% / 0.04), 0 4px 12px hsl(0 0% 0% / 0.4);
+  --shadow-glass-hover: inset 0 1px 0 hsl(0 0% 100% / 0.06), 0 8px 20px hsl(0 0% 0% / 0.5);
+  --shadow-glow: 0 0 30px hsl(0 0% 100% / 0.06);
+  --shadow-card: inset 0 1px 0 hsl(0 0% 100% / 0.04), 0 4px 16px hsl(0 0% 0% / 0.4);
+  --shadow-button: 0 4px 16px hsl(0 0% 0% / 0.4);
+
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .dark {
-  --background: 222 20% 8%;
-  --foreground: 210 20% 92%;
-
-  --card: 222 18% 13%;
-  --card-foreground: 210 20% 92%;
-  --card-glass: 222 18% 15%;
-  --glass-light: 222 18% 16%;
-
-  --popover: 222 18% 13%;
-  --popover-foreground: 210 20% 92%;
-
-  --primary: 217 91% 60%;
-  --primary-foreground: 0 0% 100%;
-  --primary-glow: 217 91% 70%;
-
-  --secondary: 222 18% 18%;
-  --secondary-foreground: 210 20% 80%;
-
-  --muted: 222 18% 16%;
-  --muted-foreground: 220 12% 55%;
-
-  --accent: 222 18% 18%;
-  --accent-foreground: 210 20% 90%;
-
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 100%;
-
-  --border: 222 18% 22%;
-  --input: 222 18% 16%;
-  --ring: 217 91% 60%;
-
-  --text-main: hsl(210 20% 92%);
-  --text-muted: hsl(220 12% 55%);
-
-  --surface-bg: hsl(222 20% 8%);
-  --surface-raised: hsl(222 18% 13%);
-  --surface-sunken: hsl(222 20% 6%);
-  --surface-border-light: hsl(222 15% 20%);
-  --surface-border-dark: hsl(222 20% 4%);
-
-  --gradient-radial: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(217 91% 60% / 0.12) 0%, transparent 60%);
-  --gradient-hero-bg: linear-gradient(180deg, hsl(222 20% 8%) 0%, hsl(222 20% 10%) 50%, hsl(222 20% 8%) 100%);
-  --gradient-text: linear-gradient(135deg, hsl(217 91% 65%), hsl(217 91% 80%));
-
-  --gradient-primary: linear-gradient(180deg, hsl(217 91% 58%), hsl(217 91% 48%));
-  --gradient-card: linear-gradient(180deg, hsl(222 18% 14%), hsl(222 18% 11%));
-
-  --shadow-raised: 0 2px 4px hsl(0 0% 0% / 0.5),
-                   0 4px 12px hsl(0 0% 0% / 0.3),
-                   inset 0 1px 0 hsl(222 15% 20% / 0.6),
-                   inset 0 -1px 0 hsl(0 0% 0% / 0.3);
-  --shadow-raised-hover: 0 4px 8px hsl(0 0% 0% / 0.55),
-                         0 8px 24px hsl(0 0% 0% / 0.35),
-                         inset 0 1px 0 hsl(222 15% 22% / 0.7),
-                         inset 0 -1px 0 hsl(0 0% 0% / 0.3);
-  --shadow-pressed: inset 0 2px 6px hsl(0 0% 0% / 0.5),
-                    inset 0 1px 2px hsl(0 0% 0% / 0.3);
-  --shadow-glass: 0 2px 4px hsl(0 0% 0% / 0.4),
-                  0 4px 12px hsl(0 0% 0% / 0.25),
-                  inset 0 1px 0 hsl(222 15% 20% / 0.5);
-  --shadow-glass-hover: 0 4px 8px hsl(0 0% 0% / 0.45),
-                        0 8px 20px hsl(0 0% 0% / 0.3),
-                        inset 0 1px 0 hsl(222 15% 22% / 0.6);
-  --shadow-glow: 0 0 20px hsl(217 91% 60% / 0.3),
-                 0 0 40px hsl(217 91% 60% / 0.15);
-  --shadow-card: 0 1px 3px hsl(0 0% 0% / 0.4),
-                 0 4px 12px hsl(0 0% 0% / 0.25),
-                 inset 0 1px 0 hsl(222 15% 20% / 0.5);
-  --shadow-button: 0 2px 6px hsl(217 91% 40% / 0.4),
-                   0 4px 12px hsl(217 91% 40% / 0.25),
-                   inset 0 1px 0 hsl(0 0% 100% / 0.15);
+  /* Single dark theme */
 }
 
 /* =========================
@@ -206,29 +105,19 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Manrope', sans-serif;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text-main);
   }
 
   p, span, a, li, button, input, textarea, label {
     font-weight: 300;
-    color: var(--text-muted);
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  p { color: var(--text-muted); }
 
-  #root {
-    min-height: 100vh;
-  }
-
-  p {
-    color: var(--text-muted);
-  }
-
-  h1, h2, h3, h4 {
-    color: var(--text-main);
-  }
+  html { scroll-behavior: smooth; }
+  #root { min-height: 100vh; }
 }
 
 @layer components {
