@@ -32,13 +32,19 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 py-3 px-4">
         <nav
-          className={`mx-auto max-w-5xl rounded-full px-6 py-3 transition-all duration-500 border ${
-            isScrolled
-              ? "bg-background/80 backdrop-blur-xl border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
-              : "bg-background/40 backdrop-blur-md border-white/10"
+          className={`relative mx-auto max-w-5xl rounded-full px-6 py-3 transition-all duration-500 border border-white/15 overflow-hidden bg-white/[0.06] backdrop-blur-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.18),inset_0_-1px_0_0_rgba(255,255,255,0.05),0_10px_40px_-10px_rgba(0,0,0,0.6)] ${
+            isScrolled ? "bg-white/[0.08]" : ""
           }`}
         >
-          <div className="flex items-center justify-between">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 rounded-full opacity-60"
+            style={{
+              background:
+                "radial-gradient(120% 80% at 20% 0%, rgba(255,255,255,0.18), transparent 50%), radial-gradient(120% 80% at 80% 100%, rgba(255,255,255,0.06), transparent 50%)",
+            }}
+          />
+          <div className="relative flex items-center justify-between">
             <button onClick={() => scrollToSection("home")} className="flex items-center gap-2">
               <img src={logo} alt="MARKITX" className="h-7 w-auto" loading="eager" />
               <span className="font-bold tracking-[0.2em] text-foreground text-sm">MARKITX</span>
