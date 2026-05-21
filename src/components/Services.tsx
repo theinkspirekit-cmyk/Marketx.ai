@@ -37,7 +37,7 @@ const Services = () => {
               What We Build
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] text-foreground tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-foreground tracking-tight">
             Not tools. <span className="text-foreground/50">Infrastructure.</span>
           </h2>
         </div>

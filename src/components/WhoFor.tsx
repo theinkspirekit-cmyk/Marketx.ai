@@ -21,7 +21,7 @@ const WhoFor = () => {
             </span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] text-foreground tracking-tight mb-10">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-foreground tracking-tight mb-10">
             This is not for <span className="text-foreground/50">everyone.</span>
           </h2>
 

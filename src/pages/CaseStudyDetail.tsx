@@ -95,7 +95,7 @@ const CaseStudyDetail = () => {
           <span className="inline-block text-[10px] font-semibold uppercase tracking-[0.2em] text-foreground/70 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
             {study.tag}
           </span>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.05] text-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.05] text-foreground mb-6">
             {study.title}
           </h1>
           <p className="text-foreground/60 mb-12">{study.client}</p>
