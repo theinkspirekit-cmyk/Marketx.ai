@@ -1,29 +1,38 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface HeroProps {
   onBookCallClick: () => void;
 }
 
 const Hero = ({ onBookCallClick }: HeroProps) => {
+  const scrollToCaseStudies = (e: React.MouseEvent) => {
+    e.preventDefault();
+    document.getElementById("case-studies")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background"
     >
+      {/* Dotted background */}
       <div
-        className="absolute inset-0 z-0 opacity-60"
+        className="absolute inset-0 z-0"
         style={{
-          background:
-            "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(255,255,255,0.06), transparent 70%)",
+          backgroundImage: "radial-gradient(rgba(255,255,255,0.25) 1.2px, transparent 1.2px)",
+          backgroundSize: "22px 22px",
+          maskImage:
+            "radial-gradient(ellipse 70% 60% at 50% 50%, black 40%, transparent 100%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 70% 60% at 50% 50%, black 40%, transparent 100%)",
         }}
       />
       <div
-        className="absolute inset-0 z-0 opacity-[0.04]"
+        className="absolute inset-0 z-0 opacity-50"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-          maskImage: "radial-gradient(ellipse 60% 50% at 50% 50%, black, transparent)",
+          background:
+            "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(255,255,255,0.06), transparent 70%)",
         }}
       />
 
@@ -35,9 +44,9 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
           </div>
 
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-8 leading-[1.05] tracking-tight text-foreground">
-            Building AI Infrastructure
+            Agentic AI applications
             <br />
-            <span className="text-foreground/50">for Businesses.</span>
+            <span className="text-foreground/50">for the enterprise.</span>
           </h1>
 
           <p className="text-base md:text-lg mb-12 max-w-2xl mx-auto text-foreground/60 leading-relaxed">
@@ -46,12 +55,19 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
             your business runs without you being in every process.
           </p>
 
-          <div className="flex justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <a
+              href="#case-studies"
+              onClick={scrollToCaseStudies}
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white/5 border border-white/15 backdrop-blur-xl text-foreground font-semibold text-sm hover:bg-white/10 hover:border-white/25 transition-all"
+            >
+              Case Studies
+            </a>
             <button
               onClick={onBookCallClick}
               className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-white/90 transition-all"
             >
-              Book a Call
+              Book a Free Audit
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
           </div>
