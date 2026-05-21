@@ -1,5 +1,5 @@
 import { Mail, Linkedin } from "lucide-react";
-import logo from "@/assets/markitx-logo.avif";
+import logo from "@/assets/markitx-logo.png";
 
 const Footer = () => {
   return (
@@ -25,7 +25,7 @@ const Footer = () => {
               markitx.ai@gmail.com
             </a>
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/dheekshit-datta/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors"
