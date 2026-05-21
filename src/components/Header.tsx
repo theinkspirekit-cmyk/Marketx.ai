@@ -32,17 +32,19 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 py-3 px-4">
         <nav
-          className={`relative mx-auto max-w-5xl rounded-full px-6 py-3 transition-all duration-500 border border-white/15 overflow-hidden bg-white/[0.06] backdrop-blur-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.18),inset_0_-1px_0_0_rgba(255,255,255,0.05),0_10px_40px_-10px_rgba(0,0,0,0.6)] ${
-            isScrolled ? "bg-white/[0.08]" : ""
-          }`}
+          className="relative mx-auto max-w-5xl rounded-full px-6 py-3 overflow-hidden border border-white/20 bg-white/[0.03] backdrop-blur-3xl backdrop-saturate-150 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.25),inset_0_-1px_1px_0_rgba(255,255,255,0.08),0_8px_32px_-8px_rgba(0,0,0,0.5)]"
         >
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 rounded-full opacity-60"
+            className="pointer-events-none absolute inset-0 rounded-full"
             style={{
               background:
-                "radial-gradient(120% 80% at 20% 0%, rgba(255,255,255,0.18), transparent 50%), radial-gradient(120% 80% at 80% 100%, rgba(255,255,255,0.06), transparent 50%)",
+                "linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.04) 100%)",
             }}
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-6 top-px h-px rounded-full bg-gradient-to-r from-transparent via-white/40 to-transparent"
           />
           <div className="relative flex items-center justify-between">
             <button onClick={() => scrollToSection("home")} className="flex items-center gap-2">
