@@ -32,7 +32,7 @@ const RevenueDisappears = () => {
             </span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] mb-6 text-foreground tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] mb-6 text-foreground tracking-tight">
             Most businesses don't have an AI problem.
             <br />
             <span className="text-foreground/50">They have an infrastructure problem.</span>

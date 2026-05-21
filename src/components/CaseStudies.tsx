@@ -34,7 +34,7 @@ const CaseStudies = () => {
               Proof of Work
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] text-foreground tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-foreground tracking-tight">
             What we've <span className="text-foreground/50">built.</span>
           </h2>
         </div>
@@ -44,14 +44,20 @@ const CaseStudies = () => {
             <Link
               to={`/case-studies/${c.slug}`}
               key={c.slug}
-              className="group relative rounded-2xl p-8 flex flex-col overflow-hidden border border-white/15 bg-white/[0.04] backdrop-blur-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12),0_20px_60px_-20px_rgba(0,0,0,0.6)] hover:border-white/25 hover:bg-white/[0.06] transition-all"
+              className="group relative rounded-2xl p-8 flex flex-col overflow-hidden border border-white/15 bg-white/[0.03] backdrop-blur-2xl backdrop-saturate-150 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.22),inset_0_-1px_1px_0_rgba(255,255,255,0.06),0_20px_60px_-20px_rgba(0,0,0,0.6)] hover:border-white/25 hover:bg-white/[0.05] transition-all"
             >
-              {/* liquid glass sheen */}
+              {/* top edge highlight */}
               <div
-                className="pointer-events-none absolute -top-1/2 -left-1/2 w-[200%] h-[200%] opacity-30 group-hover:opacity-50 transition-opacity"
+                aria-hidden
+                className="pointer-events-none absolute inset-x-8 top-px h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"
+              />
+              {/* refractive sheen */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 opacity-60"
                 style={{
                   background:
-                    "radial-gradient(circle at 30% 20%, rgba(255,255,255,0.18), transparent 40%), radial-gradient(circle at 70% 80%, rgba(255,255,255,0.08), transparent 50%)",
+                    "linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.04) 100%)",
                 }}
               />
               <div className="relative flex items-start justify-between mb-6">

@@ -49,7 +49,7 @@ const FAQ = () => {
               FAQ
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] text-foreground tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-foreground tracking-tight">
             Questions, <span className="text-foreground/50">answered.</span>
           </h2>
         </div>
