@@ -20,8 +20,8 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: "radial-gradient(rgba(255,255,255,0.25) 1.2px, transparent 1.2px)",
-          backgroundSize: "22px 22px",
+          backgroundImage: "radial-gradient(rgba(255,255,255,0.28) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
           maskImage:
             "radial-gradient(ellipse 70% 60% at 50% 50%, black 40%, transparent 100%)",
           WebkitMaskImage:
@@ -40,10 +40,10 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-10 text-xs bg-white/5 border border-white/10 text-foreground/70 uppercase tracking-[0.2em]">
             <span className="w-1.5 h-1.5 rounded-full bg-white" />
-            AI Infrastructure
+            Enterprise AI Solutions
           </div>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-8 leading-[1.05] tracking-tight text-foreground">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-8 leading-[1.05] tracking-tight text-foreground">
             Agentic AI applications
             <br />
             <span className="text-foreground/50">for the enterprise.</span>
