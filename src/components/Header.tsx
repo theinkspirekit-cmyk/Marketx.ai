@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
 import logo from "@/assets/markitx-logo.png";
 
 interface HeaderProps {
@@ -14,37 +15,42 @@ const navItems = [
 ];
 
 const Header = ({ onBookCallClick }: HeaderProps) => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  useEffect(() => setMounted(true), []);
+
+  const isDark = theme === "dark";
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMobileMenuOpen(false);
   };
 
+  const toggleTheme = () => setTheme(isDark ? "light" : "dark");
+
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 py-3 px-4">
         <nav
-          className="relative mx-auto max-w-5xl rounded-full px-6 py-3 overflow-hidden border border-white/20 bg-white/[0.03] backdrop-blur-3xl backdrop-saturate-150 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.25),inset_0_-1px_1px_0_rgba(255,255,255,0.08),0_8px_32px_-8px_rgba(0,0,0,0.5)]"
+          className="relative mx-auto max-w-5xl rounded-full px-6 py-3 overflow-hidden border border-foreground/20 bg-foreground/[0.03] backdrop-blur-3xl backdrop-saturate-150 shadow-[inset_0_1px_1px_0_hsl(var(--foreground)/0.18),inset_0_-1px_1px_0_hsl(var(--foreground)/0.06),0_8px_32px_-8px_rgba(0,0,0,0.3)]"
         >
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 rounded-full"
             style={{
               background:
-                "linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.04) 100%)",
+                "linear-gradient(180deg, hsl(var(--foreground) / 0.08) 0%, hsl(var(--foreground) / 0) 50%, hsl(var(--foreground) / 0.03) 100%)",
             }}
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-x-6 top-px h-px rounded-full bg-gradient-to-r from-transparent via-white/40 to-transparent"
+            className="pointer-events-none absolute inset-x-6 top-px h-px rounded-full"
+            style={{
+              background:
+                "linear-gradient(90deg, transparent, hsl(var(--foreground) / 0.3), transparent)",
+            }}
           />
           <div className="relative flex items-center justify-between">
             <button onClick={() => scrollToSection("home")} className="flex items-center gap-2">
@@ -64,10 +70,19 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
               ))}
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
+              {mounted && (
+                <button
+                  onClick={toggleTheme}
+                  aria-label="Toggle theme"
+                  className="p-2 rounded-full border border-foreground/15 bg-foreground/[0.04] hover:bg-foreground/10 text-foreground transition-colors"
+                >
+                  {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                </button>
+              )}
               <button
                 onClick={onBookCallClick}
-                className="hidden md:flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-black hover:bg-white/90 transition-all"
+                className="hidden md:flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-semibold bg-foreground text-background hover:bg-foreground/90 transition-all"
               >
                 Book a Call
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -104,7 +119,7 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
                     onBookCallClick();
                     setMobileMenuOpen(false);
                   }}
-                  className="flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-white text-black font-semibold mt-4"
+                  className="flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-foreground text-background font-semibold mt-4"
                 >
                   Book a Call <ArrowRight className="w-4 h-4" />
                 </button>
