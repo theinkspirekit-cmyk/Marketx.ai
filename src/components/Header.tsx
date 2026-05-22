@@ -33,26 +33,9 @@ const Header = ({ onBookCallClick }: HeaderProps) => {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 py-3 px-4">
-        <nav
-          className="relative mx-auto max-w-5xl rounded-full px-6 py-3 overflow-hidden border border-foreground/20 bg-foreground/[0.03] backdrop-blur-3xl backdrop-saturate-150 shadow-[inset_0_1px_1px_0_hsl(var(--foreground)/0.18),inset_0_-1px_1px_0_hsl(var(--foreground)/0.06),0_8px_32px_-8px_rgba(0,0,0,0.3)]"
-        >
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 rounded-full"
-            style={{
-              background:
-                "linear-gradient(180deg, hsl(var(--foreground) / 0.08) 0%, hsl(var(--foreground) / 0) 50%, hsl(var(--foreground) / 0.03) 100%)",
-            }}
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-x-6 top-px h-px rounded-full"
-            style={{
-              background:
-                "linear-gradient(90deg, transparent, hsl(var(--foreground) / 0.3), transparent)",
-            }}
-          />
+        <nav className="liquid-glass relative mx-auto max-w-5xl rounded-full px-6 py-3">
           <div className="relative flex items-center justify-between">
+
             <button onClick={() => scrollToSection("home")} className="flex items-center gap-2">
               <img src={logo} alt="MARKITX" className="h-7 w-auto" loading="eager" />
               <span className="font-bold tracking-[0.2em] text-foreground text-sm">MARKITX</span>
