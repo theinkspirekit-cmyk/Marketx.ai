@@ -7,18 +7,81 @@
    ========================= */
 
 :root {
-  /* Dark infrastructure theme */
-  --surface-bg: hsl(0 0% 4%);
-  --surface-raised: hsl(0 0% 8%);
-  --surface-sunken: hsl(0 0% 3%);
-  --surface-border-light: hsl(0 0% 18%);
-  --surface-border-dark: hsl(0 0% 6%);
+  /* Light theme */
+  --surface-bg: hsl(0 0% 98%);
+  --surface-raised: hsl(0 0% 100%);
+  --surface-sunken: hsl(0 0% 96%);
+  --surface-border-light: hsl(0 0% 90%);
+  --surface-border-dark: hsl(0 0% 80%);
 
   --blur-strong: 24px;
   --blur-medium: 16px;
 
   --radius-lg: 16px;
   --radius-md: 12px;
+
+  --background: 0 0% 98%;
+  --foreground: 0 0% 8%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 8%;
+  --card-glass: 0 0% 98%;
+  --glass-light: 0 0% 95%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 8%;
+
+  --primary: 0 0% 8%;
+  --primary-foreground: 0 0% 100%;
+  --primary-glow: 0 0% 20%;
+
+  --secondary: 0 0% 94%;
+  --secondary-foreground: 0 0% 12%;
+
+  --muted: 0 0% 94%;
+  --muted-foreground: 0 0% 40%;
+
+  --accent: 0 0% 94%;
+  --accent-foreground: 0 0% 12%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 0 0% 88%;
+  --input: 0 0% 92%;
+  --ring: 0 0% 8%;
+
+  --radius: 0.875rem;
+
+  --text-main: hsl(0 0% 8%);
+  --text-muted: hsl(0 0% 40%);
+
+  --gradient-radial: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(0 0% 0% / 0.04) 0%, transparent 60%);
+  --gradient-hero-bg: linear-gradient(180deg, hsl(0 0% 98%) 0%, hsl(0 0% 96%) 50%, hsl(0 0% 98%) 100%);
+  --gradient-text: linear-gradient(135deg, hsl(0 0% 8%), hsl(0 0% 30%));
+
+  --gradient-primary: linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 20%));
+  --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 97%));
+
+  --shadow-raised: inset 0 1px 0 hsl(0 0% 100% / 0.8), 0 8px 24px hsl(0 0% 0% / 0.08);
+  --shadow-raised-hover: inset 0 1px 0 hsl(0 0% 100% / 0.9), 0 12px 32px hsl(0 0% 0% / 0.12);
+  --shadow-pressed: inset 0 2px 4px hsl(0 0% 0% / 0.1);
+  --shadow-glass: inset 0 1px 0 hsl(0 0% 100% / 0.8), 0 4px 12px hsl(0 0% 0% / 0.06);
+  --shadow-glass-hover: inset 0 1px 0 hsl(0 0% 100% / 0.9), 0 8px 20px hsl(0 0% 0% / 0.1);
+  --shadow-glow: 0 0 30px hsl(0 0% 0% / 0.06);
+  --shadow-card: inset 0 1px 0 hsl(0 0% 100% / 0.8), 0 4px 16px hsl(0 0% 0% / 0.06);
+  --shadow-button: 0 4px 16px hsl(0 0% 0% / 0.1);
+
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dark {
+  --surface-bg: hsl(0 0% 4%);
+  --surface-raised: hsl(0 0% 8%);
+  --surface-sunken: hsl(0 0% 3%);
+  --surface-border-light: hsl(0 0% 18%);
+  --surface-border-dark: hsl(0 0% 6%);
 
   --background: 0 0% 4%;
   --foreground: 0 0% 100%;
@@ -44,14 +107,9 @@
   --accent: 0 0% 12%;
   --accent-foreground: 0 0% 95%;
 
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 100%;
-
   --border: 0 0% 16%;
   --input: 0 0% 12%;
   --ring: 0 0% 100%;
-
-  --radius: 0.875rem;
 
   --text-main: hsl(0 0% 100%);
   --text-muted: hsl(0 0% 53%);
@@ -59,7 +117,6 @@
   --gradient-radial: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(0 0% 100% / 0.04) 0%, transparent 60%);
   --gradient-hero-bg: linear-gradient(180deg, hsl(0 0% 4%) 0%, hsl(0 0% 6%) 50%, hsl(0 0% 4%) 100%);
   --gradient-text: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 70%));
-
   --gradient-primary: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 92%));
   --gradient-card: linear-gradient(180deg, hsl(0 0% 9%), hsl(0 0% 7%));
 
@@ -71,13 +128,6 @@
   --shadow-glow: 0 0 30px hsl(0 0% 100% / 0.06);
   --shadow-card: inset 0 1px 0 hsl(0 0% 100% / 0.04), 0 4px 16px hsl(0 0% 0% / 0.4);
   --shadow-button: 0 4px 16px hsl(0 0% 0% / 0.4);
-
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.dark {
-  /* Single dark theme */
 }
 
 /* =========================
