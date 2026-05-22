@@ -18,10 +18,11 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
     >
       {/* Dotted background */}
       <div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 text-foreground"
         style={{
-          backgroundImage: "radial-gradient(rgba(255,255,255,0.28) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(currentColor 1px, transparent 1px)",
           backgroundSize: "40px 40px",
+          opacity: 0.28,
           maskImage:
             "radial-gradient(ellipse 70% 60% at 50% 50%, black 40%, transparent 100%)",
           WebkitMaskImage:
@@ -29,17 +30,18 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
         }}
       />
       <div
-        className="absolute inset-0 z-0 opacity-50"
+        className="absolute inset-0 z-0 opacity-50 text-foreground"
         style={{
           background:
-            "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(255,255,255,0.06), transparent 70%)",
+            "radial-gradient(ellipse 60% 40% at 50% 0%, currentColor, transparent 70%)",
+          opacity: 0.06,
         }}
       />
 
       <div className="container mx-auto px-6 text-center z-10 relative pt-24">
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-10 text-xs bg-white/5 border border-white/10 text-foreground/70 uppercase tracking-[0.2em]">
-            <span className="w-1.5 h-1.5 rounded-full bg-white" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-10 text-xs bg-foreground/5 border border-foreground/10 text-foreground/70 uppercase tracking-[0.2em]">
+            <span className="w-1.5 h-1.5 rounded-full bg-foreground" />
             Enterprise AI Solutions
           </div>
 
@@ -59,13 +61,13 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
             <a
               href="#case-studies"
               onClick={scrollToCaseStudies}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white/5 border border-white/15 backdrop-blur-xl text-foreground font-semibold text-sm hover:bg-white/10 hover:border-white/25 transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-foreground/5 border border-foreground/15 backdrop-blur-xl text-foreground font-semibold text-sm hover:bg-foreground/10 hover:border-foreground/25 transition-all"
             >
               Case Studies
             </a>
             <button
               onClick={onBookCallClick}
-              className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-white/90 transition-all"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-foreground text-background font-semibold text-sm hover:bg-foreground/90 transition-all"
             >
               Book a Free Audit
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
