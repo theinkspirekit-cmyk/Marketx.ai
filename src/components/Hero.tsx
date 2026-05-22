@@ -61,10 +61,11 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
             <a
               href="#case-studies"
               onClick={scrollToCaseStudies}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-foreground/5 border border-foreground/15 backdrop-blur-xl text-foreground font-semibold text-sm hover:bg-foreground/10 hover:border-foreground/25 transition-all"
+              className="liquid-glass inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-foreground font-semibold text-sm hover:-translate-y-0.5 transition-transform"
             >
               Case Studies
             </a>
+
             <button
               onClick={onBookCallClick}
               className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-foreground text-background font-semibold text-sm hover:bg-foreground/90 transition-all"
