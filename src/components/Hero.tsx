@@ -40,8 +40,8 @@ const Hero = ({ onBookCallClick }: HeroProps) => {
 
       <div className="container mx-auto px-6 text-center z-10 relative pt-24">
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-10 text-xs bg-white/5 border border-white/10 text-foreground/70 uppercase tracking-[0.2em]">
-            <span className="w-1.5 h-1.5 rounded-full bg-white" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-10 text-xs bg-foreground/5 border border-foreground/10 text-foreground/70 uppercase tracking-[0.2em]">
+            <span className="w-1.5 h-1.5 rounded-full bg-foreground" />
             Enterprise AI Solutions
           </div>
 
